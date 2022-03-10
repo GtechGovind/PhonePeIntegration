@@ -1,11 +1,14 @@
 <template>
 
+    <nav-bar />
+    <hero />
+
     <div v-if="isPendingPayment">
         Loading please wait ....
     </div>
 
     <div v-else>
-        <order-handler :stations />
+        <order-handler :stations="stations" />
     </div>
 
 </template>
@@ -14,10 +17,12 @@
 
 import axios from "axios";
 import OrderHandler from "./components/OrderHandler";
+import NavBar from "../../../shared/NavBar";
+import Hero from "../../../shared/Hero";
 
 export default {
     name: "Order",
-    components: {OrderHandler},
+    components: {Hero, NavBar, OrderHandler},
     props: {
         stations: Array
     },
