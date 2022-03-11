@@ -129,7 +129,7 @@
 import axios from "axios";
 
 export default {
-
+    name: "OrderHelper",
     data() {
         return {
             ticket: {
@@ -146,8 +146,6 @@ export default {
     props: {
         stations: Array
     },
-
-    name: "CreateOrder",
 
     methods: {
 
@@ -179,7 +177,6 @@ export default {
         }
 
     },
-
 
 }
 </script>
