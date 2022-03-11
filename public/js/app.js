@@ -19672,23 +19672,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   mounted: function mounted() {
-    var _this = this;
-
-    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return _this.checkIsPending();
-
-            case 2:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }))();
+    this.checkIsPending();
   },
   props: {
     stations: Array
@@ -19701,31 +19685,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     checkIsPending: function () {
-      var _checkIsPending = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      var _checkIsPending = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var response, data, isPendingPayment;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context.prev = _context.next) {
               case 0:
-                _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/order/pending');
+                _context.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/ticket/order/pending');
 
               case 2:
-                response = _context2.sent;
-                _context2.next = 5;
+                response = _context.sent;
+                _context.next = 5;
                 return response.data;
 
               case 5:
-                data = _context2.sent;
+                data = _context.sent;
                 isPendingPayment = data.isPendingPayment;
                 this.isPendingPayment = isPendingPayment;
 
               case 8:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee, this);
       }));
 
       function checkIsPending() {

@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.c-input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none
+}
+
+.btn_selected {
+    @apply bg-blue-500 text-gray-50 font-bold border border-blue-500 px-4 py-2 hover:bg-blue-600
+}
+.btn_not_selected {
+    @apply text-gray-500 font-bold py-2 px-4 border border-blue-500 hover:bg-blue-500 hover:text-gray-50
+}
+
+.btn {
+    @apply w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700
+}
+
+.c-select {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+}
+
+.c-label {
+    @apply block mb-2 text-sm font-medium text-gray-900
+}
+
+.c-error {
+    @apply block mb-2 text-sm text-red-500
+}
+
+.form_number_input {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+}
+
+.bounce-enter-active {
+    animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+    animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -28,8 +28,8 @@ export default {
         }
     },
 
-    async mounted() {
-        await this.checkIsPending()
+    mounted() {
+        this.checkIsPending()
     },
 
     props: {
@@ -46,7 +46,7 @@ export default {
 
     methods: {
         checkIsPending: async function () {
-            const response = await axios.get('/order/pending')
+            const response = await axios.get('/ticket/order/pending')
             const data = await response.data
             const {isPendingPayment} = data
             this.isPendingPayment = isPendingPayment
