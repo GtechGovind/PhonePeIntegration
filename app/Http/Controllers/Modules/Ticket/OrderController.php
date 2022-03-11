@@ -33,11 +33,9 @@ class OrderController extends Controller
             ->where('sale_or_status', '=', env('ORDER_GENERATED'))
             ->get()->count();
 
-        dd($pendingOrders);
-
         return $pendingOrders > 0
-            ? response(['isPendingPayment' => false])
-            : response(['isPendingPayment' => true]);
+            ? response(['isPendingPayment' => true])
+            : response(['isPendingPayment' => false]);
 
     }
 
