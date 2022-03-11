@@ -18,7 +18,7 @@ class ProcessingController extends Controller
 {
     public function index($order_id)
     {
-        return Inertia::render('Payment/Processing', [
+        return Inertia::render('Modules/Processing/Processing', [
             'order' => $order_id
         ]);
     }
@@ -29,12 +29,12 @@ class ProcessingController extends Controller
             ->where('sale_or_no', '=', $order_id)
             ->first();
 
-        /*$phonepe = new PhonePeStatusController();
+        $phonepe = new PhonePeStatusController();
         $response = $phonepe->getPaymentStatus($order);
 
-        OrderUtility::updateOrderStatus($response, $order);*/
+        OrderUtility::updateOrderStatus($response, $order);
 
-        if (/*$response->success*/ true) {
+        if ($response->success) {
 
             return ($order->op_type_id == env('ISSUE')
                 ? ($order->product_id == env('PRODUCT_SJT') || $order->product_id == env('PRODUCT_RJT')
