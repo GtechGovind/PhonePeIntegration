@@ -1,8 +1,15 @@
 <template>
-    <div class="relative rounded-lg m-2 bg-white">
-        <div class="grid w-full content-center p-7" >
-            <img :src="logo" alt="..." class="h-24 mx-auto">
-            <Spinner />
+    <div class="container mx-auo">
+        <div class="h-screen grid grid-rows-3">
+            <div class="mx-auto flex items-center row-span-2">
+                <div class="text-center">
+                    <img :src="logo" class="h-24" alt="logo">
+                    <Spinner />
+                </div>
+            </div>
+            <div class="mx-auto flex items-center">
+                <img :src="coBrand" class="h-24" alt="logo">
+            </div>
         </div>
     </div>
 </template>
