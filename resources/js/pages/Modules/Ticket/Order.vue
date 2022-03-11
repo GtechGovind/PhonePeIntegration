@@ -1,17 +1,11 @@
 <template>
 
-    <nav-bar />
-    <hero />
+    <nav-bar/>
+    <hero/>
 
-    <div v-if="isPendingPayment">
-        <div>hello</div>
-    </div>
+    <div>Hello</div>
 
-    <div v-else>
-        <TransitionGroup>
-            <CreateOrder :stations="stations" />
-        </TransitionGroup>
-    </div>
+    <CreateOrder :stations="stations"/>
 
 </template>
 
@@ -50,7 +44,7 @@ export default {
         checkIsPending: async function () {
             const response = await axios.get('/order/pending')
             const data = await response.data
-            const { isPendingPayment } = data
+            const {isPendingPayment} = data
             this.isPendingPayment = isPendingPayment
         }
     },
