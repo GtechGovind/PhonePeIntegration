@@ -4,11 +4,10 @@
     <hero />
 
     <div v-if="isPendingPayment">
-
+        <div>hello</div>
     </div>
 
     <div v-else>
-        <div>hello</div>
         <TransitionGroup>
             <CreateOrder :stations="stations" />
         </TransitionGroup>
