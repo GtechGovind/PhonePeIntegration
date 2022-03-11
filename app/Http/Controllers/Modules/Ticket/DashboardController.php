@@ -14,7 +14,7 @@ class DashboardController extends Controller
         $upcomingOrders = $this->getUpcomingOrders();
         $recentOrders = $this->getRecentOrders();
 
-        return Inertia::render('Ticket/Dashboard', [
+        return Inertia::render('Modules/Ticket/Dashboard', [
             'user' => Auth::user(),
             'upcomingOrders' => $upcomingOrders,
             'recentOrders' => $recentOrders
