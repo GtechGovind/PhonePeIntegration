@@ -29,12 +29,12 @@ class ProcessingController extends Controller
             ->where('sale_or_no', '=', $order_id)
             ->first();
 
-        $phonepe = new PhonePeStatusController();
+        /*$phonepe = new PhonePeStatusController();
         $response = $phonepe->getPaymentStatus($order);
 
-        OrderUtility::updateOrderStatus($response, $order);
+        OrderUtility::updateOrderStatus($response, $order);*/
 
-        if ($response->success) {
+        if (/*$response->success*/ true) {
 
             return ($order->op_type_id == env('ISSUE')
                 ? ($order->product_id == env('PRODUCT_SJT') || $order->product_id == env('PRODUCT_RJT')
