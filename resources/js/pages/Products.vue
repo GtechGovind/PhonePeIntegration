@@ -1,4 +1,6 @@
 <template>
+    <NavBar />
+    <Hero />
     <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products"
          :key="product.id">
         <Link :href="product.url">
