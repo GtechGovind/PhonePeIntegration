@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Modules\Processing\ProcessingController;
 use App\Http\Controllers\Modules\Ticket\DashboardController;
 use App\Http\Controllers\Modules\Ticket\OrderController;
 use App\Http\Controllers\ProductController;
@@ -18,3 +19,9 @@ Route::get('/ticket/dashboard', [DashboardController::class, 'index'])->name('ti
 Route::get('/ticket/order', [OrderController::class, 'index'])->name('ticket.index');
 Route::post('/ticket/create', [OrderController::class, 'create'])->name('ticket.create');
 Route::get('/ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');
+
+
+// PROCESSING TICKET
+Route::get('/processing/{order_id}', [ProcessingController::class, 'index'])->name('processing');
+Route::get('/processing/init/{order_id}', [ProcessingController::class, 'init'])->name('processing.init');
+Route::get('/processing/failed/{order_id}', [ProcessingController::class, 'failed'])->name('processing.failed');
