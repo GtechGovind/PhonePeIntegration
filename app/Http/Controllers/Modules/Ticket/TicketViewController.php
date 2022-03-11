@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection LaravelFunctionsInspection */
 
 namespace App\Http\Controllers\Modules\Ticket;
 
@@ -18,7 +18,7 @@ class TicketViewController extends Controller
 
         if ($productId == env('PRODUCT_SJT'))
         {
-            return Inertia::render('Ticket/View', [
+            return Inertia::render('Modules/Ticket/View', [
                 'type' => $productId,
                 'order_id' => $order_id,
                 'upwardTicket' => $this->getSjtTrips($order_id)
@@ -26,7 +26,7 @@ class TicketViewController extends Controller
         }
         else
         {
-            return Inertia::render('Ticket/View', [
+            return Inertia::render('Modules/Ticket/View', [
                 'type' => $productId,
                 'order_id' => $order_id,
                 'upwardTicket' => $this->getRjtTrips($order_id, env('OUTWARD')),
@@ -42,6 +42,8 @@ class TicketViewController extends Controller
             ->join('stations as s', 's.id', 'so.src_stn_id')
             ->join('stations as d', 'd.id', 'so.des_stn_id')
             ->where('so.sale_or_no', '=', $order_id)
+            ->where('sjt.qr_status', '!=', env('EXPIRED'))
+            ->where('sjt.qr_status', '!=', env('COMPLETED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'sjt.*'])
             ->get();
 
@@ -55,6 +57,8 @@ class TicketViewController extends Controller
             ->join('stations as d', 'd.id', 'so.des_stn_id')
             ->where('so.sale_or_no', '=', $order_id)
             ->where('rjt.qr_dir', '=', $dir)
+            ->where('rjt.qr_status', '!=', env('EXPIRED'))
+            ->where('rjt.qr_status', '!=', env('COMPLETED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'rjt.*'])
             ->get();
     }
