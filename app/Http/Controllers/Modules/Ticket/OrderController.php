@@ -65,7 +65,7 @@ class OrderController extends Controller
             ->where('sale_or_no', '=', $saleOrderNumber)
             ->select(['so.*', 's.stn_name as source_name', 'd.stn_name as destination_name'])
             ->first();
-        
+
         $api = new PhonePePaymentController();
         $response = $api->pay($order);
 
@@ -77,6 +77,7 @@ class OrderController extends Controller
             ])
             : response([
                 'status' => false,
+                'error' => $response,
                 'order_id' => $saleOrderNumber
             ]);
     }
