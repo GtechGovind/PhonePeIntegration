@@ -66,6 +66,8 @@ class OrderController extends Controller
             ->select(['so.*', 's.stn_name as source_name', 'd.stn_name as destination_name'])
             ->first();
 
+        dd($order);
+
         $api = new PhonePePaymentController();
         $response = $api->pay($order);
 
