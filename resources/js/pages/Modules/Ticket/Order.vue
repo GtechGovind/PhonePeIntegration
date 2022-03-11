@@ -28,8 +28,8 @@ export default {
         }
     },
 
-    mounted() {
-        this.checkIsPending()
+    async mounted() {
+        await this.checkIsPending()
     },
 
     props: {
