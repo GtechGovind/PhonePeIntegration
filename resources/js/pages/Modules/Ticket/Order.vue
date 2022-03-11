@@ -7,10 +7,8 @@
 
     </div>
 
-    <div v-else>
-        <TransitionGroup>
-            <OrderHelper :stations="stations"/>
-        </TransitionGroup>
+    <div v-if="!isPendingPayment">
+        <OrderHelper :stations="stations"/>
     </div>
 
 </template>
@@ -30,8 +28,8 @@ export default {
         }
     },
 
-    mounted() {
-        this.checkIsPending()
+    async mounted() {
+        await this.checkIsPending()
     },
 
     props: {
