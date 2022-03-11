@@ -16,7 +16,7 @@ class OrderController extends Controller
 
     public function index()
     {
-        return Inertia::render('Ticket/Order', [
+        return Inertia::render('Modules/Ticket/Order', [
             'stations' => DB::table('stations')->get(['stn_id', 'stn_name'])
         ]);
     }
