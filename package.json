@@ -22,6 +22,8 @@
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
+        "qrcode-vue3": "^1.4.17",
+        "swiper": "^8.0.7",
         "vue": "^3.2.31",
         "vue-sweetalert2": "^5.0.2"
     }
