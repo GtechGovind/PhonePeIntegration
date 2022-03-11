@@ -20117,10 +20117,6 @@ var _hoisted_39 = {
 var _hoisted_40 = {
   "class": "p-2"
 };
-var _hoisted_41 = {
-  type: "submit",
-  "class": "w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SOURCE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "c-select",
@@ -20220,7 +20216,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_35])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DETAILED FARE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.fare) + " X " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity) + " = ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity * $data.ticket.fare), 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_41, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)('PROCEED TO PAY ₹ ' + $data.ticket.quantity * $data.ticket.fare), 1
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[11] || (_cache[11] = function () {
+      return $options.genOrder && $options.genOrder.apply($options, arguments);
+    }),
+    type: "submit",
+    "class": "w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700"
+  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)('PROCEED TO PAY ₹ ' + $data.ticket.quantity * $data.ticket.fare), 1
   /* TEXT */
   )])]);
 }

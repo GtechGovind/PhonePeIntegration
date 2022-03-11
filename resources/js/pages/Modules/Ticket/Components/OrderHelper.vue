@@ -117,6 +117,7 @@
 
         <div class="p-2">
             <button
+                v-on:click="genOrder"
                 type="submit"
                 class="w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700">
                 {{ 'PROCEED TO PAY ₹ ' + ticket.quantity * ticket.fare }}
