@@ -19,6 +19,7 @@
 </template>
 
 <script>
+
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
 import RecentTicket from "./Components/RecentTicket";

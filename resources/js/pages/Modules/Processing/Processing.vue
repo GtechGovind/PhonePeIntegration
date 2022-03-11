@@ -60,6 +60,7 @@ export default {
             }
 
         },
+
         onFailure: function (data) {
             this.$swal.fire({
                 icon: 'error',
