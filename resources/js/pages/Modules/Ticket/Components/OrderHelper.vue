@@ -139,7 +139,7 @@ export default {
                 fare: 0,
                 pass_id: "10"
             },
-            errors: Object
+            errors: null
         }
     },
 

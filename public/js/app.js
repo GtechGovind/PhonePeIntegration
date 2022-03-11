@@ -19408,7 +19408,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         fare: 0,
         pass_id: "10"
       },
-      errors: Object
+      errors: null
     };
   },
   props: {
