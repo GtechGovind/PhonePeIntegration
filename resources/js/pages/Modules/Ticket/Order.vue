@@ -1,12 +1,15 @@
 <template>
 
+    <nav-bar />
+    <hero />
+
     <div v-if="isPendingPayment">
 
     </div>
 
     <div v-else>
         <TransitionGroup>
-            <OrderHandler :stations="stations" />
+
         </TransitionGroup>
     </div>
 
@@ -14,8 +17,9 @@
 
 <script>
 
-import OrderHandler from './Components/OrderHandler'
 import axios from "axios";
+import NavBar from "../../../Shared/NavBar";
+import Hero from "../../../Shared/Hero";
 
 export default {
 
@@ -36,7 +40,8 @@ export default {
     name: "Order",
 
     components: {
-        OrderHandler
+        Hero,
+        NavBar
     },
 
     methods: {
