@@ -1,7 +1,6 @@
 <template>
-    <nav-bar />
-    <hero />
-    <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products" :key="product.id">
+    <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products"
+         :key="product.id">
         <Link :href="product.url">
             <div class="grid grid-cols-6">
                 <div class="grid grid-rows-2 border-r">
@@ -36,9 +35,10 @@
 </template>
 
 <script>
-import NavBar from "../Shared/NavBar";
 import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
+import NavBar from "../Shared/NavBar";
+
 
 export default {
 
@@ -49,8 +49,8 @@ export default {
     name: "Products",
 
     components: {
-        Hero,
         NavBar,
+        Hero,
         Link
     },
 
