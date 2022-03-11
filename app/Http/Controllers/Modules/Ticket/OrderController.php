@@ -31,11 +31,9 @@ class OrderController extends Controller
         $pendingOrders = DB::table('sale_order')
             ->where('pax_id', Auth::id())
             ->where('sale_or_status', '=', env('ORDER_GENERATED'))
-            ->get();
-
-        dd($pendingOrders);
-
-        return count($pendingOrders) > 0
+            ->get()->count();
+        
+        return $pendingOrders > 0
             ? response(['isPendingPayment' => false])
             : response(['isPendingPayment' => true]);
 
