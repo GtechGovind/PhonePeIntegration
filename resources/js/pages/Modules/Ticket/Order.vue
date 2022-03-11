@@ -9,7 +9,7 @@
 
     <div v-else>
         <TransitionGroup>
-
+            <CreateOrder :stations="stations" />
         </TransitionGroup>
     </div>
 
@@ -20,6 +20,7 @@
 import axios from "axios";
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
+import CreateOrder from "./CreateOrder";
 
 export default {
 
@@ -41,7 +42,8 @@ export default {
 
     components: {
         Hero,
-        NavBar
+        NavBar,
+        CreateOrder
     },
 
     methods: {

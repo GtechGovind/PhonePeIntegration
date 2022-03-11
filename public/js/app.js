@@ -19654,11 +19654,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Hero__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/Hero */ "./resources/js/Shared/Hero.vue");
+/* harmony import */ var _CreateOrder__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CreateOrder */ "./resources/js/Pages/Modules/Ticket/CreateOrder.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -19678,7 +19680,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   name: "Order",
   components: {
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_3__["default"],
-    NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"]
+    NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
+    CreateOrder: _CreateOrder__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   methods: {
     checkIsPending: function () {
@@ -20474,7 +20477,20 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_hero = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("hero");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), $data.isPendingPayment ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.TransitionGroup)]))], 64
+  var _component_CreateOrder = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CreateOrder");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), $data.isPendingPayment ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.TransitionGroup, null, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CreateOrder, {
+        stations: $props.stations
+      }, null, 8
+      /* PROPS */
+      , ["stations"])];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]))], 64
   /* STABLE_FRAGMENT */
   );
 }
