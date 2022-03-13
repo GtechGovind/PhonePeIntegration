@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <NeedHelpModel :is-show="isNeedHelpEnabled" />
+<!--    <NeedHelpModel :is-show="isNeedHelpEnabled" />-->
 
 </template>
 
