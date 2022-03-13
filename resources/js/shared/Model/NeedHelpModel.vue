@@ -102,7 +102,7 @@
                         :type="'button'"
                         v-on:click="close"
                     />
-                    
+
                 </div>
             </div>
 
@@ -163,8 +163,27 @@ export default {
                 this.isRefundButtonLoading = false
             }
         },
-        refundTicket: function () {
-
+        refundTicket: async function () {
+            this.isRefundButtonLoading = true
+            const res = await axios.get('/refund/ticket/' + this.order_id)
+            const data = await res.data
+            if (data.status) {
+                this.isRefundButtonLoading = false
+                this.close()
+                this.$swal.fire(
+                    'Refunded Successfully !',
+                    'success'
+                )
+            }
+            else
+            {
+                this.isRefundButtonLoading = false
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            }
         }
     }
 }

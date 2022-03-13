@@ -20449,7 +20449,52 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return getRefundInfo;
     }(),
-    refundTicket: function refundTicket() {}
+    refundTicket: function () {
+      var _refundTicket = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+        var res, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                this.isRefundButtonLoading = true;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/refund/ticket/' + this.order_id);
+
+              case 3:
+                res = _context2.sent;
+                _context2.next = 6;
+                return res.data;
+
+              case 6:
+                data = _context2.sent;
+
+                if (data.status) {
+                  this.isRefundButtonLoading = false;
+                  this.close();
+                  this.$swal.fire('Refunded Successfully !', 'success');
+                } else {
+                  this.isRefundButtonLoading = false;
+                  this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'
+                  });
+                }
+
+              case 8:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function refundTicket() {
+        return _refundTicket.apply(this, arguments);
+      }
+
+      return refundTicket;
+    }()
   }
 });
 
