@@ -1,4 +1,4 @@
-<?php /** @noinspection ALL */
+<?php
 
 namespace App\Http\Controllers\Modules\TripPass;
 
@@ -7,10 +7,8 @@ use App\Http\Controllers\Api\PhonePe\PhonePePaymentController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Modules\Utility\OrderUtility;
 use App\Models\SaleOrder;
-use App\Models\SvSlBooking;
 use App\Models\TpSlBooking;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
@@ -34,7 +32,7 @@ class TripPassOrderController extends Controller
         ]);
 
         $saleOrderNumber = OrderUtility::genSaleOrderNumber(
-            $request->input('pass_id')
+            env('PASS_TP')
         );
 
         $saleOrder = new SaleOrder();
