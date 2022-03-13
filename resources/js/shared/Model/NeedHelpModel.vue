@@ -28,7 +28,7 @@
 <script>
 export default {
     props: {
-        isShow: false
+        isShow: Boolean
     },
     name: "NeedHelpModel",
     mounted() {
