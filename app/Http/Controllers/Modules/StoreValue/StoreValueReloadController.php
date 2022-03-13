@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Modules\StoreValue;
 
 use App\Http\Controllers\Api\MMOPL\ApiController;
+use App\Http\Controllers\Api\PhonePe\PhonePePaymentController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Modules\Utility;
+use App\Http\Controllers\Modules\Utility\OrderUtility;
 use App\Models\SaleOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -53,14 +55,31 @@ class StoreValueReloadController extends Controller
             ->where('sale_or_no', '=', $request->input('order_id'))
             ->first();
 
-        $SaleOrderNumber = Utility::genSaleOrderNumber($old_order->pass_id);
+        $SaleOrderNumber = OrderUtility::genSaleOrderNumber($old_order->pass_id);
         SaleOrder::reload(
             $old_order,
             $request->input('reloadAmount'),
             $SaleOrderNumber,
         );
 
-        return redirect()->to('/payment/' . $SaleOrderNumber);
+        $order = DB::table('sale_order')
+            ->where('sale_or_no', '=', $SaleOrderNumber)
+            ->first();
+
+        $api = new PhonePePaymentController();
+        $response = $api->pay($order);
+
+        return $response->success
+            ? response([
+                'status' => true,
+                'redirectUrl' => $response->data->redirectUrl,
+                'order_id' => $SaleOrderNumber
+            ])
+            : response([
+                'status' => false,
+                'error' => $response,
+                'order_id' => $SaleOrderNumber
+            ]);
 
     }
 

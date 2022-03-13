@@ -1,49 +1,51 @@
-<!--
 <template>
 
-    <NavBar/>
+    <nav-bar/>
     <hero/>
 
     <div class="bg-white m-2 p-3 shadow border text-center">
         <p class="font-bold text-lg text-gray-600">Reload StoreValue Pass</p>
     </div>
 
-    <form @submit.prevent="reload.post('/sv/reload')">
-
-        <div class="bg-white m-2 p-5 shadow border rounded">
-            <div class="mb-3">
-                <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
-                <input
-                    type="number"
-                    id="price"
-                    class="form_number_input"
-                    placeholder="₹ 500" required v-model="reload.reloadAmount"
-                    v-on:keyup="validate"
-                />
-                <div class="block m-1 text-sm text-red-500" v-if="reload.errors.reloadAmount">
-                    {{ reload.errors.reloadAmount }}
-                </div>
-            </div>
-            <div class="mt-3 grid grid-cols-3 gap-5">
-                <chip :title="'₹ 100'" v-on:click="addAmount(100)"/>
-                <chip :title="'₹ 200'" v-on:click="addAmount(200)"/>
-                <chip :title="'₹ 500'" v-on:click="addAmount(500)"/>
+    <div class="bg-white m-2 p-5 shadow border rounded">
+        <div class="mb-3">
+            <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
+            <input
+                type="number"
+                id="price"
+                class="form_number_input"
+                placeholder="₹ 500" required v-model="reload.reloadAmount"
+                v-on:keyup="validate"
+            />
+            <div class="block m-1 text-sm text-red-500" v-if="reload.errors.reloadAmount">
+                {{ reload.errors.reloadAmount }}
             </div>
         </div>
+        <div class="mt-3 grid grid-cols-3 gap-5">
+            <chip :title="'₹ 100'" v-on:click="addAmount(100)"/>
+            <chip :title="'₹ 200'" v-on:click="addAmount(200)"/>
+            <chip :title="'₹ 500'" v-on:click="addAmount(500)"/>
+        </div>
+    </div>
 
-        <Button :title="'PROCEED TO PAY ₹ ' + reload.reloadAmount" />
+    <Button
+        :is-loading="isLoading"
+        :is-disabled="isLoading"
+        :type="'button'"
+        :title="'PROCEED TO PAY ₹ ' + reload.reloadAmount"
+        v-on:click="genOrder"
+    />
 
-    </form>
 </template>
 
 <script>
 
-import NavBar from "../../Shared/NavBar";
-import {useForm} from '@inertiajs/inertia-vue3';
-import Chip from "../../Shared/Chip";
-import Hero from "../../Shared/Hero";
-import Button from "../../Shared/Components/Button";
 
+import Chip from "../../../Shared/Component/Chip";
+import Hero from "../../../Shared/Hero";
+import NavBar from "../../../Shared/NavBar";
+import Button from "../../../Shared/Component/Button";
+import axios from "axios";
 export default {
 
     props: {
@@ -52,21 +54,24 @@ export default {
 
     name: "Reload.vue",
 
-    components: {Button, Hero, Chip, NavBar},
+    components: {Button, NavBar, Hero, Chip},
 
     data() {
         return {
-            reload: useForm({
+            reload: {
                 reloadAmount: 0,
                 order_id: this.order_id
-            }),
+            },
+            isLoading: false,
         }
     },
 
     methods: {
+
         addAmount: function (amount) {
             this.reload.reloadAmount += parseInt(amount)
         },
+
         validate: function () {
 
             if (this.pass.price < 100) {
@@ -79,7 +84,28 @@ export default {
                 this.pass.errors.price = ''
             }
 
+        },
+
+        genOrder: async function () {
+            this.isLoading = true
+            const response = await axios.post('/sv/reload', this.reload)
+            let data = await response.data
+            if (data.status) this.onSuccess(data)
+            else this.onFailure(data)
+        },
+
+        onSuccess: function (data) {
+            this.isLoading = false
+            const { redirectUrl } = data
+            window.location.href = redirectUrl
+        },
+
+        onFailure: function (data) {
+            this.isLoading = false
+            const { errors } = data
+            this.errors = errors
         }
+
     }
 }
 </script>
@@ -87,4 +113,3 @@ export default {
 <style scoped>
 
 </style>
--->
