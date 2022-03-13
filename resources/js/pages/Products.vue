@@ -57,8 +57,6 @@ export default {
     name: "Products",
 
     components: {
-        NeedHelpModel,
-        NeedHelp,
         Button,
         NavBar,
         Hero,
