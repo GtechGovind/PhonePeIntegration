@@ -16,7 +16,7 @@
                 <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                     {{ sl_qr_no }}
                 </span>
-                <button v-on:click="alert('hello')" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
+                <button v-on:click="NeedHelp(sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
                     <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
                 </button>
             </swiper-slide>
@@ -47,6 +47,12 @@ export default {
         Swiper,
         SwiperSlide,
         QRCodeVue3
+    },
+
+    methods: {
+        NeedHelp: function (NeedHelp) {
+            alert("Hello" + NeedHelp)
+        }
     },
 
     setup() {
