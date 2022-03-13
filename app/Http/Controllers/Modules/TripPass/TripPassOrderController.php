@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Modules\TripPass;
 use App\Http\Controllers\Api\MMOPL\ApiController;
 use App\Http\Controllers\Api\PhonePe\PhonePePaymentController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Modules\Utility\OrderUtility;
 use App\Models\SaleOrder;
 use App\Models\SvSlBooking;
 use App\Models\TpSlBooking;
@@ -32,7 +33,7 @@ class TripPassOrderController extends Controller
             'fare' => 'required',
         ]);
 
-        $saleOrderNumber = Utility\OrderUtility::genSaleOrderNumber(
+        $saleOrderNumber = OrderUtility::genSaleOrderNumber(
             $request->input('pass_id')
         );
 
