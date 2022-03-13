@@ -40,6 +40,9 @@
             </div>
         </div>
     </div>
+
+    <need-help-model :is-show="true" />
+
 </template>
 
 <script>
@@ -49,6 +52,7 @@ import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
 import Button from "../Shared/Component/Button";
 import NeedHelp from "../Shared/Model/NeedHelpModel";
+import NeedHelpModel from "../Shared/Model/NeedHelpModel";
 
 export default {
 
@@ -59,6 +63,7 @@ export default {
     name: "Products",
 
     components: {
+        NeedHelpModel,
         NeedHelp,
         Button,
         NavBar,
