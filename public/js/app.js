@@ -21060,15 +21060,15 @@ var _hoisted_4 = {
 };
 var _hoisted_5 = ["onClick"];
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-circle-info mx-1"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" NEED HELP ")], -1
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_7 = [_hoisted_6];
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" NEED HELP ");
+
+var _hoisted_8 = [_hoisted_6, _hoisted_7];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_QRCodeVue3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("QRCodeVue3");
 
@@ -21114,11 +21114,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             /* PROPS */
             , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sl_qr_no), 1
             /* TEXT */
-            ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+            ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+              "class": "bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2",
               onClick: function onClick($event) {
                 return _ctx.$emit('needHelp', sl_qr_no);
               }
-            }, _hoisted_7, 8
+            }, _hoisted_8, 8
             /* PROPS */
             , _hoisted_5)];
           }),
