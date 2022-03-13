@@ -2,7 +2,7 @@
     <div
         class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="need-help">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
-            
+
             <!--NEED HELP-->
             <div v-if="showHelp" class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div class="flex justify-end p-2">

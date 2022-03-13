@@ -21588,14 +21588,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.upwardTicket[0]['sl_qr_exp']), 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
+  )])])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
     onRefundTicket: $options.refundTicket,
     onUnableToExit: $options.unableToExit,
     order_id: $props.order_id,
     slave_id: $data.slQrNo
   }, null, 8
   /* PROPS */
-  , ["onRefundTicket", "onUnableToExit", "order_id", "slave_id"])]);
+  , ["onRefundTicket", "onUnableToExit", "order_id", "slave_id"])], 1024
+  /* DYNAMIC_SLOTS */
+  ))]);
 }
 
 /***/ }),

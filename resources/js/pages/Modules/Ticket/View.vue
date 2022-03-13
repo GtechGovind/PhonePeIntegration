@@ -52,12 +52,14 @@
             </div>
         </div>
 
-        <need-help-model
-            v-on:refund-ticket="refundTicket"
-            v-on:unable-to-exit="unableToExit"
-            :order_id="order_id"
-            :slave_id="slQrNo"
-        />
+        <keep-alive>
+            <need-help-model
+                v-on:refund-ticket="refundTicket"
+                v-on:unable-to-exit="unableToExit"
+                :order_id="order_id"
+                :slave_id="slQrNo"
+            />
+        </keep-alive>
 
     </div>
 </template>
