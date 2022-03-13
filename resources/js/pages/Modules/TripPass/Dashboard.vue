@@ -35,7 +35,7 @@
     />
 
     <RefundModel
-        :order_id="trip.sale_or_no"
+        :order_id="pass.sale_or_no"
     />
 
     <PassButton
