@@ -20581,7 +20581,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 this.isGraButtonLoading = true;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/gra' + this.order_id);
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/gra');
 
               case 3:
                 res = _context4.sent;

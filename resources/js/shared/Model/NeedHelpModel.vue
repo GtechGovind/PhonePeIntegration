@@ -329,7 +329,7 @@ export default {
 
         applyGra: async function () {
             this.isGraButtonLoading = true
-            const res = await axios.post('/gra' + this.order_id)
+            const res = await axios.post('/gra')
             const {error, redirectUrl, status} = await res.data
             if (status) {
                 this.isRefundButtonLoading = false
