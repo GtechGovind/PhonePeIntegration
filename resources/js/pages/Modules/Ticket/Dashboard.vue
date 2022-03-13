@@ -9,11 +9,12 @@
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
     </TransitionGroup>
 
-    <AnchorButton
-        :disabled="upcomingOrders.length > 1"
-        :title="upcomingOrders.length > 1 ? 'Only two orders are allowed' : 'Book New Ticket'"
-        :url="'/ticket/order'"
+    <Button
         :type="'button'"
+        :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book New Ticket'"
+        :is-loading="isLoading"
+        :is-disabled="isDisabled"
+        v-on:click="newOrder"
     />
 
 </template>
@@ -28,10 +29,17 @@ import {Link} from '@inertiajs/inertia-vue3'
 import AnchorButton from "../../../Shared/Component/AnchorButton";
 import axios from "axios";
 import {Inertia} from "@inertiajs/inertia";
+import Button from "../../../Shared/Component/Button";
 
 export default {
     name: "Dashboard",
-    components: {AnchorButton, UpcomingTicket, RecentTicket, Hero, NavBar, Link},
+    data() {
+        return {
+            isLoading: false,
+            isDisabled: false
+        }
+    },
+    components: {Button, AnchorButton, UpcomingTicket, RecentTicket, Hero, NavBar, Link},
     props: {
         user: Object,
         upcomingOrders: Array,
@@ -44,6 +52,9 @@ export default {
             if (data.status) {
                 Inertia.reload({only: ['upcomingOrders', 'recentOrders']})
             }
+        },
+        newOrder: function () {
+            this.$inertia.visit('/ticket/order')
         }
     },
     mounted() {

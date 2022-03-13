@@ -19944,6 +19944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19958,9 +19959,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Dashboard",
+  data: function data() {
+    return {
+      isLoading: false,
+      isDisabled: false
+    };
+  },
   components: {
+    Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_9__["default"],
     AnchorButton: _Shared_Component_AnchorButton__WEBPACK_IMPORTED_MODULE_6__["default"],
     UpcomingTicket: _Components_UpcomingTicket__WEBPACK_IMPORTED_MODULE_4__["default"],
     RecentTicket: _Components_RecentTicket__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -20007,7 +20016,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return updateDashboard;
-    }()
+    }(),
+    newOrder: function newOrder() {
+      this.$inertia.visit('/ticket/order');
+    }
   },
   mounted: function mounted() {
     this.updateDashboard();
@@ -21200,7 +21212,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_UpcomingTicket = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("UpcomingTicket");
 
-  var _component_AnchorButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("AnchorButton");
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavBar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Hero), $props.recentOrders.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RecentTicket, {
     key: 0,
@@ -21220,14 +21232,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_AnchorButton, {
-    disabled: $props.upcomingOrders.length > 1,
-    title: $props.upcomingOrders.length > 1 ? 'Only two orders are allowed' : 'Book New Ticket',
-    url: '/ticket/order',
-    type: 'button'
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    type: 'button',
+    title: $props.upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book New Ticket',
+    "is-loading": $data.isLoading,
+    "is-disabled": $data.isDisabled,
+    onClick: $options.newOrder
   }, null, 8
   /* PROPS */
-  , ["disabled", "title"])], 64
+  , ["title", "is-loading", "is-disabled", "onClick"])], 64
   /* STABLE_FRAGMENT */
   );
 }
