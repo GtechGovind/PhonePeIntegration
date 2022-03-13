@@ -12,8 +12,8 @@
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
             <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
-            <div class="block m-1 text-sm text-red-500" v-if="pass.errors.price">
-                {{ pass.errors.price }}
+            <div class="block m-1 text-sm text-red-500" v-if="errors">
+                {{ errors.pass.price }}
             </div>
         </div>
 
@@ -58,6 +58,7 @@ export default {
             pass: {
                 price: 0
             },
+            errors: null
         }
     },
 
@@ -68,13 +69,13 @@ export default {
         validate: function () {
 
             if (this.pass.price < 100) {
-                this.pass.errors.price = 'Amount must be grater then 100'
+                this.errors.pass.price = 'Amount must be grater then 100'
             } else if (this.pass.price % 100 !== 0) {
-                this.pass.errors.price = 'Amount must be multiple of 100'
+                this.errors.pass.price = 'Amount must be multiple of 100'
             } else if (this.pass.price > 3000) {
-                this.pass.errors.price = 'Amount must not be grater then 3000'
+                this.errors.pass.price = 'Amount must not be grater then 3000'
             } else {
-                this.pass.errors.price = ''
+                this.errors.pass.price = ''
             }
 
         },

@@ -19617,7 +19617,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       pass: {
         price: 0
-      }
+      },
+      errors: null
     };
   },
   methods: {
@@ -19626,13 +19627,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     validate: function validate() {
       if (this.pass.price < 100) {
-        this.pass.errors.price = 'Amount must be grater then 100';
+        this.errors.pass.price = 'Amount must be grater then 100';
       } else if (this.pass.price % 100 !== 0) {
-        this.pass.errors.price = 'Amount must be multiple of 100';
+        this.errors.pass.price = 'Amount must be multiple of 100';
       } else if (this.pass.price > 3000) {
-        this.pass.errors.price = 'Amount must not be grater then 3000';
+        this.errors.pass.price = 'Amount must not be grater then 3000';
       } else {
-        this.pass.errors.price = '';
+        this.errors.pass.price = '';
       }
     },
     genOrder: function () {
@@ -21102,7 +21103,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pass.price]]), $data.pass.errors.price ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.pass.errors.price), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pass.price]]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.pass.price), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 100',
