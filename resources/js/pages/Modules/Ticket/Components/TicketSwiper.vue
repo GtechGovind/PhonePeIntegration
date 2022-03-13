@@ -35,7 +35,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Button from "../../../../Shared/Component/Button";
 
 export default {
 

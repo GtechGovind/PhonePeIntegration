@@ -19883,8 +19883,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_css_navigation__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/css/navigation */ "./node_modules/swiper/modules/navigation/navigation.min.css");
 /* harmony import */ var swiper_css_pagination__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/css/pagination */ "./node_modules/swiper/modules/pagination/pagination.min.css");
 /* harmony import */ var swiper_css_scrollbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/css/scrollbar */ "./node_modules/swiper/modules/scrollbar/scrollbar.min.css");
-/* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
-
 
 
 
