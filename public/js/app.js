@@ -21486,18 +21486,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSingle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TicketSwiper, {
     key: 2,
-    onNeedHelp: _cache[2] || (_cache[2] = function ($event) {
-      return $data.NeedHelp = true;
-    }),
     ticket: $props.upwardTicket,
     order_id: $props.order_id
   }, null, 8
   /* PROPS */
   , ["ticket", "order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.showSingle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TicketSwiper, {
     key: 3,
-    onNeedHelp: _cache[3] || (_cache[3] = function ($event) {
-      return $data.NeedHelp = true;
-    }),
     ticket: $props.returnTicket,
     order_id: $props.order_id
   }, null, 8
