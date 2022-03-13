@@ -141,7 +141,7 @@ export default {
             toggleModal('need-help', false)
         },
         getRefundInfo: async function () {
-            this.isButtonLoading = true
+            this.isRefundButtonLoading = true
             const res = await axios.get('/refund/' + this.order_id)
             const data = await res.data
             if (data.status) {
