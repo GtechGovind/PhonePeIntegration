@@ -19407,6 +19407,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     order: String
   },
+  data: function data() {
+    return {
+      coBrand: '/img/atek_logo.png'
+    };
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -20449,13 +20454,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "h-screen grid grid-rows-1"
+  "class": "h-screen grid grid-rows-3"
 };
 var _hoisted_2 = {
-  "class": "mx-auto flex items-center"
+  "class": "mx-auto flex items-center row-span-2"
 };
 var _hoisted_3 = {
-  "class": "text-center p-10"
+  "class": "text-center"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -20464,10 +20469,20 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
+var _hoisted_5 = {
+  "class": "mx-auto flex items-center"
+};
+var _hoisted_6 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Spinner = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Spinner");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Spinner)])])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Spinner)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: $data.coBrand,
+    "class": "h-24",
+    alt: "logo"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_6)])]);
 }
 
 /***/ }),
@@ -21225,8 +21240,8 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid w-full content-center p-7"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-}, "No Upcoming Orders to show ....")], -1
+  "class": "text-center my-9 font-semibold text-gray-600 text-xl"
+}, " No Upcoming Orders to show .... ")], -1
 /* HOISTED */
 );
 

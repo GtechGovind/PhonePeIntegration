@@ -1,10 +1,13 @@
 <template>
-    <div class="h-screen grid grid-rows-1">
-        <div class="mx-auto flex items-center">
-            <div class="text-center p-10">
+    <div class="h-screen grid grid-rows-3">
+        <div class="mx-auto flex items-center row-span-2">
+            <div class="text-center">
                 <p class="text-gray-600 font-bold">Generating your ticket please wait ...</p>
-                <Spinner/>
+                <Spinner />
             </div>
+        </div>
+        <div class="mx-auto flex items-center">
+            <img :src="coBrand" class="h-24" alt="logo">
         </div>
     </div>
 </template>
@@ -22,6 +25,12 @@ export default {
 
     props: {
         order: String
+    },
+
+    data() {
+        return {
+            coBrand: '/img/atek_logo.png'
+        }
     },
 
     async mounted() {

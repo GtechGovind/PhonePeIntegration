@@ -13,7 +13,9 @@
         <div v-if="upcomingOrders.length === 0"
              class="relative rounded-lg m-2 bg-white">
             <div class="grid w-full content-center p-7">
-                <div class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">No Upcoming Orders to show ....</div>
+                <div class="text-center my-9 font-semibold text-gray-600 text-xl">
+                    No Upcoming Orders to show ....
+                </div>
             </div>
         </div>
     </TransitionGroup>
