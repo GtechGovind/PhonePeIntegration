@@ -22197,6 +22197,10 @@ var _hoisted_17 = {
   key: 0,
   "class": "flex flex-row-reverse"
 };
+var _hoisted_18 = {
+  key: 1,
+  "class": "flex flex-row-reverse"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ReloadButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ReloadButton");
 
@@ -22227,12 +22231,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,
     title: 'Reload Pass',
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return $props.isSv ? $options.svReloadStatus : $options.tpReloadStatus;
-    })
+    onClick: $options.svReloadStatus
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
+  , ["is-disabled", "is-loading", "onClick"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.isSv ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_18, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ReloadButton, {
+    type: 'button',
+    "is-disabled": $data.isLoading,
+    "is-loading": $data.isLoading,
+    title: 'Reload Pass',
+    onClick: $options.tpReloadStatus
+  }, null, 8
+  /* PROPS */
+  , ["is-disabled", "is-loading", "onClick"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])]);
 }
 
 /***/ }),
@@ -22399,12 +22409,12 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_5 = [_hoisted_3, _hoisted_4];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
-    type: $props.type,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-gray-800 bg-cyan-300 dark:bg-blue-500 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full' : 'text-gray-800 bg-cyan-300 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full')
+    type: "button",
+    "class": "py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_2, _hoisted_5)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  )], 10
-  /* CLASS, PROPS */
+  )], 8
+  /* PROPS */
   , _hoisted_1);
 }
 

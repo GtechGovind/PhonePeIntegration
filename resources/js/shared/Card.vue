@@ -57,7 +57,17 @@
                             :is-disabled="isLoading"
                             :is-loading="isLoading"
                             :title="'Reload Pass'"
-                            v-on:click="isSv ? svReloadStatus : tpReloadStatus"
+                            v-on:click="svReloadStatus"
+                        />
+                    </div>
+
+                    <div class="flex flex-row-reverse" v-if="!isSv">
+                        <ReloadButton
+                            :type="'button'"
+                            :is-disabled="isLoading"
+                            :is-loading="isLoading"
+                            :title="'Reload Pass'"
+                            v-on:click="tpReloadStatus"
                         />
                     </div>
 
