@@ -24,12 +24,12 @@
                     </div>
                     <button v-on:click="$emit('unable-to-exit')" class="m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
                         Unable to exit ?
-                    </button>
+                    </button v-on:click="$emit('unable-to-exit')">
                 </div>
             </div>
 
             <!--REFUND INFO-->
-            <div v-if="showRefund" class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div v-if="showRefund" class="relative bg-white rounded-lg shadow dark:bg-gray-700 border rounded-lg bg-gray-50">
                 <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
                         Refund Ticket
@@ -120,6 +120,9 @@ export default {
     },
     methods: {
         close: function () {
+            this.showRefund = false
+            this.showGra = false
+            this.showHelp = true
             toggleModal('need-help', false)
         },
         getRefundInfo: async function () {
