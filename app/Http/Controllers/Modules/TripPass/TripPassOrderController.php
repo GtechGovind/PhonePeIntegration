@@ -36,7 +36,7 @@ class TripPassOrderController extends Controller
         );
 
         $saleOrder = new SaleOrder();
-        $saleOrder->store($request, $saleOrderNumber);
+        $saleOrder->storeTp($request, $saleOrderNumber);
 
         $order = DB::table('sale_order as so')
             ->join('stations as s', 's.stn_id', '=', 'so.src_stn_id')
