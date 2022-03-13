@@ -17,7 +17,7 @@ class StoreValueOrderController extends Controller
 {
     public function index()
     {
-        return Inertia::render('StoreValue/Order');
+        return Inertia::render('Modules/StoreValue/Order');
     }
 
     public function create(Request $request)
