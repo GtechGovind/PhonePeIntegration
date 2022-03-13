@@ -20477,7 +20477,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Something went wrong!'
+                    text: data.error
                   });
                 }
 

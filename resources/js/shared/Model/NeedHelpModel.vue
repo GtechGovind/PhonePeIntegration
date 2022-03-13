@@ -181,7 +181,7 @@ export default {
                 this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Something went wrong!',
+                    text: data.error,
                 })
             }
         }
