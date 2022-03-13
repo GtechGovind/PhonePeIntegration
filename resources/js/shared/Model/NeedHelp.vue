@@ -38,7 +38,7 @@ export default {
     },
     name: "NeedHelp",
     mounted() {
-        toggleModal("needHelp", this.isShow)
+       /* toggleModal("needHelp", this.isShow)*/
     }
 }
 </script>
