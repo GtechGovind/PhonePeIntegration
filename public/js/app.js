@@ -20440,6 +20440,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.isRefundButtonLoading = false;
                 } else {
                   this.isRefundButtonLoading = false;
+                  this.close();
+                  this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error
+                  });
                 }
 
               case 8:
@@ -20555,6 +20561,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     this.gra.penaltyNames = null;
                     this.gra.penaltyAmount = null;
                   }
+                } else {
+                  this.close();
+                  this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error
+                  });
                 }
 
               case 7:
@@ -20606,7 +20619,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.close();
                   this.$swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
+                    title: error,
                     text: error
                   });
                 }

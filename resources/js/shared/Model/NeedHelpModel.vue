@@ -249,6 +249,12 @@ export default {
                 this.isRefundButtonLoading = false
             } else {
                 this.isRefundButtonLoading = false
+                this.close()
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error,
+                })
             }
         },
 
@@ -263,9 +269,7 @@ export default {
                     'Refunded Successfully !',
                     'success'
                 )
-            }
-            else
-            {
+            } else {
                 this.isRefundButtonLoading = false
                 this.close()
                 this.$swal.fire({
@@ -325,6 +329,14 @@ export default {
                     this.gra.penaltyAmount = null
                 }
             }
+            else {
+                this.close()
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error,
+                })
+            }
         },
 
         applyGra: async function () {
@@ -338,14 +350,12 @@ export default {
                 this.isRefundButtonLoading = false
                 this.close()
                 window.location.href = redirectUrl
-            }
-            else
-            {
+            } else {
                 this.isRefundButtonLoading = false
                 this.close()
                 this.$swal.fire({
                     icon: 'error',
-                    title: 'Oops...',
+                    title: error,
                     text: error,
                 })
             }
