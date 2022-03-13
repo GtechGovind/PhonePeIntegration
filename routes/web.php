@@ -59,5 +59,5 @@ Route::get('gra/{slave_id}/{station_id}', [GraController::class, 'info'])->name(
 Route::post('gra', [GraController::class, 'apply'])->name('gra.perform-gra');
 
 // REFUND
-Route::get('refund/{order_id}', [RefundController::class, 'index'])->name('refund.info');
-Route::get('refund/ticket/{order_id}', [RefundController::class, 'refund'])->name('refund');
+Route::get('refund/{order_id}', [RefundController::class, 'info'])->name('refund.info');
+Route::get('refund/ticket/{order_id}', [RefundController::class, 'apply'])->name('refund');
