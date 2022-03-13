@@ -40,7 +40,7 @@
             </div>
 
             <!--REFUND INFO-->
-            <div v-if="showRefund" class="relative bg-white rounded-lg shadow dark:bg-gray-700 border rounded-lg bg-gray-50">
+            <div v-if="showRefund" class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <div class="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">
                         Refund Ticket
@@ -55,7 +55,7 @@
                     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
                         Refunding ticket will refund all of the tickets, Please verify below details !
                     </p>
-                    <table class="min-w-full">
+                    <table class="min-w-full border rounded-lg bg-gray-50">
                         <tbody>
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">

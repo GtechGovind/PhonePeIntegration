@@ -21965,7 +21965,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_10 = {
   key: 1,
-  "class": "relative bg-white rounded-lg shadow dark:bg-gray-700 border rounded-lg bg-gray-50"
+  "class": "relative bg-white rounded-lg shadow dark:bg-gray-700"
 };
 var _hoisted_11 = {
   "class": "flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600"
@@ -22002,7 +22002,7 @@ var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_17 = {
-  "class": "min-w-full"
+  "class": "min-w-full border rounded-lg bg-gray-50"
 };
 var _hoisted_18 = {
   "class": "bg-white border-b dark:bg-gray-800 dark:border-gray-700"
