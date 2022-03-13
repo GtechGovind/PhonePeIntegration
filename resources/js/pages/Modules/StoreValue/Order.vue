@@ -58,7 +58,8 @@ export default {
             pass: {
                 price: 0
             },
-            errors: null
+            errors: null,
+            isLoading: false
         }
     },
 
@@ -81,6 +82,7 @@ export default {
         },
 
         genOrder: async function () {
+            this.isLoading = true
             const response = await axios.post('/sv/create', this.pass)
             let data = await response.data
             if (data.status) this.onSuccess(data)
@@ -88,11 +90,13 @@ export default {
         },
 
         onSuccess: function (data) {
+            this.isLoading = false
             const { redirectUrl } = data
             window.location.href = redirectUrl
         },
 
         onFailure: function (data) {
+            this.isLoading = false
             const { errors } = data
             this.errors = errors
         }

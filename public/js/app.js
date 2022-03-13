@@ -19618,7 +19618,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       pass: {
         price: 0
       },
-      errors: null
+      errors: null,
+      isLoading: false
     };
   },
   methods: {
@@ -19643,19 +19644,20 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                this.isLoading = true;
+                _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_5___default().post('/sv/create', this.pass);
 
-              case 2:
+              case 3:
                 response = _context.sent;
-                _context.next = 5;
+                _context.next = 6;
                 return response.data;
 
-              case 5:
+              case 6:
                 data = _context.sent;
                 if (data.status) this.onSuccess(data);else this.onFailure(data);
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -19670,10 +19672,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return genOrder;
     }(),
     onSuccess: function onSuccess(data) {
+      this.isLoading = false;
       var redirectUrl = data.redirectUrl;
       window.location.href = redirectUrl;
     },
     onFailure: function onFailure(data) {
+      this.isLoading = false;
       var errors = data.errors;
       this.errors = errors;
     }
@@ -21122,8 +21126,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     onClick: $options.genOrder,
-    "is-loading": _ctx.isLoading,
-    "is-disabled": _ctx.isLoading,
+    "is-loading": $data.isLoading,
+    "is-disabled": $data.isLoading,
     type: 'button',
     title: 'PROCEED TO PAY ₹ ' + $data.pass.price
   }, null, 8
