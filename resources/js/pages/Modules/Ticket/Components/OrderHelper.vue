@@ -112,25 +112,27 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <div class="p-2">
-            <button
-                v-on:click="genOrder"
-                type="submit"
-                class="w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700">
-                {{ 'PROCEED TO PAY ₹ ' + ticket.quantity * ticket.fare }}
-            </button>
-        </div>
+        <Button
+            :type="'button'"
+            :title="'PROCEED TO PAY ₹ ' + ticket.quantity * ticket.fare"
+            :is-loading="isLoading"
+            :is-disabled="isDisabled"
+            v-on:click="genOrder"
+        />
+
     </div>
+
 </template>
 
 <script>
 import axios from "axios";
+import Button from "../../../../Shared/Component/Button";
 
 export default {
     name: "OrderHelper",
+    components: {Button},
     data() {
         return {
             ticket: {
@@ -140,7 +142,9 @@ export default {
                 fare: 0,
                 pass_id: "10"
             },
-            errors: null
+            errors: null,
+            isLoading: false,
+            isDisabled: false
         }
     },
 
@@ -161,20 +165,35 @@ export default {
         },
 
         genOrder: async function () {
+
+            this.isLoading = true
+            this.isDisabled = true
+
             const response = await axios.post('/ticket/create', this.ticket)
             let data = await response.data
             if (data.status) this.onSuccess(data)
             else this.onFailure(data)
+
         },
 
         onSuccess: function (data) {
+
+            this.isLoading = false
+            this.isDisabled = false
+
             const { redirectUrl } = data
             window.location.href = redirectUrl
+
         },
 
         onFailure: function (data) {
+
+            this.isLoading = false
+            this.isDisabled = false
+
             const { errors } = data
             this.errors = errors
+            
         }
 
     },

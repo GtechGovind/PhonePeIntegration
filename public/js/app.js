@@ -19718,6 +19718,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19725,8 +19726,12 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "OrderHelper",
+  components: {
+    Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   data: function data() {
     return {
       ticket: {
@@ -19736,7 +19741,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         fare: 0,
         pass_id: "10"
       },
-      errors: null
+      errors: null,
+      isLoading: false,
+      isDisabled: false
     };
   },
   props: {
@@ -19787,19 +19794,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.next = 2;
+                this.isLoading = true;
+                this.isDisabled = true;
+                _context2.next = 4;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/ticket/create', this.ticket);
 
-              case 2:
+              case 4:
                 response = _context2.sent;
-                _context2.next = 5;
+                _context2.next = 7;
                 return response.data;
 
-              case 5:
+              case 7:
                 data = _context2.sent;
                 if (data.status) this.onSuccess(data);else this.onFailure(data);
 
-              case 7:
+              case 9:
               case "end":
                 return _context2.stop();
             }
@@ -19814,10 +19823,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return genOrder;
     }(),
     onSuccess: function onSuccess(data) {
+      this.isLoading = false;
+      this.isDisabled = false;
       var redirectUrl = data.redirectUrl;
       window.location.href = redirectUrl;
     },
     onFailure: function onFailure(data) {
+      this.isLoading = false;
+      this.isDisabled = false;
       var errors = data.errors;
       this.errors = errors;
     }
@@ -20784,10 +20797,9 @@ var _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_39 = {
   "class": "text-right font-bold text-gray-600"
 };
-var _hoisted_40 = {
-  "class": "p-2"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SOURCE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "c-select",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
@@ -20886,15 +20898,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_35])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DETAILED FARE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_36, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_37, [_hoisted_38, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_39, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.fare) + " X " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity) + " = ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity * $data.ticket.fare), 1
   /* TEXT */
-  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_40, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    onClick: _cache[11] || (_cache[11] = function () {
-      return $options.genOrder && $options.genOrder.apply($options, arguments);
-    }),
-    type: "submit",
-    "class": "w-full py-3 bg-blue-500 border rounded-2xl text-gray-100 font-bold hover:bg-blue-700"
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)('PROCEED TO PAY ₹ ' + $data.ticket.quantity * $data.ticket.fare), 1
-  /* TEXT */
-  )])]);
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+    type: 'button',
+    title: 'PROCEED TO PAY ₹ ' + $data.ticket.quantity * $data.ticket.fare,
+    "is-loading": $data.isLoading,
+    "is-disabled": $data.isDisabled,
+    onClick: $options.genOrder
+  }, null, 8
+  /* PROPS */
+  , ["title", "is-loading", "is-disabled", "onClick"])]);
 }
 
 /***/ }),
