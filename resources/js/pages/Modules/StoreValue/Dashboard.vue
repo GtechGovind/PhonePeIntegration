@@ -32,6 +32,15 @@
         </div>
     </div>
 
+    <PassButton
+        v-if="!trip"
+        :is-disabled="isLoading"
+        :is-loading="isLoading"
+        :type="'button'"
+        :title="'GENERATE TRIP'"
+        v-on:click="genTrip"
+    />
+
 </template>
 
 <script>
@@ -41,6 +50,7 @@ import axios from "axios";
 import AnchorButton from "../../../Shared/Component/AnchorButton";
 import NavBar from "../../../Shared/NavBar";
 import Card from "../../../Shared/Card";
+import PassButton from "../../../Shared/Component/PassButton";
 
 export default {
 
@@ -52,18 +62,26 @@ export default {
 
     data() {
         return {
-            balance: 0
+            balance: 0,
+            isLoading: false
         }
     },
 
     name: "Dashboard",
 
-    components: {Card, AnchorButton, NavBar, QRCodeVue3},
+    components: {PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);
         const data = res.data;
         this.balance = data.data.balance;
+    },
+
+    methods: {
+        genTrip: async function() {
+            this.isLoading = true
+            this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
+        }
     }
 
 }

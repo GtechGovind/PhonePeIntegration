@@ -1333,6 +1333,16 @@ input:checked + .toggle-bg {
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+.from-purple-600 {
+  --tw-gradient-from: #7E3AF2;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(126 58 242 / 0));
+}
+.to-blue-500 {
+  --tw-gradient-to: #3F83F8;
+}
 .fill-blue-600 {
   fill: #1C64F2;
 }
@@ -1429,6 +1439,10 @@ input:checked + .toggle-bg {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.py-9 {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 .pt-3 {
   padding-top: 0.75rem;
@@ -1835,6 +1849,9 @@ input:checked + .toggle-bg {
 .hover\:bg-gray-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.hover\:bg-gradient-to-bl:hover {
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
 .hover\:text-blue-700:hover {
   --tw-text-opacity: 1;
