@@ -34,7 +34,9 @@
         :stations="stations"
     />
 
-    <RefundModel :order_id="trip.sale_or_no" />
+    <RefundModel
+        :order_id="trip.sale_or_no"
+    />
 
     <PassButton
         v-if="!trip"
@@ -43,6 +45,15 @@
         :type="'button'"
         :title="'GENERATE TRIP'"
         v-on:click="genTrip"
+    />
+
+    <PassButton
+        v-if="!trip"
+        :is-disabled="isLoading"
+        :is-loading="isLoading"
+        :type="'button'"
+        :title="'REFUND PASS'"
+        v-on:click="refundPass"
     />
 
 </template>
@@ -90,7 +101,10 @@ export default {
             this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
         },
         getGraInfo: function () {
-            toggleModal('need-help', true)
+            toggleModal('gra-help', true)
+        },
+        refundPass: function () {
+            toggleModal('refund-help', true)
         }
     }
 
