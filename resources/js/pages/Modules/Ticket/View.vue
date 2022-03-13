@@ -22,8 +22,8 @@
         </button>
     </div>
 
-    <TicketSwiper v-on:need-help="needHelpCallback(SlaveQrNo)" :ticket="upwardTicket" :order_id="order_id" v-if="showSingle"/>
-    <TicketSwiper v-on:need-help="needHelpCallback(SlaveQrNo)" :ticket="returnTicket" :order_id="order_id" v-if="!showSingle"/>
+    <TicketSwiper  :ticket="upwardTicket" :order_id="order_id" v-if="showSingle"/>
+    <TicketSwiper  :ticket="returnTicket" :order_id="order_id" v-if="!showSingle"/>
 
     <div class="border rounded-lg border-dashed border-3 border-blue-700 bg-white m-2">
         <div class="grid grid-cols-2 px-3 pt-3">
