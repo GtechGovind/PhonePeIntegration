@@ -17,7 +17,7 @@
                 placeholder="₹ 500" required v-model="reload.reloadAmount"
                 v-on:keyup="validate"
             />
-            <div class="block m-1 text-sm text-red-500" v-if="reload.errors.reloadAmount">
+            <div class="block m-1 text-sm text-red-500" v-if="errors">
                 {{ reload.errors.reloadAmount }}
             </div>
         </div>
@@ -63,6 +63,7 @@ export default {
                 order_id: this.order_id
             },
             isLoading: false,
+            errors: null
         }
     },
 

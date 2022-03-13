@@ -19774,7 +19774,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         reloadAmount: 0,
         order_id: this.order_id
       },
-      isLoading: false
+      isLoading: false,
+      errors: null
     };
   },
   methods: {
@@ -21342,7 +21343,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.reload.reloadAmount]]), $data.reload.errors.reloadAmount ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.reload.errors.reloadAmount), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.reload.reloadAmount]]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.reload.errors.reloadAmount), 1
   /* TEXT */
   )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 100',
