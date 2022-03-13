@@ -136,15 +136,15 @@
                         </select>
                     </div>
 
-                    <div class="bg-gray-200 rounded border p-3" v-if="penalty">
+                    <div class="bg-gray-200 rounded border p-3" v-if="gra.penalty">
 
-                        <div v-if="penaltyNames || penaltyAmount">
+                        <div v-if="gra.penaltyNames || gra.penaltyAmount">
                             <div class="grid grid-cols-2">
                                 <div class="text-gray-900 font-bold">
                                     Penalties
                                 </div>
                                 <div>
-                                    {{ penaltyNames }}
+                                    {{ gra.penaltyNames }}
                                 </div>
                             </div>
                             <div class="grid grid-cols-2">
@@ -152,10 +152,11 @@
                                     Penalty Amount
                                 </div>
                                 <div>
-                                    ₹ {{ penaltyAmount }}
+                                    ₹ {{ gra.penaltyAmount }}
                                 </div>
                             </div>
                         </div>
+
 
                         <div v-else>
                             <div class="bg-gray-200 rounded border p-3 text-gray-900 font-bold text-center">
@@ -163,7 +164,10 @@
                             </div>
                         </div>
 
+                    </div>
+                
                 </div>
+
                 <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
 
                     <Button
@@ -322,7 +326,7 @@ export default {
                 }
             }
         }
-        
+
     }
 }
 </script>
