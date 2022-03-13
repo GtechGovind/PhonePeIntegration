@@ -11,7 +11,7 @@
 
     <Button
         :type="'button'"
-        :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book New Ticket'"
+        :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
         :is-loading="isLoading"
         :is-disabled="isDisabled"
         v-on:click="newOrder"
