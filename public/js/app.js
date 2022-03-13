@@ -22041,8 +22041,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white",
         "data-modal-toggle": "need-help"
       }, _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        onClick: _cache[1] || (_cache[1] = function ($event) {
-          return _ctx.$emit('refund-ticket');
+        onClick: _cache[1] || (_cache[1] = function () {
+          return $options.getRefundInfo && $options.getRefundInfo.apply($options, arguments);
         }),
         "data-modal-toggle": "need-help",
         type: "button",
