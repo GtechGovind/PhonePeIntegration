@@ -23,14 +23,16 @@
                     {{ trip.sl_qr_no }}
                 </span>
             </div>
-            <a :href="'/gra/' + trip.sl_qr_no">
-                <div class="bg-blue-500 text-center p-2 rounded-b-lg border border-blue-500 text-gray-50 font-bold mt-2 py-2 hover:bg-blue-700">
-                    <i class="fa-solid fa-circle-info mx-1"></i>
-                    UNABLE TO EXIT
-                </div>
-            </a>
+            <button v-on:click="getGraInfo(sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
+                <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
+            </button>
         </div>
     </div>
+
+    <GraModel
+        :slave_id="trip.sl_qr_no"
+        :stations="stations"
+    />
 
     <PassButton
         v-if="!trip"
@@ -51,6 +53,7 @@ import AnchorButton from "../../../Shared/Component/AnchorButton";
 import NavBar from "../../../Shared/NavBar";
 import Card from "../../../Shared/Card";
 import PassButton from "../../../Shared/Component/PassButton";
+import GraModel from "../../../Shared/Model/GraModel";
 
 export default {
 
@@ -58,6 +61,7 @@ export default {
         user: Object,
         pass: Object,
         trip: Object,
+        stations: Array
     },
 
     data() {
@@ -69,7 +73,7 @@ export default {
 
     name: "Dashboard",
 
-    components: {PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
+    components: {GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);
@@ -81,6 +85,9 @@ export default {
         genTrip: async function() {
             this.isLoading = true
             this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
+        },
+        getGraInfo: function () {
+            toggleModal('need-help', true)
         }
     }
 
