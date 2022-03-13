@@ -856,6 +856,14 @@ input:checked + .toggle-bg {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
+.my-9 {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
 .mt-2 {
   margin-top: 0.5rem;
 }

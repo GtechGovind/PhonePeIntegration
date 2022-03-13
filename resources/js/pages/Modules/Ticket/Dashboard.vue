@@ -9,6 +9,13 @@
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
     </TransitionGroup>
 
+    <TransitionGroup>
+        <div v-if="upcomingOrders.length === 0"
+            class="text-center my-12 font-semibold text-gray-600">
+            No Upcoming Orders to show ....
+        </div>
+    </TransitionGroup>
+
     <Button
         :type="'button'"
         :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
