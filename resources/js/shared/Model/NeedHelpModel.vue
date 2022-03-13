@@ -32,7 +32,11 @@ export default {
     },
     name: "NeedHelpModel",
     mounted() {
-       toggleModal('need-help', this.isShow)
+        try {
+            toggleModal('need-help', this.isShow)
+        } catch (e) {
+            console.log(e)
+        }
     }
 }
 </script>

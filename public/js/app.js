@@ -20232,12 +20232,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     products: Array
   },
   name: "Products",
   components: {
+    NeedHelpModel: _Shared_Model_NeedHelpModel__WEBPACK_IMPORTED_MODULE_4__["default"],
     NeedHelp: _Shared_Model_NeedHelpModel__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -20368,7 +20370,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: "NeedHelpModel",
   mounted: function mounted() {
-    toggleModal('need-help', this.isShow);
+    try {
+      toggleModal('need-help', this.isShow);
+    } catch (e) {
+      console.log(e);
+    }
   }
 });
 
