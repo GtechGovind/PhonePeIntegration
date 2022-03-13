@@ -812,6 +812,9 @@ input:checked + .toggle-bg {
 .top-4 {
   top: 1rem;
 }
+.top-1\/2 {
+  top: 50%;
+}
 .z-20 {
   z-index: 20;
 }

@@ -21822,7 +21822,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   ref: "model",
-  "class": "hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center",
+  "class": "hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-1/2 z-50 justify-center items-center md:inset-0 h-modal sm:h-full",
   id: "need-help"
 };
 var _hoisted_2 = {
