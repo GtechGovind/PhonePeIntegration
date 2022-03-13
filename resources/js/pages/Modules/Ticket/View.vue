@@ -52,7 +52,7 @@
             </div>
         </div>
 
-        <need-help-model :is-show="true" />
+        <need-help-model :is-show="isNeedHelpEnabled" />
 
     </div>
 </template>

@@ -21522,8 +21522,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.upwardTicket[0]['sl_qr_exp']), 1
   /* TEXT */
   )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
-    "is-show": true
-  })]);
+    "is-show": $data.isNeedHelpEnabled
+  }, null, 8
+  /* PROPS */
+  , ["is-show"])]);
 }
 
 /***/ }),
