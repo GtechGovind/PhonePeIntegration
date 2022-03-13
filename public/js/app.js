@@ -23146,7 +23146,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
-    order_id: $props.trip.sale_or_no
+    order_id: $props.pass.sale_or_no
   }, null, 8
   /* PROPS */
   , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
