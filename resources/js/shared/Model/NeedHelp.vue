@@ -33,9 +33,12 @@
 
 <script>
 export default {
+    props: {
+        isShow: false
+    },
     name: "NeedHelp",
     mounted() {
-        toggleModal("needHelp", true)
+        toggleModal("needHelp", this.isShow)
     }
 }
 </script>
