@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <NeedHelp :is-show="isNeedHelpEnabled" />
+    <NeedHelpModel :is-show="isNeedHelpEnabled" />
 
 </template>
 
@@ -59,7 +59,7 @@
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
 import TicketSwiper from "./Components/TicketSwiper";
-import NeedHelp from "../../../Shared/Model/NeedHelp";
+import NeedHelpModel from "../../../Shared/Model/NeedHelpModel";
 
 export default {
 
@@ -73,7 +73,7 @@ export default {
     name: "View",
 
     components: {
-        NeedHelp,
+        NeedHelpModel,
         TicketSwiper,
         Hero,
         NavBar,

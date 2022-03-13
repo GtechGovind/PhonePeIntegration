@@ -30,7 +30,7 @@ export default {
     props: {
         isShow: false
     },
-    name: "NeedHelp",
+    name: "NeedHelpModel",
     mounted() {
        toggleModal('need-help', this.isShow)
     }

@@ -48,7 +48,7 @@ import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
 import Button from "../Shared/Component/Button";
-import NeedHelp from "../Shared/Model/NeedHelp";
+import NeedHelp from "../Shared/Model/NeedHelpModel";
 
 export default {
 
