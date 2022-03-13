@@ -25,7 +25,7 @@
 
     </div>
 
-    <Button
+    <ReloadButton
         v-on:click="genOrder"
         :is-loading="isLoading"
         :is-disabled="isLoading"
@@ -39,14 +39,15 @@
 
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
-import Button from "../../../Shared/Component/Button";
 import Chip from "../../../Shared/Component/Chip";
 import axios from "axios";
+import ReloadButton from "../../../Shared/Component/ReloadButton";
 
 export default {
 
     name: "Order",
     components: {
+        ReloadButton,
         Chip,
         Button,
         Hero,
