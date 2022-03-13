@@ -20405,7 +20405,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('refund/' + this.order_id);
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/refund/' + this.order_id);
 
               case 2:
                 res = _context.sent;
