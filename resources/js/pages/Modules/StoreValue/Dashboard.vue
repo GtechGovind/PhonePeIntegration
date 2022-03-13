@@ -23,7 +23,7 @@
                     {{ trip.sl_qr_no }}
                 </span>
             </div>
-            <button v-on:click="getGraInfo(sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
+            <button v-on:click="getGraInfo(trip.sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
                 <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
             </button>
         </div>
@@ -33,6 +33,8 @@
         :slave_id="trip.sl_qr_no"
         :stations="stations"
     />
+
+    <RefundModel :order_id="trip.sale_or_no" />
 
     <PassButton
         v-if="!trip"
@@ -54,6 +56,7 @@ import NavBar from "../../../Shared/NavBar";
 import Card from "../../../Shared/Card";
 import PassButton from "../../../Shared/Component/PassButton";
 import GraModel from "../../../Shared/Model/GraModel";
+import RefundModel from "../../../Shared/Model/RefundModel";
 
 export default {
 
@@ -73,7 +76,7 @@ export default {
 
     name: "Dashboard",
 
-    components: {GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
+    components: {RefundModel, GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);

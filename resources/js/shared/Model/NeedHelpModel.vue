@@ -96,8 +96,8 @@
                     />
 
                     <Button
-                        :is-loading="isRefundButtonLoading"
-                        :is-disabled="isRefundButtonLoading"
+                        :is-loading="false"
+                        :is-disabled="false"
                         :title="'Decline'"
                         :type="'button'"
                         v-on:click="close"
@@ -171,6 +171,7 @@
                 <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
 
                     <Button
+                        v-if="gra.penalty"
                         :is-loading="isGraButtonLoading"
                         :is-disabled="isGraButtonLoading"
                         :title="'Proceed to pay ₹' + gra.penaltyAmount"

@@ -1,8 +1,7 @@
-<!--
 <template>
     <nav-bar />
 
-    <card
+    <Card
         :pass-details="pass"
         :user="user"
         :isSv="false"
@@ -23,33 +22,39 @@
                     {{ trip.sl_qr_no }}
                 </span>
             </div>
-            <a :href="'/gra/' + trip.sl_qr_no">
-                <div class="bg-blue-500 text-center p-2 rounded-b-lg border border-blue-500 text-gray-50 font-bold mt-2 py-2 hover:bg-blue-700">
-                    <i class="fa-solid fa-circle-info mx-1"></i>
-                    UNABLE TO EXIT
-                </div>
-            </a>
+            <button v-on:click="getGraInfo(trip.sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
+                <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
+            </button>
         </div>
     </div>
 
-    <anchor-button
+    <GraModel
+        :slave_id="trip.sl_qr_no"
+        :stations="stations"
+    />
+
+    <RefundModel :order_id="trip.sale_or_no" />
+
+    <PassButton
+        v-if="!trip"
+        :is-disabled="isLoading"
+        :is-loading="isLoading"
+        :type="'button'"
         :title="'GENERATE TRIP'"
-        :url="'/tp/trip/' + pass.sale_or_no"
-        :type="'button'"
-        v-if="!trip"
+        v-on:click="genTrip"
     />
-    <AnchorButton
-        :title="'REFUND PASS'"
-        :url="'/refund/' + pass.sale_or_no + '/info'"
-        :type="'button'"
-        v-if="!trip"
-    />
+
 </template>
 
 <script>
 
 import QRCodeVue3 from "qrcode-vue3";
 import axios from "axios";
+import NavBar from "../../../Shared/NavBar";
+import Card from "../../../Shared/Card";
+import GraModel from "../../../Shared/Model/GraModel";
+import RefundModel from "../../../Shared/Model/RefundModel";
+import PassButton from "../../../Shared/Component/PassButton";
 
 export default {
 
@@ -61,24 +66,33 @@ export default {
 
     data() {
         return {
-            balance: 0
+            balance: 0,
+            isLoading: false
         }
     },
 
     name: "Dashboard",
 
-    components: {AnchorButton, NavBar, Card, QRCodeVue3},
+    components: {PassButton, RefundModel, GraModel, Card, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/tp/status/' + this.pass.ms_qr_no);
         const data = res.data;
         this.balance = data.data.balanceTrip;
-    }
+    },
 
+    methods: {
+        genTrip: async function() {
+            this.isLoading = true
+            this.$inertia.get('/tp/trip/' + this.pass.sale_or_no)
+        },
+        getGraInfo: function () {
+            toggleModal('need-help', true)
+        }
+    }
 }
 </script>
 
 <style scoped>
 
 </style>
--->
