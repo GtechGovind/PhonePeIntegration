@@ -1,15 +1,14 @@
 <template>
-    <NavBar />
-    <Hero />
-    <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products"
-         :key="product.id">
-        <Link :href="product.url">
+    <NavBar/>
+    <Hero/>
+    <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products" :key="product.id">
+        <Link :href="product.url" class="appearance-none">
             <div class="grid grid-cols-6">
                 <div class="grid grid-rows-2 border-r">
                     <div class="row-span-2 text-center">
                         <div class="grid content-center h-full">
                             <div class="flex justify-center">
-                                <img :src="qr_logo" class="object-cover rounded-t-lg" alt="QR Ticket">
+                                <img :src="product.img" class="w-10 rounded-t-lg" alt="QR Ticket">
                             </div>
                         </div>
                     </div>
@@ -22,11 +21,11 @@
                         {{ product.description }}
                     </div>
                 </div>
-                <div class="grid grid-rows-2 bg-blue-400 border-blue-400 rounded-r">
+                <div class="grid grid-rows-2 border-blue-400 rounded-r">
                     <div class="row-span-2 text-center">
                         <div class="grid content-center h-full">
                             <div class="flex justify-center">
-                                <i class="fa-solid fa-angle-right fa-2xl text-gray-50"></i>
+                                <i class="fa-solid fa-angle-right fa-2xl text-gray-600"></i>
                             </div>
                         </div>
                     </div>
@@ -34,13 +33,21 @@
             </div>
         </Link>
     </div>
+    <div class="container mx-auo">
+        <div class="h-full my-10 grid grid-rows-1">
+            <div class="mx-auto flex items-center">
+                <img :src="coBrand" class="h-24" alt="logo">
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
+
 import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
-
+import Button from "../Shared/Component/Button";
 
 export default {
 
@@ -51,6 +58,7 @@ export default {
     name: "Products",
 
     components: {
+        Button,
         NavBar,
         Hero,
         Link
@@ -58,7 +66,16 @@ export default {
 
     data() {
         return {
-            qr_logo: '/img/qr-card.png'
+            isLoading: false,
+            isDisabled: false,
+            coBrand: '/img/atek_logo.png'
+        }
+    },
+
+    methods: {
+        toggle: function () {
+            this.isLoading = true
+            this.isDisabled = true
         }
     }
 }

@@ -1,3 +1,4 @@
+<!--
 <template>
     <nav-bar />
 
@@ -80,3 +81,4 @@ export default {
 <style scoped>
 
 </style>
+-->

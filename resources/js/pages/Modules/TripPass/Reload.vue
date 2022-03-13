@@ -1,3 +1,4 @@
+<!--
 <template>
     <nav-bar/>
     <hero/>
@@ -12,19 +13,19 @@
 
             <div class="m-2 bg-white rounded border p-3">
 
-                <!--SOURCE-->
+                &lt;!&ndash;SOURCE&ndash;&gt;
                 <div class="mb-6">
                     <label class="c-label">Source</label>
                     <input disabled class="c-input" type="text" :value="source">
                 </div>
 
-                <!--DESTINATION-->
+                &lt;!&ndash;DESTINATION&ndash;&gt;
                 <div class="mb-6">
                     <label class="c-label">Destination</label>
                     <input disabled class="c-input" type="text" :value="destination">
                 </div>
 
-                <!--TYPE AND QUANTITY-->
+                &lt;!&ndash;TYPE AND QUANTITY&ndash;&gt;
                 <div class="bg-blue-100 grid grid-cols-3 p-3 rounded-lg">
                     <div class="grid grid-row-2 pl-3">
                         <div class="text-xs text-blue-900">Trips</div>
@@ -83,3 +84,4 @@ export default {
 <style scoped>
 
 </style>
+-->

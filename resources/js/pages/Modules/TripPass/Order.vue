@@ -1,3 +1,4 @@
+<!--
 <template>
 
     <nav-bar />
@@ -14,7 +15,7 @@
 
             <div class="m-2 bg-white rounded border p-3">
 
-                <!--SOURCE-->
+                &lt;!&ndash;SOURCE&ndash;&gt;
                 <div class="mb-6">
                     <label class="block mb-2 text-sm font-medium text-gray-900">Source</label>
                     <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -32,7 +33,7 @@
                     </div>
                 </div>
 
-                <!--DESTINATION-->
+                &lt;!&ndash;DESTINATION&ndash;&gt;
                 <div class="mb-6">
                     <label class="block mb-2 text-sm font-medium text-gray-900">Destination</label>
                     <select
@@ -51,7 +52,7 @@
                     </div>
                 </div>
 
-                <!--TYPE AND QUANTITY-->
+                &lt;!&ndash;TYPE AND QUANTITY&ndash;&gt;
                 <div class="bg-blue-100 grid grid-cols-3 p-3 rounded-lg">
                     <div class="grid grid-row-2 pl-3">
                         <div class="text-xs text-blue-900">Trips</div>
@@ -174,3 +175,4 @@ export default {
 <style scoped>
 
 </style>
+-->

@@ -1,8 +1,8 @@
 <template>
 
-    <nav-bar />
+<!--    <nav-bar />
 
-    <hero />
+    <hero />-->
 
     <div class="bg-white m-2 p-3 shadow border text-center">
         <p class="font-bold text-lg text-gray-600">BUY NEW STORE VALUE PASS</p>
@@ -21,9 +21,9 @@
             </div>
 
             <div class="mt-3 grid grid-cols-3 gap-5">
-                <chip :title = "'₹ 100'" v-on:click="addAmount(100)"/>
+<!--                <chip :title = "'₹ 100'" v-on:click="addAmount(100)"/>
                 <chip :title = "'₹ 200'" v-on:click="addAmount(200)"/>
-                <chip :title = "'₹ 500'" v-on:click="addAmount(500)"/>
+                <chip :title = "'₹ 500'" v-on:click="addAmount(500)"/>-->
             </div>
 
         </div>
@@ -37,16 +37,14 @@
 <script>
 
 import {useForm} from '@inertiajs/inertia-vue3'
-import NavBar from "../../Shared/NavBar";
-import Hero from "../../Shared/Hero";
-import Chip from "../../Shared/Chip";
-import Button from "../../Shared/Components/Button";
 import axios from "axios";
 
 export default {
 
     name: "Order",
-    components: {Button, Chip, Hero, NavBar},
+    components: {
+
+    },
 
     data() {
         return {
