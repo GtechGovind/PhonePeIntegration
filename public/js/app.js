@@ -20204,13 +20204,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     needHelpCallback: function needHelpCallback(sl_qr_no) {
       this.slQrNo = sl_qr_no;
-      this.isNeedHelpEnabled = true;
+      toggleModal('need-help', true);
     },
     refundTicket: function refundTicket() {
-      this.isNeedHelpEnabled = false;
+      toggleModal('need-help', false);
     },
     unableToExit: function unableToExit() {
-      this.isNeedHelpEnabled = false;
+      toggleModal('need-help', false);
     }
   }
 });
@@ -20360,10 +20360,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "NeedHelpModel",
-  mounted: function mounted() {
-    toggleModal('need-help', true);
-  }
+  name: "NeedHelpModel"
 });
 
 /***/ }),
@@ -21515,13 +21512,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.upwardTicket[0]['sl_qr_exp']), 1
   /* TEXT */
-  )])])]), $data.isNeedHelpEnabled ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_need_help_model, {
-    key: 4,
+  )])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
     onRefundTicket: $options.refundTicket,
     onUnableToExit: $options.unableToExit
   }, null, 8
   /* PROPS */
-  , ["onRefundTicket", "onUnableToExit"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  , ["onRefundTicket", "onUnableToExit"])]);
 }
 
 /***/ }),

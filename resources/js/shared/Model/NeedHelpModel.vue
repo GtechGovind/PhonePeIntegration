@@ -28,9 +28,6 @@
 <script>
 export default {
     name: "NeedHelpModel",
-    mounted() {
-        toggleModal('need-help', true)
-    }
 }
 </script>
 
