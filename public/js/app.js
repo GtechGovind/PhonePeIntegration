@@ -21464,8 +21464,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSingle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TicketSwiper, {
     key: 2,
-    onNeedHelp: _cache[2] || (_cache[2] = function ($event) {
-      return $options.needHelpCallback(_ctx.sl_qr_no);
+    onNeedHelp: _cache[2] || (_cache[2] = function (sl_qr_no) {
+      return $options.needHelpCallback(sl_qr_no);
     }),
     ticket: $props.upwardTicket,
     order_id: $props.order_id
