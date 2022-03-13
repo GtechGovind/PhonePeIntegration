@@ -82,7 +82,7 @@ export default {
     data() {
         return {
             showSingle: true,
-            slQrNo: String,
+            slQrNo: '',
             isNeedHelpEnabled: false
         }
     },
