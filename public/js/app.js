@@ -21894,7 +21894,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-2/4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full",
+  "class": "hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full",
   id: "need-help"
 };
 var _hoisted_2 = {
@@ -22045,7 +22045,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $options.getRefundInfo && $options.getRefundInfo.apply($options, arguments);
         }),
         "data-modal-toggle": "need-help",
-        type: "button",
         "class": "m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600"
       }, " Refund ticket ! "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: _cache[2] || (_cache[2] = function ($event) {
