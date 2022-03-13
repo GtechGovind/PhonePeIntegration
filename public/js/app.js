@@ -20448,7 +20448,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log("hello");
                 this.isLoading = true;
                 _context.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/sv/reload/' + this.passDetails.sale_or_no);
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/sv/reload/status/' + this.passDetails.sale_or_no);
 
               case 4:
                 res = _context.sent;
@@ -20479,7 +20479,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log("hello");
                 this.isLoading = true;
                 _context2.next = 4;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/tp/reload/' + this.passDetails.sale_or_no);
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/tp/reload/status/' + this.passDetails.sale_or_no);
 
               case 4:
                 res = _context2.sent;
