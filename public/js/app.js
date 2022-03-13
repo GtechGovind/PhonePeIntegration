@@ -19899,7 +19899,6 @@ __webpack_require__.r(__webpack_exports__);
     order_id: String
   },
   components: {
-    Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_7__["default"],
     Swiper: swiper_vue__WEBPACK_IMPORTED_MODULE_1__.Swiper,
     SwiperSlide: swiper_vue__WEBPACK_IMPORTED_MODULE_1__.SwiperSlide,
     QRCodeVue3: (qrcode_vue3__WEBPACK_IMPORTED_MODULE_2___default())
@@ -21056,8 +21055,9 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
 };
+var _hoisted_5 = ["onClick"];
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fa-solid fa-circle-info mx-1"
@@ -21065,10 +21065,9 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
+var _hoisted_7 = [_hoisted_6];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_QRCodeVue3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("QRCodeVue3");
-
-  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   var _component_swiper_slide = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("swiper-slide");
 
@@ -21112,20 +21111,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             /* PROPS */
             , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sl_qr_no), 1
             /* TEXT */
-            ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+            ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
               onClick: function onClick($event) {
                 return _ctx.$emit('needHelp', sl_qr_no);
               }
-            }, {
-              "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-                return [_hoisted_5];
-              }),
-              _: 2
-              /* DYNAMIC */
-
-            }, 1032
-            /* PROPS, DYNAMIC_SLOTS */
-            , ["onClick"])];
+            }, _hoisted_7, 8
+            /* PROPS */
+            , _hoisted_5)];
           }),
           _: 2
           /* DYNAMIC */
