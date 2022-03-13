@@ -20242,8 +20242,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: "Products",
   components: {
-    NeedHelpModel: NeedHelpModel,
-    NeedHelp: NeedHelp,
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_0__["default"],
