@@ -20232,14 +20232,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     products: Array
   },
   name: "Products",
   components: {
-    NeedHelpModel: _Shared_Model_NeedHelpModel__WEBPACK_IMPORTED_MODULE_4__["default"],
     NeedHelp: _Shared_Model_NeedHelpModel__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -21604,8 +21602,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
-  var _component_need_help_model = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("need-help-model");
-
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavBar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Hero), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products, function (product) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
       "class": "bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border",
@@ -21641,9 +21637,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     alt: "logo"
   }, null, 8
   /* PROPS */
-  , _hoisted_14)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
-    "is-show": true
-  })], 64
+  , _hoisted_14)])])])], 64
   /* STABLE_FRAGMENT */
   );
 }
