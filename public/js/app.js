@@ -19902,8 +19902,8 @@ __webpack_require__.r(__webpack_exports__);
     QRCodeVue3: (qrcode_vue3__WEBPACK_IMPORTED_MODULE_2___default())
   },
   methods: {
-    NeedHelp: function NeedHelp(_NeedHelp) {
-      alert("Hello" + _NeedHelp);
+    NeedHelp: function NeedHelp(sl_qr_no) {
+      this.$emit('NeedHelp', sl_qr_no);
     }
   },
   setup: function setup() {
@@ -20196,6 +20196,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     showReturnTicket: function showReturnTicket() {
       this.showSingle = false;
+    },
+    needHelpCallback: function needHelpCallback(sl_qr_no) {
+      alert("hi " + sl_qr_no);
     }
   }
 });
@@ -21462,7 +21465,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSingle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TicketSwiper, {
     key: 2,
     onNeedHelp: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.alert('hi');
+      return $options.needHelpCallback(_ctx.sl_qr_no);
     }),
     ticket: $props.upwardTicket,
     order_id: $props.order_id

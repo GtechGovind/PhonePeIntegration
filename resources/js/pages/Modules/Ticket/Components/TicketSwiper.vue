@@ -50,8 +50,8 @@ export default {
     },
 
     methods: {
-        NeedHelp: function (NeedHelp) {
-            alert("Hello" + NeedHelp)
+        NeedHelp: function (sl_qr_no) {
+            this.$emit('NeedHelp', sl_qr_no)
         }
     },
 
