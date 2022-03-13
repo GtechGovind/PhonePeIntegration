@@ -2,12 +2,12 @@
 
     <nav-bar />
 
-<!--    <Card
+    <Card
         :pass-details="pass"
         :user="user"
         :isSv="true"
         :balance="balance"
-    />-->
+    />
 
     <div v-if="trip">
         <div class="text-center m-2 border bg-white rounded-lg">
@@ -32,19 +32,6 @@
         </div>
     </div>
 
-    <AnchorButton
-        :title="'GENERATE TRIP'"
-        :url="'/sv/trip/' + pass.sale_or_no"
-        :type="'button'"
-        v-if="!trip"
-    />
-    <AnchorButton
-        :title="'REFUND PASS'"
-        :url="'/refund/' + pass.sale_or_no + '/info'"
-        :type="'button'"
-        v-if="!trip"
-    />
-
 </template>
 
 <script>
@@ -53,6 +40,7 @@ import QRCodeVue3 from "qrcode-vue3";
 import axios from "axios";
 import AnchorButton from "../../../Shared/Component/AnchorButton";
 import NavBar from "../../../Shared/NavBar";
+import Card from "../../../Shared/Card";
 
 export default {
 
@@ -70,7 +58,7 @@ export default {
 
     name: "Dashboard",
 
-    components: {AnchorButton, NavBar, QRCodeVue3},
+    components: {Card, AnchorButton, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);

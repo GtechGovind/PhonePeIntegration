@@ -1,56 +1,63 @@
 <template>
 
-<!--    <nav-bar />
-
-    <hero />-->
+    <nav-bar />
+    <hero />
 
     <div class="bg-white m-2 p-3 shadow border text-center">
         <p class="font-bold text-lg text-gray-600">BUY NEW STORE VALUE PASS</p>
     </div>
 
+    <div class="bg-white m-2 p-5 shadow border rounded">
 
-
-        <div class="bg-white m-2 p-5 shadow border rounded">
-
-            <div class="mb-3">
-                <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
-                <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
-                <div class="block m-1 text-sm text-red-500" v-if="pass.errors.price">
-                    {{ pass.errors.price }}
-                </div>
+        <div class="mb-3">
+            <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
+            <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
+            <div class="block m-1 text-sm text-red-500" v-if="pass.errors.price">
+                {{ pass.errors.price }}
             </div>
-
-            <div class="mt-3 grid grid-cols-3 gap-5">
-<!--                <chip :title = "'₹ 100'" v-on:click="addAmount(100)"/>
-                <chip :title = "'₹ 200'" v-on:click="addAmount(200)"/>
-                <chip :title = "'₹ 500'" v-on:click="addAmount(500)"/>-->
-            </div>
-
         </div>
 
-        <Button v-on:click="genOrder" :title="'PROCEED TO PAY ₹ ' + pass.price" />
+        <div class="mt-3 grid grid-cols-3 gap-5">
+            <chip :title = "'₹ 100'" v-on:click="addAmount(100)"/>
+            <chip :title = "'₹ 200'" v-on:click="addAmount(200)"/>
+            <chip :title = "'₹ 500'" v-on:click="addAmount(500)"/>
+        </div>
 
+    </div>
 
+    <Button
+        v-on:click="genOrder"
+        :is-loading="isLoading"
+        :is-disabled="isLoading"
+        :type="'button'"
+        :title="'PROCEED TO PAY ₹ ' + pass.price"
+    />
 
 </template>
 
 <script>
 
-import {useForm} from '@inertiajs/inertia-vue3'
+import NavBar from "../../../Shared/NavBar";
+import Hero from "../../../Shared/Hero";
+import Button from "../../../Shared/Component/Button";
+import Chip from "../../../Shared/Component/Chip";
 import axios from "axios";
 
 export default {
 
     name: "Order",
     components: {
-
+        Chip,
+        Button,
+        Hero,
+        NavBar
     },
 
     data() {
         return {
-            pass: useForm({
+            pass: {
                 price: 0
-            }),
+            },
         }
     },
 
@@ -73,7 +80,7 @@ export default {
         },
 
         genOrder: async function () {
-            const response = await axios.post('/sv/create', this.ticket)
+            const response = await axios.post('/sv/create', this.pass)
             let data = await response.data
             if (data.status) this.onSuccess(data)
             else this.onFailure(data)
