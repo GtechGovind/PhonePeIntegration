@@ -19590,10 +19590,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Hero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Shared/Hero */ "./resources/js/Shared/Hero.vue");
-/* harmony import */ var _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/Component/Chip */ "./resources/js/Shared/Component/Chip.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _Shared_Component_ReloadButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/Component/ReloadButton */ "./resources/js/Shared/Component/ReloadButton.vue");
+/* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/Component/Chip */ "./resources/js/Shared/Component/Chip.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19608,9 +19608,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Order",
   components: {
-    ReloadButton: _Shared_Component_ReloadButton__WEBPACK_IMPORTED_MODULE_5__["default"],
-    Chip: _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_3__["default"],
-    Button: Button,
+    Chip: _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_4__["default"],
+    Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_2__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
@@ -19647,7 +19646,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 this.isLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_4___default().post('/sv/create', this.pass);
+                return axios__WEBPACK_IMPORTED_MODULE_5___default().post('/sv/create', this.pass);
 
               case 3:
                 response = _context.sent;
@@ -19693,7 +19692,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context2.prev = _context2.next) {
             case 0:
               _context2.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_4___default().get('/sv/canIssuePass');
+              return axios__WEBPACK_IMPORTED_MODULE_5___default().get('/sv/canIssuePass');
 
             case 2:
               res = _context2.sent;
@@ -20295,7 +20294,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Component_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var _Component_ReloadButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Component/ReloadButton */ "./resources/js/Shared/Component/ReloadButton.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20314,7 +20313,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     balance: Number
   },
   components: {
-    Button: _Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ReloadButton: _Component_ReloadButton__WEBPACK_IMPORTED_MODULE_3__["default"],
     Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
   },
   data: function data() {
@@ -21115,7 +21114,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_chip = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("chip");
 
-  var _component_ReloadButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ReloadButton");
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
@@ -21148,7 +21147,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return $options.addAmount(500);
     })
-  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ReloadButton, {
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     onClick: $options.genOrder,
     "is-loading": $data.isLoading,
     "is-disabled": $data.isLoading,
@@ -22199,7 +22198,7 @@ var _hoisted_17 = {
   "class": "flex flex-row-reverse"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+  var _component_ReloadButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ReloadButton");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "relative object-cover w-full h-full rounded-xl",
@@ -22223,7 +22222,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("EXP DATE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date($props.passDetails.ms_qr_exp).toLocaleDateString()), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("RELOAD"), $props.isSv ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("RELOAD"), $props.isSv ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ReloadButton, {
     type: 'button',
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,

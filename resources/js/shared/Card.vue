@@ -52,7 +52,7 @@
 
                     <!--RELOAD-->
                     <div class="flex flex-row-reverse" v-if="isSv">
-                        <Button
+                        <ReloadButton
                             :type="'button'"
                             :is-disabled="isLoading"
                             :is-loading="isLoading"
@@ -71,7 +71,7 @@
 
 import {Link} from '@inertiajs/inertia-vue3';
 import axios from "axios";
-import Button from "./Component/Button";
+import ReloadButton from "./Component/ReloadButton";
 
 export default {
     name: "Card",
@@ -82,7 +82,7 @@ export default {
         balance: Number,
     },
     components: {
-        Button,
+        ReloadButton,
         Link
     },
     data() {
