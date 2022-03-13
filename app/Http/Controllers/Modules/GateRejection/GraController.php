@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Modules\GateRejection;
 
 use App\Http\Controllers\Api\MMOPL\ApiController;
+use App\Http\Controllers\Api\PhonePe\PhonePePaymentController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Modules\Utility\OrderUtility;
 use Illuminate\Http\Request;
@@ -67,7 +68,27 @@ class GraController extends Controller
             'ref_sl_qr'         => $graInfo -> refTxnId
         ]);
 
-        return redirect()->route('payment.index', [$saleOrderNumber]);
+        $order = DB::table('sale_order as so')
+            ->join('stations as s', 's.stn_id', '=', 'so.src_stn_id')
+            ->join('stations as d', 'd.stn_id', '=', 'so.des_stn_id')
+            ->where('sale_or_no', '=', $saleOrderNumber)
+            ->select(['so.*', 's.stn_name as source_name', 'd.stn_name as destination_name'])
+            ->first();
+
+        $api = new PhonePePaymentController();
+        $response = $api->pay($order);
+
+        return $response->success
+            ? response([
+                'status' => true,
+                'redirectUrl' => $response->data->redirectUrl,
+                'order_id' => $saleOrderNumber
+            ])
+            : response([
+                'status' => false,
+                'error' => $response,
+                'order_id' => $saleOrderNumber
+            ]);
 
     }
 

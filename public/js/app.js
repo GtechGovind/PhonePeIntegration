@@ -20573,17 +20573,42 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }(),
     applyGra: function () {
       var _applyGra = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
+        var res, _yield$res$data, error, redirectUrl, status;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 this.isGraButtonLoading = true;
-                this.$inertia.post('/gra', {
-                  penaltyInfo: this.penalty,
-                  station_id: this.station_id
-                });
+                _context4.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/gra' + this.order_id);
 
-              case 2:
+              case 3:
+                res = _context4.sent;
+                _context4.next = 6;
+                return res.data;
+
+              case 6:
+                _yield$res$data = _context4.sent;
+                error = _yield$res$data.error;
+                redirectUrl = _yield$res$data.redirectUrl;
+                status = _yield$res$data.status;
+
+                if (status) {
+                  this.isRefundButtonLoading = false;
+                  this.close();
+                  window.location.href = redirectUrl;
+                } else {
+                  this.isRefundButtonLoading = false;
+                  this.close();
+                  this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error
+                  });
+                }
+
+              case 11:
               case "end":
                 return _context4.stop();
             }

@@ -329,12 +329,24 @@ export default {
 
         applyGra: async function () {
             this.isGraButtonLoading = true
-            this.$inertia.post('/gra', {
-                penaltyInfo: this.penalty,
-                station_id: this.station_id
-            })
+            const res = await axios.post('/gra' + this.order_id)
+            const {error, redirectUrl, status} = await res.data
+            if (status) {
+                this.isRefundButtonLoading = false
+                this.close()
+                window.location.href = redirectUrl
+            }
+            else
+            {
+                this.isRefundButtonLoading = false
+                this.close()
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error,
+                })
+            }
         }
-
     }
 }
 </script>
