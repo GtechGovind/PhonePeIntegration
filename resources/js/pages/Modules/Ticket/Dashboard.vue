@@ -63,7 +63,6 @@ export default {
     mounted() {
         this.updateDashboard()
     }
-
 }
 </script>
 
