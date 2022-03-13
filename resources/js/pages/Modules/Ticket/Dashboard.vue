@@ -11,8 +11,10 @@
 
     <TransitionGroup>
         <div v-if="upcomingOrders.length === 0"
-            class="text-center my-12 font-semibold text-gray-600">
-            No Upcoming Orders to show ....
+             class="relative rounded-lg m-2 bg-white">
+            <div class="grid w-full content-center p-7">
+                <div class="text-center my-9 font-semibold text-gray-600">No Upcoming Orders to show ....</div>
+            </div>
         </div>
     </TransitionGroup>
 
@@ -54,7 +56,7 @@ export default {
         recentOrders: Array
     },
     methods: {
-        updateDashboard: async  function () {
+        updateDashboard: async function () {
             const res = await axios.get('/ticket/status');
             const data = res.data
             if (data.status) {
