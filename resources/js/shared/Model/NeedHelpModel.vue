@@ -329,7 +329,10 @@ export default {
 
         applyGra: async function () {
             this.isGraButtonLoading = true
-            const res = await axios.post('/gra')
+            const res = await axios.post('/gra', {
+                penaltyInfo: this.gra.penalty,
+                station_id: this.station_id
+            })
             const {error, redirectUrl, status} = await res.data
             if (status) {
                 this.isRefundButtonLoading = false

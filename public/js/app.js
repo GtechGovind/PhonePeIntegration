@@ -20581,7 +20581,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 this.isGraButtonLoading = true;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/gra');
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/gra', {
+                  penaltyInfo: this.gra.penalty,
+                  station_id: this.station_id
+                });
 
               case 3:
                 res = _context4.sent;
