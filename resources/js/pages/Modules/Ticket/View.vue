@@ -49,9 +49,7 @@
             </div>
         </div>
     </div>
-
-    <NeedHelp :is-show="isNeedHelpEnabled" />
-
+    
 </template>
 
 <script>
