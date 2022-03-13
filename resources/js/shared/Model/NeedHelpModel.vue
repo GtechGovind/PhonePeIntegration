@@ -62,7 +62,7 @@
                                 Ticket Fare
                             </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                {{ refund.pass_price }}
+                                ₹ {{ refund.pass_price }}
                             </td>
                         </tr>
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -70,7 +70,7 @@
                                 Processing Charges
                             </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                {{ refund.processing_fee }}
+                                ₹ {{ refund.processing_fee }}
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -78,7 +78,7 @@
                                 Refundable Amount
                             </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                {{ refund.refund_amount }}
+                                ₹ {{ refund.refund_amount }}
                             </td>
                         </tr>
                         </tbody>
@@ -165,22 +165,22 @@
                         </div>
 
                     </div>
-                
+
                 </div>
 
                 <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
 
                     <Button
-                        :is-loading="isRefundButtonLoading"
-                        :is-disabled="isRefundButtonLoading"
-                        :title="'Yes, Refund Order'"
+                        :is-loading="isGraButtonLoading"
+                        :is-disabled="isGraButtonLoading"
+                        :title="'Proceed to pay ₹' + gra.penaltyAmount"
                         :type="'button'"
-                        v-on:click="refundTicket"
+                        v-on:click="applyGra"
                     />
 
                     <Button
-                        :is-loading="isRefundButtonLoading"
-                        :is-disabled="isRefundButtonLoading"
+                        :is-loading="isGraButtonLoading"
+                        :is-disabled="isGraButtonLoading"
                         :title="'Decline'"
                         :type="'button'"
                         v-on:click="close"
@@ -325,6 +325,14 @@ export default {
                     this.gra.penaltyAmount = null
                 }
             }
+        },
+
+        applyGra: async function () {
+            this.isGraButtonLoading = true
+            this.$inertia.post('/gra', {
+                penaltyInfo: this.penalty,
+                station_id: this.station_id
+            })
         }
 
     }
