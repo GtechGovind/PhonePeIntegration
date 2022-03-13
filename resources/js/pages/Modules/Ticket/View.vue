@@ -22,7 +22,7 @@
         </button>
     </div>
 
-    <TicketSwiper :ticket="upwardTicket" :order_id="order_id" v-if="showSingle"/>
+    <TicketSwiper v-on:need-help="alert('hi')" :ticket="upwardTicket" :order_id="order_id" v-if="showSingle"/>
     <TicketSwiper :ticket="returnTicket" :order_id="order_id" v-if="!showSingle"/>
 
     <div class="border rounded-lg border-dashed border-3 border-blue-700 bg-white m-2">

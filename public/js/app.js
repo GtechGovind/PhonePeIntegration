@@ -21026,7 +21026,7 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
 };
-var _hoisted_5 = ["href"];
+var _hoisted_5 = ["onClick"];
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2"
@@ -21083,7 +21083,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             , ["value"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(sl_qr_no), 1
             /* TEXT */
             ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-              href: '/help/' + sl_qr_no + '/' + $props.order_id
+              onClick: function onClick($event) {
+                return _ctx.$emit('needHelp', sl_qr_no);
+              }
             }, _hoisted_7, 8
             /* PROPS */
             , _hoisted_5)];
@@ -21453,6 +21455,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* CLASS */
   )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.showSingle ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_TicketSwiper, {
     key: 2,
+    onNeedHelp: _cache[2] || (_cache[2] = function ($event) {
+      return _ctx.alert('hi');
+    }),
     ticket: $props.upwardTicket,
     order_id: $props.order_id
   }, null, 8

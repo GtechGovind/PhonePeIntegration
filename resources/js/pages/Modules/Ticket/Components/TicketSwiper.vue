@@ -16,7 +16,7 @@
                 <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                     {{ sl_qr_no }}
                 </span>
-                <a :href="'/help/' + sl_qr_no + '/' + order_id">
+                <a v-on:click="$emit('needHelp', sl_qr_no)">
                     <div class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2">
                         <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
                     </div>
