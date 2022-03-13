@@ -1,5 +1,5 @@
 <template>
-    <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="need-help">
+    <div ref="model" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="need-help">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -13,10 +13,10 @@
                 <div class="p-6 pt-0 text-center">
                     <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Please select the type of help, you need ?</h3>
-                    <button data-modal-toggle="need-help" type="button" class="m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
+                    <button v-on:click="$emit('refund-ticket')" data-modal-toggle="need-help" type="button" class="m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
                         Refund ticket !
                     </button>
-                    <button data-modal-toggle="need-help" type="button" class="m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
+                    <button v-on:click="$emit('unable-to-exit')" data-modal-toggle="need-help" type="button" class="m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
                         Unable to exit ?
                     </button>
                 </div>
@@ -27,16 +27,9 @@
 
 <script>
 export default {
-    props: {
-        isShow: Boolean
-    },
     name: "NeedHelpModel",
     mounted() {
-        try {
-            toggleModal('need-help', this.isShow)
-        } catch (e) {
-            console.log(e)
-        }
+        toggleModal('need-help', true)
     }
 }
 </script>

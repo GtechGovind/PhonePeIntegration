@@ -52,7 +52,11 @@
             </div>
         </div>
 
-        <need-help-model :is-show="isNeedHelpEnabled" />
+        <need-help-model
+            v-if="isNeedHelpEnabled"
+            v-on:refund-ticket="refundTicket"
+            v-on:unable-to-exit="unableToExit"
+        />
 
     </div>
 </template>
@@ -100,6 +104,12 @@ export default {
         needHelpCallback: function (sl_qr_no) {
             this.slQrNo = sl_qr_no
             this.isNeedHelpEnabled = true
+        },
+        refundTicket: function () {
+            this.isNeedHelpEnabled = false
+        },
+        unableToExit: function () {
+            this.isNeedHelpEnabled = false
         }
     },
 }

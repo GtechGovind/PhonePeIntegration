@@ -48,9 +48,6 @@ import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
 import Button from "../Shared/Component/Button";
-import NeedHelp from "../Shared/Model/NeedHelpModel";
-import NeedHelpModel from "../Shared/Model/NeedHelpModel";
-
 export default {
 
     props: {
@@ -72,14 +69,7 @@ export default {
         return {
             isLoading: false,
             isDisabled: false,
-            coBrand: '/img/atek_logo.png'
-        }
-    },
-
-    methods: {
-        toggle: function () {
-            this.isLoading = true
-            this.isDisabled = true
+            coBrand: '/img/atek_logo.png',
         }
     },
 }
