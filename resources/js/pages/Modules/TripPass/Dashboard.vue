@@ -29,6 +29,7 @@
     </div>
 
     <GraModel
+        v-if="trip"
         :slave_id="trip.sl_qr_no"
         :stations="stations"
     />
