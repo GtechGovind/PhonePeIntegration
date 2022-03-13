@@ -86,7 +86,7 @@ class StoreValueOrderController extends Controller
         {
             return response([
                 'status' => false,
-                'error' => $response -> error
+                'error' => $response
             ]);
         }
 
