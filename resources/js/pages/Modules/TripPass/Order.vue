@@ -25,9 +25,9 @@
                         {{ stn_name }}
                     </option>
                 </select>
-                <div class="block mb-2 text-sm text-red-500" v-if="errors">
+<!--                <div class="block mb-2 text-sm text-red-500" v-if="errors">
                     {{ errors.tripPass.source_id }}
-                </div>
+                </div>-->
             </div>
 
             <!--DESTINATION-->
@@ -44,9 +44,9 @@
                         {{ stn_name }}
                     </option>
                 </select>
-                <div class="block mb-2 text-sm text-red-500" v-if="errors">
+<!--                <div class="block mb-2 text-sm text-red-500" v-if="errors">
                     {{ errors.tripPass.destination_id }}
-                </div>
+                </div>-->
             </div>
 
             <!--TYPE AND QUANTITY-->

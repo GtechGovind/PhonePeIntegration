@@ -23219,71 +23219,63 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = ["value"];
 var _hoisted_8 = {
-  key: 0,
-  "class": "block mb-2 text-sm text-red-500"
-};
-var _hoisted_9 = {
   "class": "mb-6"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "block mb-2 text-sm font-medium text-gray-900"
 }, "Destination", -1
 /* HOISTED */
 );
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: "",
   value: ""
 }, "Select destination station", -1
 /* HOISTED */
 );
 
-var _hoisted_12 = ["value"];
-var _hoisted_13 = {
-  key: 0,
-  "class": "block mb-2 text-sm text-red-500"
-};
-var _hoisted_14 = {
+var _hoisted_11 = ["value"];
+var _hoisted_12 = {
   "class": "bg-blue-100 grid grid-cols-3 p-3 rounded-lg"
 };
-var _hoisted_15 = {
+var _hoisted_13 = {
   "class": "grid grid-row-2 pl-3"
 };
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-xs text-blue-900"
 }, "Trips", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = {
+var _hoisted_15 = {
   "class": "font-semibold text-xl"
 };
-var _hoisted_18 = {
+var _hoisted_16 = {
   "class": "grid grid-row-2 pl-3"
 };
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-xs text-blue-900"
 }, "Validity", -1
 /* HOISTED */
 );
 
-var _hoisted_20 = {
+var _hoisted_18 = {
   "class": "font-semibold text-xl"
 };
-var _hoisted_21 = {
+var _hoisted_19 = {
   "class": "grid grid-row-2 pl-3"
 };
 
-var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "text-xs text-blue-900"
 }, "Fare", -1
 /* HOISTED */
 );
 
-var _hoisted_23 = {
+var _hoisted_21 = {
   "class": "font-semibold text-xl"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -23315,9 +23307,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.tripPass.source_id), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.source_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.tripPass.destination_id = $event;
@@ -23325,7 +23315,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onChange: _cache[3] || (_cache[3] = function () {
       return $options.getFare && $options.getFare.apply($options, arguments);
     })
-  }, [_hoisted_11, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.stations, function (_ref2) {
+  }, [_hoisted_10, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.stations, function (_ref2) {
     var id = _ref2.id,
         stn_id = _ref2.stn_id,
         stn_name = _ref2.stn_name;
@@ -23334,18 +23324,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       value: stn_id
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(stn_name), 9
     /* TEXT, PROPS */
-    , _hoisted_12);
+    , _hoisted_11);
   }), 128
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.tripPass.destination_id), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.destination_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
   /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.validity) + " Days", 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.validity) + " Days", 1
-  /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.tripPass.fare), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_21, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.tripPass.fare), 1
   /* TEXT */
   )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "is-loading": $data.isLoading,
