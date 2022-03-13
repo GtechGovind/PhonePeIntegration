@@ -193,7 +193,7 @@ export default {
 
             const { errors } = data
             this.errors = errors
-            
+
         }
 
     },

@@ -21225,7 +21225,7 @@ var _hoisted_1 = {
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "grid w-full content-center p-7"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "text-center my-9 font-semibold text-gray-600"
+  "class": "mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
 }, "No Upcoming Orders to show ....")], -1
 /* HOISTED */
 );

@@ -1336,6 +1336,10 @@ input:checked + .toggle-bg {
   font-size: 1rem;
   line-height: 1.5rem;
 }
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 .font-semibold {
   font-weight: 600;
 }
@@ -1356,6 +1360,9 @@ input:checked + .toggle-bg {
 }
 .leading-9 {
   line-height: 2.25rem;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 .text-gray-600 {
   --tw-text-opacity: 1;
