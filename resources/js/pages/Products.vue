@@ -40,7 +40,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -81,10 +80,6 @@ export default {
             this.isDisabled = true
         }
     },
-
-    mounted() {
-        toggleModal('needHelp')
-    }
 }
 </script>
 

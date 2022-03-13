@@ -20256,9 +20256,6 @@ __webpack_require__.r(__webpack_exports__);
       this.isLoading = true;
       this.isDisabled = true;
     }
-  },
-  mounted: function mounted() {
-    toggleModal('needHelp');
   }
 });
 
