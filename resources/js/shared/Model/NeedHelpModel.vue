@@ -122,16 +122,17 @@ export default {
         close: function () {
             toggleModal('need-help', false)
         },
-        getRefundInfo: async function () {
-            const res = await axios.get('/refund/' + this.order_id)
-            const data = await res.data
-            if (data.status) {
-                this.showHelp = false
-                this.showRefund = true
-                this.refund = data.refund
-            } else {
+        getRefundInfo: function () {
+            const res = axios.get('/refund/' + this.order_id)
+            res.then((data) => {
+                if (data.status) {
+                    this.showHelp = false
+                    this.showRefund = true
+                    this.refund = data.refund
+                } else {
 
-            }
+                }
+            })
         },
         refundTicket: function () {
 
