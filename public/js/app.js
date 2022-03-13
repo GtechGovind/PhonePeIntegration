@@ -22172,7 +22172,7 @@ var _hoisted_10 = {
   "class": "tracking-more-wider font-bold"
 };
 var _hoisted_11 = {
-  "class": "pt-6 pr-6"
+  "class": "pt-6"
 };
 var _hoisted_12 = {
   "class": "flex justify-between"
@@ -22386,7 +22386,7 @@ var _hoisted_1 = ["type"];
 var _hoisted_2 = {
   key: 0,
   role: "status",
-  "class": "inline mr-3 w-4 h-4 text-white animate-spin",
+  "class": "inline mr-3 w-4 h-4 text-blue-500 animate-spin",
   viewBox: "0 0 100 101",
   fill: "none",
   xmlns: "http://www.w3.org/2000/svg"

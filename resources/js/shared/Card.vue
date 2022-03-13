@@ -26,7 +26,7 @@
                 </p>
             </div>
 
-            <div class="pt-6 pr-6">
+            <div class="pt-6">
                 <div class="flex justify-between">
 
                     <!--BALANCE-->
