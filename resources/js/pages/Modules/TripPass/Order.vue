@@ -44,8 +44,8 @@
                         {{ stn_name }}
                     </option>
                 </select>
-                <div class="block mb-2 text-sm text-red-500" v-if="tripPass.errors.destination_id">
-                    {{ tripPass.errors.destination_id }}
+                <div class="block mb-2 text-sm text-red-500" v-if="errors">
+                    {{ errors.tripPass.destination_id }}
                 </div>
             </div>
 
@@ -107,7 +107,8 @@ export default {
                 fare: 0,
                 pass_id: "21"
             },
-            isLoading: false
+            isLoading: false,
+            errors: Object
         }
     },
 
