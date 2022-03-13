@@ -40,6 +40,7 @@
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -48,6 +49,7 @@ import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
 import Button from "../Shared/Component/Button";
+import NeedHelp from "../Shared/Model/NeedHelp";
 
 export default {
 
@@ -58,6 +60,7 @@ export default {
     name: "Products",
 
     components: {
+        NeedHelp,
         Button,
         NavBar,
         Hero,
@@ -77,6 +80,10 @@ export default {
             this.isLoading = true
             this.isDisabled = true
         }
+    },
+
+    mounted() {
+        toggleModal('needHelp')
     }
 }
 </script>

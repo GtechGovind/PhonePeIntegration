@@ -20226,6 +20226,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var _Shared_Model_NeedHelp__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Shared/Model/NeedHelp */ "./resources/js/Shared/Model/NeedHelp.vue");
+
 
 
 
@@ -20236,6 +20238,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: "Products",
   components: {
+    NeedHelp: _Shared_Model_NeedHelp__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -20253,6 +20256,9 @@ __webpack_require__.r(__webpack_exports__);
       this.isLoading = true;
       this.isDisabled = true;
     }
+  },
+  mounted: function mounted() {
+    toggleModal('needHelp');
   }
 });
 
@@ -20365,7 +20371,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: "NeedHelp",
   mounted: function mounted() {
-    /* toggleModal("needHelp", this.isShow)*/
+    toggleModal('need-help', this.isShow);
   }
 });
 
@@ -21824,10 +21830,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   "class": "hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0 h-modal sm:h-full",
-  id: "needHelp"
+  id: "need-help"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative px-4 w-full max-w-md h-full md:h-auto\"><!-- Modal content --><div class=\"relative bg-white rounded-lg shadow dark:bg-gray-700\"><!-- Modal header --><div class=\"flex justify-end p-2\"><button type=\"button\" class=\"text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white\" data-modal-toggle=\"popup-modal\"><svg class=\"w-5 h-5\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg></button></div><!-- Modal body --><div class=\"p-6 pt-0 text-center\"><svg class=\"mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg><h3 class=\"mb-5 text-lg font-normal text-gray-500 dark:text-gray-400\"> Select the type of help you need ! </h3><button data-modal-toggle=\"popup-modal\" type=\"button\" class=\"text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2\"> Refund Ticket </button><button data-modal-toggle=\"popup-modal\" type=\"button\" class=\"text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2\"> Unable to exit ! </button></div></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative px-4 w-full max-w-md h-full md:h-auto\"><!-- Modal content --><div class=\"relative bg-white rounded-lg shadow dark:bg-gray-700\"><!-- Modal header --><div class=\"flex justify-end p-2\"><button type=\"button\" class=\"text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white\" data-modal-toggle=\"need-help\"><svg class=\"w-5 h-5\" fill=\"currentColor\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" d=\"M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z\" clip-rule=\"evenodd\"></path></svg></button></div><!-- Modal body --><div class=\"p-6 pt-0 text-center\"><svg class=\"mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg><h3 class=\"mb-5 text-lg font-normal text-gray-500 dark:text-gray-400\">Please select the type of help, you need ?</h3><button data-modal-toggle=\"need-help\" type=\"button\" class=\"m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600\"> Refund ticket ! </button><button data-modal-toggle=\"need-help\" type=\"button\" class=\"m-1 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600\"> Unable to exit ? </button></div></div></div>", 1);
 
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
