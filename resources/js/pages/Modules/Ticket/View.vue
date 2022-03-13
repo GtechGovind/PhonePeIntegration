@@ -49,6 +49,9 @@
             </div>
         </div>
     </div>
+
+    <NeedHelp :is-show="isNeedHelpEnabled" />
+
 </template>
 
 <script>
@@ -56,6 +59,7 @@
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
 import TicketSwiper from "./Components/TicketSwiper";
+import NeedHelp from "../../../Shared/Model/NeedHelp";
 
 export default {
 
@@ -69,6 +73,7 @@ export default {
     name: "View",
 
     components: {
+        NeedHelp,
         TicketSwiper,
         Hero,
         NavBar,
@@ -77,6 +82,8 @@ export default {
     data() {
         return {
             showSingle: true,
+            slQrNo: String,
+            isNeedHelpEnabled: false
         }
     },
 
@@ -88,7 +95,8 @@ export default {
             this.showSingle = false
         },
         needHelpCallback: function (sl_qr_no) {
-            alert("hi " + sl_qr_no)
+            this.slQrNo = sl_qr_no
+            this.isNeedHelpEnabled = true
         }
     },
 }
