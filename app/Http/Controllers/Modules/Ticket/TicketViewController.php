@@ -21,6 +21,7 @@ class TicketViewController extends Controller
             return Inertia::render('Modules/Ticket/View', [
                 'type' => $productId,
                 'order_id' => $order_id,
+                'stations' => DB::table('stations')->get(['stn_id', 'stn_name']),
                 'upwardTicket' => $this->getSjtTrips($order_id)
             ]);
         }
@@ -29,6 +30,7 @@ class TicketViewController extends Controller
             return Inertia::render('Modules/Ticket/View', [
                 'type' => $productId,
                 'order_id' => $order_id,
+                'stations' => DB::table('stations')->get(['stn_id', 'stn_name']),
                 'upwardTicket' => $this->getRjtTrips($order_id, env('OUTWARD')),
                 'returnTicket' => $this->getRjtTrips($order_id, env('RETURN'))
             ]);

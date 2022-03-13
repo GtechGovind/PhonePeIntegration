@@ -54,6 +54,7 @@
 
         <keep-alive>
             <need-help-model
+                :stations="stations"
                 v-on:refund-ticket="refundTicket"
                 v-on:unable-to-exit="unableToExit"
                 :order_id="order_id"
@@ -78,6 +79,7 @@ export default {
         order_id: String,
         upwardTicket: Array,
         returnTicket: Array,
+        stations: Array
     },
 
     name: "View",
