@@ -45,7 +45,9 @@ Route::get('sv/order', [StoreValueOrderController::class, 'index'])->name('sv.or
 Route::post('sv/create', [StoreValueOrderController::class, 'create'])->name('sv.create');
 Route::get('sv/trip/{order_id}', [StoreValueOrderController::class, 'issueTrip'])->name('sv.issueTrip');
 Route::get('sv/status/{master_id}', [StoreValueStatusController::class, 'index'])->name('sv.status');
-Route::get('sv/reload/{master_id}', [StoreValueReloadController::class, 'status'])->name('sv.reload.status');
+Route::get('sv/reload/status/{order_id}', [StoreValueReloadController::class, 'status'])->name('sv.reload.status');
+Route::get('sv/reload/{order_id}', [StoreValueReloadController::class, 'index'])->name('sv.reload.index');
+Route::post('sv/reload', [StoreValueReloadController::class, 'reload'])->name('sv.reload');
 
 // TRIP PASS VALUE
 Route::get('tp/dashboard', [TripPassDashboardController::class, 'index'])->name('tp.dashboard');
@@ -54,7 +56,7 @@ Route::get('tp/order', [TripPassOrderController::class, 'index'])->name('tp.orde
 Route::post('tp/create', [TripPassOrderController::class, 'create'])->name('tp.create');
 Route::get('tp/trip/{order_id}', [TripPassOrderController::class, 'issueTrip'])->name('tp.issueTrip');
 Route::get('tp/status/{master_id}', [TripPassStatusController::class, 'index'])->name('tp.status');
-Route::get('tp/reload/{master_id}', [StoreValueReloadController::class, 'status'])->name('tp.reload');
+Route::get('tp/reload/{order_id}', [StoreValueReloadController::class, 'status'])->name('tp.reload');
 
 // GRA
 Route::get('gra/{slave_id}/{station_id}', [GraController::class, 'info'])->name('gra.info');

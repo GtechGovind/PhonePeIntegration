@@ -15,7 +15,7 @@ class StoreValueReloadController extends Controller
 {
     public function index($order_id)
     {
-        return Inertia::render('StoreValue/Reload', [
+        return Inertia::render('Modules/StoreValue/Reload', [
             'order_id' => $order_id
         ]);
     }

@@ -106,7 +106,7 @@ export default {
         svReloadStatus: async function () {
             console.log("hello")
             this.isLoading = true
-            const res = await axios.get('/sv/reload/status/' + this.passDetails.sale_or_no)
+            const res = await axios.get('/sv/reload/' + this.passDetails.sale_or_no)
             const data = res.data
             if (data.status) this.onSuccess(data)
             else this.onFailure(data)
@@ -114,7 +114,7 @@ export default {
         tpReloadStatus: async function () {
             console.log("hello")
             this.isLoading = true
-            const res = await axios.get('/tp/reload/status/' + this.passDetails.sale_or_no)
+            const res = await axios.get('/tp/reload/' + this.passDetails.sale_or_no)
             const data = res.data
             if (data.status) this.onSuccess(data)
             else this.onFailure(data)
