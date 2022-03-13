@@ -54,7 +54,7 @@ class GraController extends Controller
             'txn_date'          => Carbon::now(),
             'pax_id'            => Auth::id(),
             'ms_qr_no'          => $graInfo -> masterTxnId,
-            'src_stn_id'        => $graInfo -> source ?? null,
+            'src_stn_id'        => $graInfo -> source ?? 1,
             'des_stn_id'        => $request -> input('station_id'),
             'unit'              => 1,
             'unit_price'        => $penaltyAmount,
