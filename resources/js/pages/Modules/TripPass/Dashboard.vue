@@ -35,6 +35,7 @@
     />
 
     <RefundModel
+        v-if="!trip"
         :order_id="pass.sale_or_no"
     />
 

@@ -21991,12 +21991,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RefundModel, {
+    key: 2,
     order_id: $props.trip.sale_or_no
   }, null, 8
   /* PROPS */
-  , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 2,
+  , ["order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+    key: 3,
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,
     type: 'button',
@@ -22005,7 +22006,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 3,
+    key: 4,
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,
     type: 'button',
@@ -23148,12 +23149,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RefundModel, {
+    key: 2,
     order_id: $props.pass.sale_or_no
   }, null, 8
   /* PROPS */
-  , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 2,
+  , ["order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+    key: 3,
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,
     type: 'button',
@@ -23162,7 +23164,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 3,
+    key: 4,
     "is-disabled": $data.isLoading,
     "is-loading": $data.isLoading,
     type: 'button',
