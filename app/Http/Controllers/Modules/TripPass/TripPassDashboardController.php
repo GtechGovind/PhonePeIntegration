@@ -27,7 +27,7 @@ class TripPassDashboardController extends Controller
             ->orderBy('txn_date', 'desc')
             ->first();
 
-        return Inertia::render('TripPass/Dashboard', [
+        return Inertia::render('Modules/TripPass/Dashboard', [
             'user' => Auth::user(),
             'pass' => $pass,
             'trip' => $trip

@@ -18,7 +18,7 @@ class TripPassOrderController extends Controller
 {
     public function index()
     {
-        return Inertia::render('TripPass/Order', [
+        return Inertia::render('Modules/TripPass/Order', [
             'stations' => DB::table('stations')->get(['stn_id', 'stn_name']),
             'trips' => 45,
             'validity' => 30

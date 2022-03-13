@@ -29,7 +29,7 @@ class TripPassReloadController extends Controller
             ->where('fare_table_id', '=', 2)
             ->first();
 
-        return Inertia::render('TripPass/Reload', [
+        return Inertia::render('Modules/TripPass/Reload', [
             'order_id'      => $order_id,
             'fare'          => $fare -> fare,
             'source'        => $order -> source,
