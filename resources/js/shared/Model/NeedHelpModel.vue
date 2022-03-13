@@ -19,12 +19,23 @@
                     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Please select the type of
                         help, you need ?
                     </h3>
-                    <div v-on:click="getRefundInfo" class="m-1 text-blue-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
-                        Refund ticket !
-                    </div>
-                    <div v-on:click="getRefundInfo" class="m-1 text-blue-500 bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600">
-                        Unable to exit ?
-                    </div>
+
+                    <Button
+                        :is-loading="isButtonLoading"
+                        :is-disabled="isDisabledButton"
+                        :title="'Refund Order'"
+                        :type="'button'"
+                        v-on:click="getRefundInfo"
+                    />
+
+                    <Button
+                        :is-loading="isButtonLoading"
+                        :is-disabled="isButtonLoading"
+                        :title="'Unable to exit ?'"
+                        :type="'button'"
+                        v-on:click="getRefundInfo"
+                    />
+
                 </div>
             </div>
 
@@ -94,8 +105,10 @@
 
 <script>
 import axios from "axios";
+import Button from "../Component/Button";
 
 export default {
+    components: {Button},
     props: {
         order_id: String,
         slave_id: String,
@@ -108,6 +121,7 @@ export default {
             showHelp: true,
             showRefund: false,
             showGra: false,
+            isButtonLoading: false,
             refund: {
                 order_id: null,
                 processing_fee: null,
@@ -126,14 +140,16 @@ export default {
             toggleModal('need-help', false)
         },
         getRefundInfo: async function () {
+            this.isButtonLoading = true
             const res = await axios.get('/refund/' + this.order_id)
             const data = await res.data
             if (data.status) {
                 this.showHelp = false
                 this.showRefund = true
                 this.refund = data.refund
+                this.isButtonLoading = false
             } else {
-
+                this.isButtonLoading = false
             }
         },
         refundTicket: function () {
