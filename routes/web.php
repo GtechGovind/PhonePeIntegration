@@ -10,6 +10,7 @@ use App\Http\Controllers\Modules\StoreValue\StoreValueReloadController;
 use App\Http\Controllers\Modules\StoreValue\StoreValueStatusController;
 use App\Http\Controllers\Modules\Ticket\DashboardController;
 use App\Http\Controllers\Modules\Ticket\OrderController;
+use App\Http\Controllers\Modules\Ticket\TicketStatusController;
 use App\Http\Controllers\Modules\Ticket\TicketViewController;
 use App\Http\Controllers\Modules\TripPass\TripPassDashboardController;
 use App\Http\Controllers\Modules\TripPass\TripPassOrderController;
@@ -32,6 +33,7 @@ Route::get('processing/failed/{order_id}', [ProcessingController::class, 'failed
 // TICKET
 Route::get('ticket/dashboard', [DashboardController::class, 'index'])->name('ticket.dashboard');
 Route::get('ticket/order', [OrderController::class, 'index'])->name('ticket.index');
+Route::get('ticket/status', [TicketStatusController::class, 'index'])->name('ticket.status');
 Route::post('ticket/create', [OrderController::class, 'create'])->name('ticket.create');
 Route::get('ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');
 Route::get('ticket/view/{order_id}', [TicketViewController::class, 'index'])->name('ticket.view');
