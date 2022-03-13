@@ -179,8 +179,8 @@
                     />
 
                     <Button
-                        :is-loading="isGraButtonLoading"
-                        :is-disabled="isGraButtonLoading"
+                        :is-loading="false"
+                        :is-disabled="false"
                         :title="'Decline'"
                         :type="'button'"
                         v-on:click="close"

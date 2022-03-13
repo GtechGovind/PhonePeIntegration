@@ -22413,14 +22413,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["is-loading", "is-disabled", "title", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "is-loading": $data.isGraButtonLoading,
-    "is-disabled": $data.isGraButtonLoading,
+    "is-loading": false,
+    "is-disabled": false,
     title: 'Decline',
     type: 'button',
     onClick: $options.close
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "onClick"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
+  , ["onClick"])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
 }
 
 /***/ }),
