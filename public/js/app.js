@@ -20388,7 +20388,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       showHelp: true,
       showRefund: false,
       showGra: false,
-      isButtonLoading: false,
+      isRefundButtonLoading: false,
+      isGraButtonLoading: false,
       refund: {
         order_id: null,
         processing_fee: null,
@@ -20429,9 +20430,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.showHelp = false;
                   this.showRefund = true;
                   this.refund = data.refund;
-                  this.isButtonLoading = false;
+                  this.isRefundButtonLoading = false;
                 } else {
-                  this.isButtonLoading = false;
+                  this.isRefundButtonLoading = false;
                 }
 
               case 8:
@@ -22056,16 +22057,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white",
     "data-modal-toggle": "need-help"
   }, _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "is-loading": $data.isButtonLoading,
-    "is-disabled": _ctx.isDisabledButton,
+    "is-loading": $data.isRefundButtonLoading,
+    "is-disabled": $data.isRefundButtonLoading,
     title: 'Refund Order',
     type: 'button',
     onClick: $options.getRefundInfo
   }, null, 8
   /* PROPS */
   , ["is-loading", "is-disabled", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "is-loading": $data.isButtonLoading,
-    "is-disabled": $data.isButtonLoading,
+    "is-loading": $data.isGraButtonLoading,
+    "is-disabled": $data.isGraButtonLoading,
     title: 'Unable to exit ?',
     type: 'button',
     onClick: $options.getRefundInfo

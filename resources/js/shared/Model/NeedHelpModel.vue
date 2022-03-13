@@ -21,16 +21,16 @@
                     </h3>
 
                     <Button
-                        :is-loading="isButtonLoading"
-                        :is-disabled="isDisabledButton"
+                        :is-loading="isRefundButtonLoading"
+                        :is-disabled="isRefundButtonLoading"
                         :title="'Refund Order'"
                         :type="'button'"
                         v-on:click="getRefundInfo"
                     />
 
                     <Button
-                        :is-loading="isButtonLoading"
-                        :is-disabled="isButtonLoading"
+                        :is-loading="isGraButtonLoading"
+                        :is-disabled="isGraButtonLoading"
                         :title="'Unable to exit ?'"
                         :type="'button'"
                         v-on:click="getRefundInfo"
@@ -121,7 +121,8 @@ export default {
             showHelp: true,
             showRefund: false,
             showGra: false,
-            isButtonLoading: false,
+            isRefundButtonLoading: false,
+            isGraButtonLoading: false,
             refund: {
                 order_id: null,
                 processing_fee: null,
@@ -147,9 +148,9 @@ export default {
                 this.showHelp = false
                 this.showRefund = true
                 this.refund = data.refund
-                this.isButtonLoading = false
+                this.isRefundButtonLoading = false
             } else {
-                this.isButtonLoading = false
+                this.isRefundButtonLoading = false
             }
         },
         refundTicket: function () {
