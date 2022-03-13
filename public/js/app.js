@@ -20018,6 +20018,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return updateDashboard;
     }(),
     newOrder: function newOrder() {
+      this.isLoading = true;
+      this.isDisabled = true;
       this.$inertia.visit('/ticket/order');
     }
   },

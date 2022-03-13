@@ -36,7 +36,8 @@ export default {
     data() {
         return {
             isLoading: false,
-            isDisabled: false
+            isDisabled: false,
+
         }
     },
     components: {Button, AnchorButton, UpcomingTicket, RecentTicket, Hero, NavBar, Link},
@@ -54,6 +55,8 @@ export default {
             }
         },
         newOrder: function () {
+            this.isLoading = true
+            this.isDisabled = true
             this.$inertia.visit('/ticket/order')
         }
     },
