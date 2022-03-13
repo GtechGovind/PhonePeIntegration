@@ -29,9 +29,6 @@ class StoreValueOrderController extends Controller
         $saleOrderNumber = OrderUtility::genSaleOrderNumber($request->input('pass_id'));
         SaleOrder::storeSv($request, $saleOrderNumber);
 
-        $saleOrder = new SaleOrder();
-        $saleOrder->store($request, $saleOrderNumber);
-
         $order = DB::table('sale_order')
             ->where('sale_or_no', '=', $saleOrderNumber)
             ->first();
