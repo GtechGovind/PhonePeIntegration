@@ -15,7 +15,7 @@
                             {{ stn_name }}
                         </option>
                     </select>
-                    <div class="c-error" v-if="errors">
+                    <div class="c-error" v-if="errors.source_id">
                         {{ errors.source_id }}
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             {{ stn_name }}
                         </option>
                     </select>
-                    <div class="c-error" v-if="errors">
+                    <div class="c-error" v-if="errors.destination_id">
                         {{ errors.destination_id }}
                     </div>
                 </div>
@@ -143,7 +143,10 @@ export default {
                 fare: 0,
                 pass_id: "10"
             },
-            errors: null,
+            errors: {
+                source_id: null,
+                destination_id: null
+            },
             isLoading: false,
             isDisabled: false
         }
