@@ -98,6 +98,7 @@ export default {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);
         const data = res.data;
         this.balance = data.data.balance;
+        this.$inertia.reload()
     },
 
     methods: {

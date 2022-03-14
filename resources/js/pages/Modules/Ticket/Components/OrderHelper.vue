@@ -16,7 +16,7 @@
                         </option>
                     </select>
                     <div class="c-error" v-if="errors">
-                        {{ errors.ticket.source_id }}
+                        {{ errors.source_id }}
                     </div>
                 </div>
 
@@ -33,7 +33,7 @@
                         </option>
                     </select>
                     <div class="c-error" v-if="errors">
-                        {{ errors.ticket.destination_id }}
+                        {{ errors.destination_id }}
                     </div>
                 </div>
 
@@ -192,14 +192,17 @@ export default {
             this.isLoading = false
             this.isDisabled = false
 
-            const { errors } = data
+            const { errors, message } = data
 
-            this.$swal.fire({
-                icon: 'error',
-                title: errors,
-                text: errors,
-            })
-
+            if (message === 'The given data was invalid.'){
+                this.errors = errors
+            } else {
+                this.$swal.fire({
+                    icon: 'error',
+                    title: errors,
+                    text: errors,
+                })
+            }
         }
 
     },

@@ -62,6 +62,8 @@ export default {
             const data = res.data
             if (data.status) {
                 Inertia.reload({only: ['upcomingOrders', 'recentOrders']})
+                this.isLoading = false
+                this.isDisabled = false
             }
         },
         newOrder: function () {
