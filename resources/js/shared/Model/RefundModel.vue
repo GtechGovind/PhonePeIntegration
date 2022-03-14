@@ -135,7 +135,6 @@ export default {
                 this.isRefundButtonLoading = false
                 this.close()
                 this.$swal.fire(
-                    "₹", this.refund.refund_amount,
                     'Refunded Successfully !',
 
                 )
