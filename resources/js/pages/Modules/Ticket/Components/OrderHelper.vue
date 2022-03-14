@@ -221,6 +221,8 @@ export default {
                 this.errors.destination_id = 'Source & destination can\'t be same !'
             } else {
                 this.isDisabled = false
+                this.errors.source_id = null
+                this.errors.destination_id = null
                 return true
             }
 
