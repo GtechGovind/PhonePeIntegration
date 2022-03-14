@@ -82,9 +82,7 @@ class RefundController extends Controller
             $refund_order_id,
             $response -> data -> details -> pass -> refundAmount
         );
-
-        dd($response -> data -> details -> pass -> refundAmount);
-
+        
         if ($refundResponse -> success) {
 
             DB::table('refund_order')
