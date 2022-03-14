@@ -182,20 +182,15 @@ export default {
         },
 
         onSuccess: function (data) {
-
             this.isLoading = false
             this.isDisabled = false
-
             const { redirectUrl } = data
             window.location.href = redirectUrl
-
         },
 
         onFailure: function (data) {
-
             this.isLoading = false
             this.isDisabled = false
-
             const { errors, message } = data
             this.$swal.fire({
                 icon: 'error',
@@ -224,12 +219,9 @@ export default {
                 this.errors.destination_id = null
                 return true
             }
-
             return false
         }
-
     },
-
 }
 </script>
 
