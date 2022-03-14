@@ -31,7 +31,7 @@
                         </tr>
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                Processing Charges
+                                Processing Charges ({{ refund.processing_fee }}%)
                             </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
                                 ₹ {{ refund.processing_fee_amount}}
@@ -135,9 +135,10 @@ export default {
                 this.isRefundButtonLoading = false
                 this.close()
                 this.$swal.fire(
-                    'Refunded Successfully !',
-
+                    '₹' + this.refund.refund_amount +
+                    ' Refunded Successfully !',
                 )
+                window.location.href = '/products'
             } else {
                 this.isRefundButtonLoading = false
                 this.close()

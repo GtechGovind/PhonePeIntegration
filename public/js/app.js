@@ -21733,7 +21733,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (data.status) {
                   this.isRefundButtonLoading = false;
                   this.close();
-                  this.$swal.fire('Refunded Successfully !');
+                  this.$swal.fire('₹' + this.refund.refund_amount + ' Refunded Successfully !');
+                  window.location.href = '/products';
                 } else {
                   this.isRefundButtonLoading = false;
                   this.close();
@@ -24645,13 +24646,9 @@ var _hoisted_13 = {
 var _hoisted_14 = {
   "class": "bg-white border-b dark:bg-gray-800 dark:border-gray-700"
 };
-
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+var _hoisted_15 = {
   "class": "py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"
-}, " Processing Charges ", -1
-/* HOISTED */
-);
-
+};
 var _hoisted_16 = {
   "class": "py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
 };
@@ -24683,7 +24680,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "data-modal-toggle": "refund-help"
   }, _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.pass_price), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee_amount), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, " Processing Charges (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee) + "%) ", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee_amount), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_19, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.refund_amount), 1
   /* TEXT */
@@ -24797,7 +24796,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: "/terms-and-conditions",
+    href: '/terms',
     "class": "block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {

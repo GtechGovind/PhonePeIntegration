@@ -19,7 +19,7 @@
                 <Link :href="home" class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Home</Link>
             </li>
             <li>
-                <Link href="/terms-and-conditions"
+                <Link :href="'/terms'"
                       class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Terms & Conditions
                 </Link>
             </li>
