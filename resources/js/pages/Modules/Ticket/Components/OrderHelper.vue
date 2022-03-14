@@ -61,14 +61,15 @@
                     </div>
                     <div class="grid grid-cols-5 text-center content-center w-full items-center">
                         <div class="col-span-2"
-                             v-on:click="ticket.quantity < 6 ? ticket.quantity++ : ticket.quantity">
-                            <i class="fas fa-plus-circle fa-xl mt-1"></i>
-                        </div>
-                        <p v-text="ticket.quantity" class="text-gray-600 text-3xl font-bold"
-                           v-on:change="getFare"></p>
-                        <div class="col-span-2"
                              v-on:click="ticket.quantity > 1 ? ticket.quantity-- : ticket.quantity">
                             <i class="fas fa-minus-circle fa-xl mt-1"></i>
+                        </div>
+                        <p v-text="ticket.quantity" class="text-gray-600 text-3xl font-bold"
+                           v-on:change="getFare">
+                        </p>
+                        <div class="col-span-2"
+                             v-on:click="ticket.quantity < 6 ? ticket.quantity++ : ticket.quantity">
+                            <i class="fas fa-plus-circle fa-xl mt-1"></i>
                         </div>
                     </div>
                 </div>

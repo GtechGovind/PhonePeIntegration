@@ -21959,6 +21959,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_GraModel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GraModel");
 
+  var _component_RefundModel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("RefundModel");
+
+  var _component_PassButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PassButton");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
     "pass-details": $props.pass,
     user: $props.user,
@@ -21987,7 +21991,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <RefundModel\n        v-if=\"!trip\"\n        :order_id=\"pass.sale_or_no\"\n    />\n\n    <PassButton\n        v-if=\"!trip\"\n        :is-disabled=\"isLoading\"\n        :is-loading=\"isLoading\"\n        :type=\"'button'\"\n        :title=\"'GENERATE TRIP'\"\n        v-on:click=\"genTrip\"\n    />\n\n    <PassButton\n        v-if=\"!trip\"\n        :is-disabled=\"isLoading\"\n        :is-loading=\"isLoading\"\n        :type=\"'button'\"\n        :title=\"'REFUND PASS'\"\n        v-on:click=\"refundPass\"\n    />")], 64
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RefundModel, {
+    key: 2,
+    order_id: $props.pass.sale_or_no
+  }, null, 8
+  /* PROPS */
+  , ["order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+    key: 3,
+    "is-disabled": $data.isLoading,
+    "is-loading": $data.isLoading,
+    type: 'button',
+    title: 'GENERATE TRIP',
+    onClick: $options.genTrip
+  }, null, 8
+  /* PROPS */
+  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+    key: 4,
+    "is-disabled": $data.isLoading,
+    "is-loading": $data.isLoading,
+    type: 'button',
+    title: 'REFUND PASS',
+    onClick: $options.refundPass
+  }, null, 8
+  /* PROPS */
+  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22276,7 +22303,7 @@ var _hoisted_19 = {
 };
 
 var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-plus-circle fa-xl mt-1"
+  "class": "fas fa-minus-circle fa-xl mt-1"
 }, null, -1
 /* HOISTED */
 );
@@ -22285,7 +22312,7 @@ var _hoisted_21 = [_hoisted_20];
 var _hoisted_22 = ["textContent"];
 
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-minus-circle fa-xl mt-1"
+  "class": "fas fa-plus-circle fa-xl mt-1"
 }, null, -1
 /* HOISTED */
 );
@@ -22434,7 +22461,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.ticket.pass_id]]), _hoisted_18])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-span-2",
     onClick: _cache[8] || (_cache[8] = function ($event) {
-      return $data.ticket.quantity < 6 ? $data.ticket.quantity++ : $data.ticket.quantity;
+      return $data.ticket.quantity > 1 ? $data.ticket.quantity-- : $data.ticket.quantity;
     })
   }, _hoisted_21), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity),
@@ -22447,7 +22474,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_22), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-span-2",
     onClick: _cache[10] || (_cache[10] = function ($event) {
-      return $data.ticket.quantity > 1 ? $data.ticket.quantity-- : $data.ticket.quantity;
+      return $data.ticket.quantity < 6 ? $data.ticket.quantity++ : $data.ticket.quantity;
     })
   }, _hoisted_24)])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TOTAL AMOUNT"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [_hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_28, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.ticket.quantity * $data.ticket.fare), 1
   /* TEXT */
@@ -22857,12 +22884,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  key: 0
-};
-var _hoisted_2 = {
-  key: 1
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_nav_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("nav-bar");
 
@@ -22870,11 +22891,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_OrderHelper = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("OrderHelper");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), $data.isPendingPayment ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$data.isPendingPayment ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_OrderHelper, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_OrderHelper, {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["stations"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  , ["stations"])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22977,6 +22998,9 @@ var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_19 = {
   "class": "text-left font-bold text-gray-700"
 };
+var _hoisted_20 = {
+  "class": "text-sm text-gray-400 text-center"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_nav_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("nav-bar");
 
@@ -23028,7 +23052,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.upwardTicket[0]['sl_qr_exp']), 1
   /* TEXT */
-  )])])]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, " QR is valid till the last train on " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date().getDay()), 1
+  /* TEXT */
+  )]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
     stations: $props.stations,
     onRefundTicket: $options.refundTicket,
     onUnableToExit: $options.unableToExit,
@@ -24455,7 +24481,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "data-modal-toggle": "need-help"
   }, _hoisted_14)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_20, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.pass_price), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee_amount), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_24, [_hoisted_25, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_26, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.refund_amount), 1
   /* TEXT */

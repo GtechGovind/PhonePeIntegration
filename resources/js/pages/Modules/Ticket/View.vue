@@ -50,6 +50,9 @@
                     <div class="text-left font-bold text-gray-700">{{ upwardTicket[0]['sl_qr_exp'] }}</div>
                 </div>
             </div>
+            <div class="text-sm text-gray-400 text-center">
+                QR is valid till the last train on {{ new Date().getDay() }}
+            </div>
         </div>
 
         <keep-alive>

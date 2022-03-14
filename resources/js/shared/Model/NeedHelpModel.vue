@@ -70,7 +70,7 @@
                                 Processing Charges
                             </td>
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                ₹ {{ refund.processing_fee }}
+                                ₹ {{ refund.processing_fee_amount }}
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">

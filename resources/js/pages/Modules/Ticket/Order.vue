@@ -3,13 +3,7 @@
     <nav-bar/>
     <hero/>
 
-    <div v-if="isPendingPayment">
-
-    </div>
-
-    <div v-if="!isPendingPayment">
-        <OrderHelper :stations="stations"/>
-    </div>
+    <OrderHelper :stations="stations"/>
 
 </template>
 

@@ -38,7 +38,6 @@ class StoreValueStatusController extends Controller
                         'qr_data' => $response->data->trips[0]->qrCodeData
                     ]);
 
-
             }
 
             return response([

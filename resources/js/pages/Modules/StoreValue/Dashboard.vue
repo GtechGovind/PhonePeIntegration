@@ -35,7 +35,7 @@
         :stations="stations"
     />
 
-<!--    <RefundModel
+    <RefundModel
         v-if="!trip"
         :order_id="pass.sale_or_no"
     />
@@ -56,7 +56,7 @@
         :type="'button'"
         :title="'REFUND PASS'"
         v-on:click="refundPass"
-    />-->
+    />
 
 </template>
 
