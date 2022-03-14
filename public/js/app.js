@@ -19544,7 +19544,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       balance: 0,
-      isLoading: false
+      isLoadingGenTrip: false
     };
   },
   name: "Dashboard",
@@ -19589,7 +19589,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                this.isLoading = true;
+                this.isLoadingGenTrip = true;
                 this.$inertia.get('/sv/trip/' + this.pass.sale_or_no);
 
               case 2:
@@ -20955,8 +20955,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       console.log(data);
       this.$swal.fire({
         icon: 'error',
-        title: 'Generation Failed !',
-        text: data.error,
+        title: 'Failed to reload pass !',
+        text: 'Please complete active trip to reload !',
         confirmButtonText: 'Okay'
       });
       this.isLoading = false;
@@ -21975,6 +21975,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: $props.trip.qr_data,
     cornersSquareOptions: {
       type: 'square'
+    },
+    "qr-options": {
+      typeNumber: 0,
+      mode: 'Byte',
+      errorCorrectionLevel: 'L'
+    },
+    "dots-options": {
+      type: 'square',
+      color: '#1f1f1f'
+    },
+    backgroundOptions: {
+      color: '#ffffff'
     }
   }, null, 8
   /* PROPS */
@@ -21984,7 +21996,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $options.getGraInfo($props.trip.sl_qr_no);
     }),
-    "class": "bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full"
+    "class": "bg-blue-500 text-center p-3 rounded-b-lg text-gray-50 mt-2 w-full"
   }, _hoisted_8)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_GraModel, {
     key: 1,
     slave_id: $props.trip.sl_qr_no,
@@ -21998,8 +22010,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
     key: 3,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
+    "is-disabled": $data.isLoadingGenTrip,
+    "is-loading": $data.isLoadingGenTrip,
     type: 'button',
     title: 'GENERATE TRIP',
     onClick: $options.genTrip
@@ -22007,14 +22019,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
     key: 4,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
+    "is-disabled": false,
+    "is-loading": false,
     type: 'button',
     title: 'REFUND PASS',
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  , ["onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -23052,7 +23064,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.upwardTicket[0]['sl_qr_exp']), 1
   /* TEXT */
-  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, " QR is valid till the last train on " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date().getDay()), 1
+  )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, " QR is valid till the last train on " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(new Date()), 1
   /* TEXT */
   )]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.KeepAlive, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_need_help_model, {
     stations: $props.stations,
@@ -24177,7 +24189,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.gra.penaltyAmount), 1
   /* TEXT */
-  )])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, _hoisted_22))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [$data.gra.penalty ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Button, {
+  )])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_20, _hoisted_22))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [$data.gra.penaltyAmount > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Button, {
     key: 0,
     "is-loading": $data.isGraButtonLoading,
     "is-disabled": $data.isGraButtonLoading,

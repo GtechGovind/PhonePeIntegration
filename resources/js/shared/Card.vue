@@ -135,8 +135,8 @@ export default {
             console.log(data)
             this.$swal.fire({
                 icon: 'error',
-                title: 'Generation Failed !',
-                text: data.error,
+                title: 'Failed to reload pass !',
+                text: 'Please complete active trip to reload !',
                 confirmButtonText: 'Okay',
             })
             this.isLoading = false;

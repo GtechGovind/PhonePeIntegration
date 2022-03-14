@@ -17,13 +17,16 @@
                         class="w-3/4"
                         :value="trip.qr_data"
                         :cornersSquareOptions="{ type: 'square' }"
+                        :qr-options="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'L' }"
+                        :dots-options="{ type: 'square', color: '#1f1f1f' }"
+                        :backgroundOptions="{ color: '#ffffff' }"
                     />
                 </div>
                 <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
                     {{ trip.sl_qr_no }}
                 </span>
             </div>
-            <button v-on:click="getGraInfo(trip.sl_qr_no)" class="bg-blue-500 text-center p-2 rounded-b-lg text-gray-50 mt-2 w-full">
+            <button v-on:click="getGraInfo(trip.sl_qr_no)" class="bg-blue-500 text-center p-3 rounded-b-lg text-gray-50 mt-2 w-full">
                 <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
             </button>
         </div>
@@ -42,8 +45,8 @@
 
     <PassButton
         v-if="!trip"
-        :is-disabled="isLoading"
-        :is-loading="isLoading"
+        :is-disabled="isLoadingGenTrip"
+        :is-loading="isLoadingGenTrip"
         :type="'button'"
         :title="'GENERATE TRIP'"
         v-on:click="genTrip"
@@ -51,8 +54,8 @@
 
     <PassButton
         v-if="!trip"
-        :is-disabled="isLoading"
-        :is-loading="isLoading"
+        :is-disabled="false"
+        :is-loading="false"
         :type="'button'"
         :title="'REFUND PASS'"
         v-on:click="refundPass"
@@ -83,7 +86,7 @@ export default {
     data() {
         return {
             balance: 0,
-            isLoading: false
+            isLoadingGenTrip: false
         }
     },
 
@@ -99,7 +102,7 @@ export default {
 
     methods: {
         genTrip: async function() {
-            this.isLoading = true
+            this.isLoadingGenTrip = true
             this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
         },
         getGraInfo: function () {

@@ -108,7 +108,7 @@ class RefundController extends Controller
             }
 
             DB::table('sale_order')
-                ->where('sale_or_id', '=', $order -> sale_or_id)
+                ->where('sale_or_no', '=', $order_id)
                 ->update([
                     'sale_or_status' => env('ORDER_REFUNDED')
                 ]);
