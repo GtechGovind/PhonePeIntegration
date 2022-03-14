@@ -22860,7 +22860,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: 'button',
     title: $props.upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket',
     "is-loading": $data.isLoading,
-    "is-disabled": $data.isDisabled,
+    "is-disabled": $props.upcomingOrders.length > 1,
     onClick: $options.newOrder
   }, null, 8
   /* PROPS */
