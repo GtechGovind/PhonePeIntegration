@@ -18,6 +18,7 @@ use App\Http\Controllers\Modules\TripPass\TripPassReloadController;
 use App\Http\Controllers\Modules\TripPass\TripPassStatusController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::get('/', [MainController::class, 'index'])->name('home');
 Route::post('auth', [MainController::class, 'auth'])->name('auth');
@@ -67,3 +68,8 @@ Route::post('gra', [GraController::class, 'apply'])->name('gra.perform-gra');
 // REFUND
 Route::get('refund/{order_id}', [RefundController::class, 'info'])->name('refund.info');
 Route::get('refund/ticket/{order_id}', [RefundController::class, 'apply'])->name('refund');
+
+// TERMS AND CONDITIONS
+Route::get('/terms', function () {
+    return Inertia::render('Terms');
+});
