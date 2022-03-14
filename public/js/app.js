@@ -20663,7 +20663,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           switch (_context3.prev = _context3.next) {
             case 0:
               _context3.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/sv/canIssuePass');
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/tp/canIssuePass');
 
             case 2:
               res = _context3.sent;
@@ -23327,7 +23327,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\r\n                    {{ errors.tripPass.source_id }}\r\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.source_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.tripPass.destination_id = $event;
@@ -23349,7 +23349,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\r\n                    {{ errors.tripPass.destination_id }}\r\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.destination_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.validity) + " Days", 1
   /* TEXT */

@@ -94,8 +94,6 @@ class TripPassOrderController extends Controller
             env('PASS_TP')
         );
 
-        dd($response);
-
         if ($response -> status == 'OK')
         {
             return response([

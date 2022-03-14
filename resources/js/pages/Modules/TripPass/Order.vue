@@ -153,7 +153,7 @@ export default {
 
     async mounted() {
 
-        const res = await axios.get('/sv/canIssuePass')
+        const res = await axios.get('/tp/canIssuePass')
         const data = await res.data
 
         if (!data.status) {
