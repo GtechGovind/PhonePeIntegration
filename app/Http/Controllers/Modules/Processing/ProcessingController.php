@@ -32,6 +32,8 @@ class ProcessingController extends Controller
         $phonepe = new PhonePeStatusController();
         $response = $phonepe->getPaymentStatus($order);
 
+        dd($response);
+
         OrderUtility::updateOrderStatus($response, $order);
 
         if ($response->success) {
