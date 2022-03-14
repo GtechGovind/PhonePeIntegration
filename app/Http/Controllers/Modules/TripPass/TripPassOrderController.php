@@ -89,7 +89,7 @@ class TripPassOrderController extends Controller
     public function canIssuePass()
     {
         $api = new ApiController();
-        $response = $api -> canIssuePass(
+        $response = $api -> canIssuePassTP(
             env('PRODUCT_TP'),
             env('PASS_TP')
         );

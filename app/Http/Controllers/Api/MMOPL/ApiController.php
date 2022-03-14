@@ -379,4 +379,25 @@ class ApiController extends Controller
 
     }
 
+    public function canIssuePassTP($product_id, $pass_id)
+    {
+        $response = Http::withHeaders(['Authorization' => $this->auth])
+            ->withBody('{
+                "data": {
+                    "fare"          : "1100",
+                    "mobile"        : "' . Auth::user()->pax_mobile . '",
+                    "operatorId"    : "' . $this->operator_id . '",
+                    "qrType"        : "' . $product_id . '",
+                    "source": 1,
+                    "destination": 2,
+                    "supportType"   : "' . $this->media_type_id . '",
+                    "tokenType"     : "' . $pass_id . '"
+                }
+            }', 'application/json')
+            ->post($this->base_url . '/qrcode/canIssuePass');
+
+        return json_decode($response);
+
+    }
+
 }
