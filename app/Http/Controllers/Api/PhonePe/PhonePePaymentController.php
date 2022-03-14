@@ -159,7 +159,7 @@ class PhonePePaymentController extends Controller
         $payload->merchantId = $this -> x_client_id;
         $payload->amount = $order -> total_price * 100;
         $payload->validFor = 300000;
-        $payload->transactionId = $order -> sale_or_id;
+        $payload->transactionId = $order -> sale_or_no;
         $payload->merchantOrderId = $order -> sale_or_no;
         $payload->redirectUrl = $this -> app_url . '/processing/' . $order->sale_or_no;
         $payload->transactionContext = "" . base64_encode($cert) . "";
