@@ -19943,23 +19943,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                if (!this.isValid()) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/get/fare', {
                   "source": this.ticket.source_id,
                   "destination": this.ticket.destination_id,
                   "pass_id": this.ticket.pass_id
                 });
 
-              case 2:
+              case 3:
                 response = _context.sent;
-                _context.next = 5;
+                _context.next = 6;
                 return response.data;
 
-              case 5:
+              case 6:
                 data = _context.sent;
                 if (data.status) this.ticket.fare = data.fare;
 
-              case 7:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -20019,16 +20024,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.isDisabled = false;
       var errors = data.errors,
           message = data.message;
-
-      if (message === 'The given data was invalid.') {
-        this.errors = errors;
+      this.$swal.fire({
+        icon: 'error',
+        title: message,
+        text: errors
+      });
+    },
+    isValid: function isValid() {
+      if (this.ticket.source_id === '') {
+        this.isLoading = false;
+        this.isDisabled = true;
+        this.errors.source_id = 'Please select source station !';
+      } else if (this.ticket.destination_id === '') {
+        this.isLoading = false;
+        this.isDisabled = true;
+        this.errors.destination_id = 'Please select destination station !';
+      } else if (this.ticket.source_id === this.ticket.destination_id) {
+        this.isLoading = false;
+        this.isDisabled = true;
+        this.errors.source_id = 'Source & destination can\'t be same !';
+        this.errors.destination_id = 'Source & destination can\'t be same !';
       } else {
-        this.$swal.fire({
-          icon: 'error',
-          title: errors,
-          text: errors
-        });
+        this.isDisabled = false;
+        return true;
       }
+
+      return false;
     }
   }
 });

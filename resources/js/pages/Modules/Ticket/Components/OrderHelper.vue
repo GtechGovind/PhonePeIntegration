@@ -156,13 +156,15 @@ export default {
     methods: {
 
         getFare: async function () {
-            const response = await axios.post('/api/get/fare', {
-                "source": this.ticket.source_id,
-                "destination": this.ticket.destination_id,
-                "pass_id": this.ticket.pass_id
-            });
-            let data = await response.data
-            if (data.status) this.ticket.fare = data.fare
+            if(this.isValid()) {
+                const response = await axios.post('/api/get/fare', {
+                    "source": this.ticket.source_id,
+                    "destination": this.ticket.destination_id,
+                    "pass_id": this.ticket.pass_id
+                });
+                let data = await response.data
+                if (data.status) this.ticket.fare = data.fare
+            }
         },
 
         genOrder: async function () {
@@ -193,16 +195,33 @@ export default {
             this.isDisabled = false
 
             const { errors, message } = data
+            this.$swal.fire({
+                icon: 'error',
+                title: message,
+                text: errors,
+            })
+        },
 
-            if (message === 'The given data was invalid.'){
-                this.errors = errors
+        isValid: function () {
+            if (this.ticket.source_id === '') {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.source_id = 'Please select source station !'
+            } else if (this.ticket.destination_id === '') {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.destination_id = 'Please select destination station !'
+            } else if (this.ticket.source_id === this.ticket.destination_id) {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.source_id = 'Source & destination can\'t be same !'
+                this.errors.destination_id = 'Source & destination can\'t be same !'
             } else {
-                this.$swal.fire({
-                    icon: 'error',
-                    title: errors,
-                    text: errors,
-                })
+                this.isDisabled = false
+                return true
             }
+
+            return false
         }
 
     },
