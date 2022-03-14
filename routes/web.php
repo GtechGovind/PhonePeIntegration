@@ -71,5 +71,5 @@ Route::get('refund/ticket/{order_id}', [RefundController::class, 'apply'])->name
 
 // TERMS AND CONDITIONS
 Route::get('/terms', function () {
-    return Inertia::render('Terms');
+    return Inertia::render('Modules/Terms');
 });
