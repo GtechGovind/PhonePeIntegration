@@ -26,7 +26,7 @@ class StoreValueDashboardController extends Controller
             ->where('qr_status', '!=', env('EXPIRED'))
             ->first();
 
-        return Inertia::render('Store', [
+        return Inertia::render('Modules/StoreValue/Dashboard', [
             'user' => Auth::user(),
             'pass' => $pass,
             'trip' => $trip,
