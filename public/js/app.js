@@ -21733,7 +21733,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (data.status) {
                   this.isRefundButtonLoading = false;
                   this.close();
-                  this.$swal.fire('Refunded Successfully !', 'success');
+                  this.$swal.fire("₹", this.refund.refund_amount, 'Refunded Successfully !');
                 } else {
                   this.isRefundButtonLoading = false;
                   this.close();
