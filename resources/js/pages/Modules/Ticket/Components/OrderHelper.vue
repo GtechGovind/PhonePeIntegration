@@ -157,13 +157,13 @@ export default {
 
         getFare: async function () {
             if(this.isValid()) {
-                const response = await axios.post('/api/get/fare', {
+                /*const response = await axios.post('/api/get/fare', {
                     "source": this.ticket.source_id,
                     "destination": this.ticket.destination_id,
                     "pass_id": this.ticket.pass_id
                 });
                 let data = await response.data
-                if (data.status) this.ticket.fare = data.fare
+                if (data.status) this.ticket.fare = data.fare*/
             }
         },
 
