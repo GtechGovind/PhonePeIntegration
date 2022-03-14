@@ -171,15 +171,14 @@ export default {
         },
 
         genOrder: async function () {
-
-            this.isLoading = true
-            this.isDisabled = true
-
-            const response = await axios.post('/ticket/create', this.ticket)
-            let data = await response.data
-            if (data.status) this.onSuccess(data)
-            else this.onFailure(data)
-
+            if (this.isValid()) {
+                this.isLoading = true
+                this.isDisabled = true
+                const response = await axios.post('/ticket/create', this.ticket)
+                let data = await response.data
+                if (data.status) this.onSuccess(data)
+                else this.onFailure(data)
+            }
         },
 
         onSuccess: function (data) {

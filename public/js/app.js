@@ -19988,21 +19988,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                if (!this.isValid()) {
+                  _context2.next = 10;
+                  break;
+                }
+
                 this.isLoading = true;
                 this.isDisabled = true;
-                _context2.next = 4;
+                _context2.next = 5;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/ticket/create', this.ticket);
 
-              case 4:
+              case 5:
                 response = _context2.sent;
-                _context2.next = 7;
+                _context2.next = 8;
                 return response.data;
 
-              case 7:
+              case 8:
                 data = _context2.sent;
                 if (data.status) this.onSuccess(data);else this.onFailure(data);
 
-              case 9:
+              case 10:
               case "end":
                 return _context2.stop();
             }
