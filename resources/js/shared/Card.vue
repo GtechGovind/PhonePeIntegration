@@ -10,7 +10,7 @@
                 <div>
                     <p class="font-light">Name</p>
                     <p class="tracking-widest font-bold">
-                        {{ user.name }}
+                        {{ user.pax_name }}
                     </p>
                 </div>
 
