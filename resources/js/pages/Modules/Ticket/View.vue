@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="text-sm text-gray-400 text-center my-2">
-                QR is valid till the last train on {{ new Date().toDateString() }}
+                QR is valid till the last train on {{ new Date().toLocaleDateString() }}
             </div>
         </div>
 
