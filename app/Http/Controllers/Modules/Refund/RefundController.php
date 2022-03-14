@@ -83,7 +83,7 @@ class RefundController extends Controller
             $response -> data -> details -> pass -> refundAmount
         );
 
-        dd($refundResponse);
+        dd($response -> data -> details -> pass -> refundAmount);
 
         if ($refundResponse -> success) {
 
