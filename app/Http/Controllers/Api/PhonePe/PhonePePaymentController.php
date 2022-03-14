@@ -68,12 +68,6 @@ class PhonePePaymentController extends Controller
                                 "category": "TRAIN",
                                 "itemId":"' . $order->sale_or_no . '",
                                 "price":' . $order->total_price * 100 . ',
-                                "from": {
-                                    "stationName": ""
-                                },
-                                "to": {
-                                    "stationName": ""
-                                },
                                 "dateOfTravel": {
                                     "timestamp": ' . time() . ',
                                     "zoneOffSet": "+05:30"
@@ -164,7 +158,7 @@ class PhonePePaymentController extends Controller
         $payload = new Payload();
         $payload->merchantId = $this -> x_client_id;
         $payload->amount = $order -> total_price * 100;
-        $payload->validFor = 99999;
+        $payload->validFor = 300000;
         $payload->transactionId = $order -> sale_or_id;
         $payload->merchantOrderId = $order -> sale_or_no;
         $payload->redirectUrl = $this -> app_url . '/processing/' . $order->sale_or_no;
