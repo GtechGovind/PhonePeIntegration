@@ -50,8 +50,8 @@
                     <div class="text-left font-bold text-gray-700">{{ upwardTicket[0]['sl_qr_exp'] }}</div>
                 </div>
             </div>
-            <div class="text-sm text-gray-400 text-center my-2 bg-blue-100">
-                QR is valid till the last train on {{ new Date() }}
+            <div class="text-sm text-gray-400 text-center my-2">
+                QR is valid till the last train on {{ new Date().getDate() + " " + new Date().getMonth() }}
             </div>
         </div>
 
