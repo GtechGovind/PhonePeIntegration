@@ -52,7 +52,7 @@ Route::post('sv/reload', [StoreValueReloadController::class, 'reload'])->name('s
 
 // TRIP PASS VALUE
 Route::get('tp/dashboard', [TripPassDashboardController::class, 'index'])->name('tp.dashboard');
-Route::get('tp/canIssuePass', [TripPassReloadController::class, 'canIssuePass'])->name('tp.canIssuePass');
+Route::get('tp/canIssuePass', [TripPassOrderController::class, 'canIssuePass'])->name('tp.canIssuePass');
 Route::get('tp/order', [TripPassOrderController::class, 'index'])->name('tp.order');
 Route::post('tp/create', [TripPassOrderController::class, 'create'])->name('tp.create');
 Route::get('tp/trip/{order_id}', [TripPassOrderController::class, 'issueTrip'])->name('tp.issueTrip');
