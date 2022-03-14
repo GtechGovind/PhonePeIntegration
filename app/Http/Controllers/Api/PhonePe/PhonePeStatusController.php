@@ -25,9 +25,9 @@ class PhonePeStatusController extends Controller
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'X-CLIENT-ID' => $this->x_client_id,
-            'X-VERIFY' => $this->createXVerify($order -> sale_or_id)
+            'X-VERIFY' => $this->createXVerify($order -> sale_or_no)
         ])
-            -> get("https://apps-uat.phonepe.com/v3/transaction/". $this->x_client_id ."/". $order -> sale_or_id ."/status")
+            -> get("https://apps-uat.phonepe.com/v3/transaction/". $this->x_client_id ."/". $order -> sale_or_no ."/status")
             ->collect();
         return json_decode($response);
     }
