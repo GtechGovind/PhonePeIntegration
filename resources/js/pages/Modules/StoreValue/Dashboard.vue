@@ -38,7 +38,7 @@
 <!--    <RefundModel
         v-if="!trip"
         :order_id="pass.sale_or_no"
-    />-->
+    />
 
     <PassButton
         v-if="!trip"
@@ -56,7 +56,7 @@
         :type="'button'"
         :title="'REFUND PASS'"
         v-on:click="refundPass"
-    />
+    />-->
 
 </template>
 

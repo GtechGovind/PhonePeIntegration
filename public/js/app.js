@@ -21959,8 +21959,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_GraModel = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("GraModel");
 
-  var _component_PassButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PassButton");
-
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
     "pass-details": $props.pass,
     user: $props.user,
@@ -21989,25 +21987,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <RefundModel\n        v-if=\"!trip\"\n        :order_id=\"pass.sale_or_no\"\n    />"), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 2,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
-    type: 'button',
-    title: 'GENERATE TRIP',
-    onClick: $options.genTrip
-  }, null, 8
-  /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 3,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
-    type: 'button',
-    title: 'REFUND PASS',
-    onClick: $options.refundPass
-  }, null, 8
-  /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <RefundModel\n        v-if=\"!trip\"\n        :order_id=\"pass.sale_or_no\"\n    />\n\n    <PassButton\n        v-if=\"!trip\"\n        :is-disabled=\"isLoading\"\n        :is-loading=\"isLoading\"\n        :type=\"'button'\"\n        :title=\"'GENERATE TRIP'\"\n        v-on:click=\"genTrip\"\n    />\n\n    <PassButton\n        v-if=\"!trip\"\n        :is-disabled=\"isLoading\"\n        :is-loading=\"isLoading\"\n        :type=\"'button'\"\n        :title=\"'REFUND PASS'\"\n        v-on:click=\"refundPass\"\n    />")], 64
   /* STABLE_FRAGMENT */
   );
 }
