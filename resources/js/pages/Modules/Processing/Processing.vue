@@ -82,7 +82,7 @@ export default {
                 if (res.isConfirmed) {
                     this.$inertia.get("/processing/" + this.order)
                 } else if (res.isDenied) {
-                    this.$inertia.get('products')
+                    this.$inertia.get('/products')
                 }
             })
         }
