@@ -12,9 +12,6 @@
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
             <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
-            <div class="block m-1 text-sm text-red-500" v-if="errors">
-                {{ errors.pass.price }}
-            </div>
         </div>
 
         <div class="mt-3 grid grid-cols-3 gap-5">
@@ -58,7 +55,6 @@ export default {
             pass: {
                 price: 0
             },
-            errors: null,
             isLoading: false
         }
     },
@@ -98,7 +94,11 @@ export default {
         onFailure: function (data) {
             this.isLoading = false
             const { errors } = data
-            this.errors = errors
+            this.$swal.fire({
+                icon: 'error',
+                title: errors,
+                text: errors,
+            })
         }
 
     },

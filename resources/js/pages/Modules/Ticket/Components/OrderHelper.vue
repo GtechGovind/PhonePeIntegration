@@ -193,7 +193,12 @@ export default {
             this.isDisabled = false
 
             const { errors } = data
-            this.errors = errors
+
+            this.$swal.fire({
+                icon: 'error',
+                title: errors,
+                text: errors,
+            })
 
         }
 

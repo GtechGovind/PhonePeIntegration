@@ -19660,7 +19660,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       pass: {
         price: 0
       },
-      errors: null,
       isLoading: false
     };
   },
@@ -19721,7 +19720,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     onFailure: function onFailure(data) {
       this.isLoading = false;
       var errors = data.errors;
-      this.errors = errors;
+      this.$swal.fire({
+        icon: 'error',
+        title: errors,
+        text: errors
+      });
     }
   },
   mounted: function mounted() {
@@ -20013,7 +20016,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.isLoading = false;
       this.isDisabled = false;
       var errors = data.errors;
-      this.errors = errors;
+      this.$swal.fire({
+        icon: 'error',
+        title: errors,
+        text: errors
+      });
     }
   }
 });
@@ -22070,10 +22077,6 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_5 = {
-  key: 0,
-  "class": "block m-1 text-sm text-red-500"
-};
-var _hoisted_6 = {
   "class": "mt-3 grid grid-cols-3 gap-5"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -22099,9 +22102,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pass.price]]), $data.errors ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.pass.price), 1
-  /* TEXT */
-  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.pass.price]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 100',
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $options.addAmount(100);
@@ -23822,7 +23823,7 @@ var _hoisted_6 = [_hoisted_4, _hoisted_5];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: $props.type,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-white bg-blue-400 dark:bg-blue-500 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full' : 'text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full')
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full' : 'text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 w-full')
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_3, _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
   )], 10
