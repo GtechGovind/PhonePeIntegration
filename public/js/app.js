@@ -22999,7 +22999,7 @@ var _hoisted_19 = {
   "class": "text-left font-bold text-gray-700"
 };
 var _hoisted_20 = {
-  "class": "text-sm text-gray-400 text-center"
+  "class": "text-sm text-gray-400 text-center my-2 bg-blue-100"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_nav_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("nav-bar");
