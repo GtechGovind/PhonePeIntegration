@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection LaravelFunctionsInspection */
 
 namespace App\Http\Controllers\Modules\Refund;
 
@@ -23,12 +23,12 @@ class RefundController extends Controller
         if ($order->pass_id == env('PASS_SV')) {
 
             $lastOrder = DB::table('sale_order')
-                ->where('ms_qr_no', '=', $order -> ms_qr_no)
+                ->where('ms_qr_no', '=', $order->ms_qr_no)
                 ->orderBy('txn_date', 'desc')
                 ->first();
 
             if (!is_null($lastOrder)) {
-                if (!$lastOrder -> total_price - $response->data->details->pass->refundAmount > $lastOrder -> total_price) {
+                if (!$lastOrder->total_price - $response->data->details->pass->refundAmount > $lastOrder->total_price) {
                     return response([
                         'status' => false,
                         'error' => 'Please spend ₹ ' . ($lastOrder->total_price - $response->data->details->pass->refundAmount) . ' to refund card !'
@@ -78,6 +78,20 @@ class RefundController extends Controller
             'error' => $response -> error
         ]);
 
+        if($order->product_id == env('PRODUCT_SJT') || $order->product_id == env('PRODUCT_RJT')) return $this -> sjtRjtRefund($order, $response);
+        else if ($order->product_id == env('PRODUCT_SV')) return $this -> svRefund($order, $response);
+        else if ($order->product_id == env('PRODUCT_TP')) return $this -> tpRefund($order, $response);
+
+        return  response([
+            'status' => false,
+            'error' => 'Invalid product'
+        ]);
+
+    }
+
+    private function sjtRjtRefund($order, $response)
+    {
+
         $refund_order_id = OrderUtility::genSaleOrderNumber($order->pass_id);
 
         DB::table('refund_order')
@@ -100,48 +114,73 @@ class RefundController extends Controller
             $response -> data -> details -> pass -> refundAmount
         );
 
-        if ($refundResponse -> success) {
-
-            DB::table('refund_order')
-                ->where('sale_or_id', '=', $order -> sale_or_id)
-                ->update([
-                    'pg_txn_no' => $refundResponse -> data -> providerReferenceId
-                ]);
-
-            $refundApiResponse = $api -> refundTicket($response, $refund_order_id);
-
-            if ($refundApiResponse == null) {
-                return response([
-                    'status' => false,
-                    'error' => 'Please check your internet connection !'
-                ]);
-            }
-
-            if ($refundApiResponse->status == "BSE") {
-                return response([
-                    'status' => false,
-                    'error' => $response -> error
-                ]);
-            }
-
-            DB::table('sale_order')
-                ->where('sale_or_no', '=', $order_id)
-                ->update([
-                    'sale_or_status' => env('ORDER_REFUNDED')
-                ]);
-
+        if (!$refundResponse -> success) {
             return response([
                 'status' => true,
                 'message' => 'Order refunded Successfully.'
             ]);
-
         }
 
+        DB::table('refund_order')
+            ->where('sale_or_id', '=', $order -> sale_or_id)
+            ->update([
+                'pg_txn_no' => $refundResponse -> data -> providerReferenceId
+            ]);
+
+        $refundApiResponse = $api -> refundTicket($response, $refund_order_id);
+
+        if ($refundApiResponse == null) {
+            return response([
+                'status' => false,
+                'error' => 'Please check your internet connection !'
+            ]);
+        }
+
+        if ($refundApiResponse->status == "BSE") {
+            return response([
+                'status' => false,
+                'error' => $response -> error
+            ]);
+        }
+
+        DB::table('sale_order')
+            ->where('sale_or_no', '=', $order_id)
+            ->update([
+                'sale_or_status' => env('ORDER_REFUNDED')
+            ]);
+
         return response([
-            'status' => false,
-            'error' => 'failed to refund order, try again !'
+            'status' => true,
+            'message' => 'Order refunded Successfully.'
         ]);
 
     }
+
+    private function svRefund($order)
+    {
+        $api = new ApiController();
+        $response = $api->getRefundInfo($order);
+
+        if ($response == null) return response([
+            'status' => false,
+            'error' => 'Please check your internet connection !'
+        ]);
+
+        if ($response->status == "BSE") return response([
+            'status' => false,
+            'error' => $response -> error
+        ]);
+
+
+
+    }
+
+    private function tpRefund($order)
+    {
+        $api = new ApiController();
+        $response = $api->getRefundInfo($order);
+
+    }
+
 
 }

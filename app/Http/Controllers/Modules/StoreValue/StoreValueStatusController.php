@@ -24,7 +24,7 @@ class StoreValueStatusController extends Controller
         ]);
 
         $api = new ApiController();
-        $response = $api->getPassStatus($pass->ms_qr_no);
+        $response = $api->getSlaveStatus($pass->ms_qr_no);
 
         if ($response->status == "OK") {
 
