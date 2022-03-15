@@ -43,19 +43,13 @@ class RefundController extends Controller
                 ->orderBy('txn_date', 'desc')
                 ->first();
 
-            dd($lastOrder);
-
             if (!is_null($lastOrder))
             {
-                $difference =  abs($lastOrder->total_price - $order->total_price);
-
-                dd($difference);
-
-                if ($difference > $lastOrder->total_price)
+                if ($refund_amount > $lastOrder->total_price)
                 {
                     return response([
                         'status' => false,
-                        'error' => 'Please spend ₹ ' . ($difference) . ' to refund pass !'
+                        'error' => 'Please spend ₹ ' . ($refund_amount - $lastOrder->total_price) . ' to refund pass !'
                     ]);
                 }
             }
