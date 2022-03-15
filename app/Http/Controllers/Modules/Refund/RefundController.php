@@ -43,11 +43,12 @@ class RefundController extends Controller
                 ->orderBy('txn_date', 'desc')
                 ->first();
 
-            dd($lastOrder);
-
             if (!is_null($lastOrder))
             {
                 $difference =  abs($lastOrder->total_price - $order->total_price);
+
+                dd($difference);
+
                 if ($difference > $lastOrder->total_price)
                 {
                     return response([
@@ -58,7 +59,7 @@ class RefundController extends Controller
             }
         }
 
-        /*return response([
+        return response([
             'status' => true,
             'refund' => [
                 'order_id' => $order_id,
@@ -67,7 +68,7 @@ class RefundController extends Controller
                 'refund_amount' => $refund_amount,
                 'pass_price' => $pass_price
             ]
-        ]);*/
+        ]);
     }
 
     public function apply($order_id)
