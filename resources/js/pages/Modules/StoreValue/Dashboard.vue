@@ -107,8 +107,18 @@ export default {
         getGraInfo: function () {
             toggleModal('gra-help', true)
         },
-        refundPass: function () {
-            toggleModal('refund-help', true)
+        refundPass: async function () {
+            const res = await axios.get('/refund/' + this.order_id)
+            const data = await res.data
+            if (data.status) {
+                toggleModal('refund-help', true)
+            } else {
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error,
+                })
+            }
         }
     }
 
