@@ -53,7 +53,6 @@
     />
 
     <PassButton
-        v-if="!trip"
         :is-disabled="false"
         :is-loading="false"
         :type="'button'"
