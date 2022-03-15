@@ -43,6 +43,8 @@ class RefundController extends Controller
                 ->orderBy('txn_date', 'desc')
                 ->first();
 
+            dd($lastOrder);
+
             if (!is_null($lastOrder))
             {
                 $difference =  abs($lastOrder->total_price - $order->total_price);
