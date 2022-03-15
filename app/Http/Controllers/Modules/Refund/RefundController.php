@@ -35,7 +35,6 @@ class RefundController extends Controller
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
 
-        dd($response);
 
         if ($order->product_id == env('PRODUCT_SV'))
         {
@@ -59,7 +58,7 @@ class RefundController extends Controller
             }
         }
 
-        return response([
+        /*return response([
             'status' => true,
             'refund' => [
                 'order_id' => $order_id,
@@ -68,7 +67,7 @@ class RefundController extends Controller
                 'refund_amount' => $refund_amount,
                 'pass_price' => $pass_price
             ]
-        ]);
+        ]);*/
     }
 
     public function apply($order_id)
