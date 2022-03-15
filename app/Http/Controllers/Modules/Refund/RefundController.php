@@ -168,28 +168,131 @@ class RefundController extends Controller
 
     }
 
-    private function svRefund($order)
+    private function svRefund($order, $response)
     {
+
+        $lastOrder = DB::table('sale_order')
+            ->where('ms_qr_no', '=', $order->ms_qr_no)
+            ->orderBy('txn_date', 'desc')
+            ->first();
+
+        // GENERATING REFUND ORDER
+        $refund_order_id = OrderUtility::genSaleOrderNumber($lastOrder->pass_id);
+
+        // CREATING REFUND ORDER
+        DB::table('refund_order')
+            ->insert([
+                'ref_or_no' => $refund_order_id,
+                'sale_or_id' => $lastOrder->sale_or_id,
+                'pax_id' => Auth::id(),
+                'unit' => $lastOrder->unit,
+                'ref_amt' => $response->data->details->pass->refundAmount,
+                'ref_chr' => $response->data->details->pass->processingFee,
+                'ref_or_status' => env('ISSUE'),
+                'txn_date' => now()
+            ]);
+
+        // REFUNDING PHONEPE
+        $phonepe = new PhonePeRefundController();
+        $refundResponse = $phonepe->init($lastOrder, $refund_order_id, $response->data->details->pass->refundAmount);
+
+        // IF PHONEPE REFUND FAILED
+        if (!$refundResponse->success) {
+            return response([
+                'status' => false,
+                'error' => 'failed to refund order, try again or contact phonepe!'
+            ]);
+        }
+
+        // UPDATING REFUND ORDER
+        DB::table('refund_order')
+            ->where('sale_or_id', '=', $lastOrder->sale_or_id)
+            ->update([
+                'pg_txn_no' => $refundResponse->data->providerReferenceId
+            ]);
+
+        // REFUNDING MMOPL
         $api = new ApiController();
-        $response = $api->getRefundInfo($order);
+        $refundApiResponse = $api->refundTicket($response, $refund_order_id);
 
-        if ($response == null) return response([
-            'status' => false,
-            'error' => 'Please check your internet connection !'
+        // MMOPL ERRORS
+        if ($refundApiResponse == null) {
+            return response([
+                'status' => false,
+                'error' => 'Please check your internet connection !'
+            ]);
+        }
+
+        if ($refundApiResponse->status == "BSE") {
+            return response([
+                'status' => false,
+                'error' => $response->error
+            ]);
+        }
+
+        // UPDATING OLD ORDER
+        DB::table('sale_order')
+            ->where('sale_or_no', '=', $lastOrder->order_id)
+            ->update([
+                'sale_or_status' => env('ORDER_REFUNDED')
+            ]);
+
+        return response([
+            'status' => true,
+            'message' => 'Order refunded Successfully.'
         ]);
-
-        if ($response->status == "BSE") return response([
-            'status' => false,
-            'error' => $response->error
-        ]);
-
 
     }
 
-    private function tpRefund($order)
+    private function tpRefund($order, $response)
     {
+        // GENERATING REFUND ORDER
+        $refund_order_id = OrderUtility::genSaleOrderNumber($order->pass_id);
+
+        // CREATING REFUND ORDER
+        DB::table('refund_order')
+            ->insert([
+                'ref_or_no' => $refund_order_id,
+                'sale_or_id' => $order->sale_or_id,
+                'pax_id' => Auth::id(),
+                'unit' => $order->unit,
+                'ref_amt' => $response->data->details->pass->refundAmount,
+                'ref_chr' => $response->data->details->pass->processingFee,
+                'ref_or_status' => env('ISSUE'),
+                'txn_date' => now()
+            ]);
+
+
+        // REFUNDING MMOPL
         $api = new ApiController();
-        $response = $api->getRefundInfo($order);
+        $refundApiResponse = $api->refundTicket($response, $refund_order_id);
+
+        // MMOPL ERRORS
+        if ($refundApiResponse == null) {
+            return response([
+                'status' => false,
+                'error' => 'Please check your internet connection !'
+            ]);
+        }
+
+        if ($refundApiResponse->status == "BSE") {
+            return response([
+                'status' => false,
+                'error' => $response->error
+            ]);
+        }
+
+        // UPDATING OLD ORDER
+        DB::table('sale_order')
+            ->where('sale_or_no', '=', $order->order_id)
+            ->update([
+                'sale_or_status' => env('ORDER_REFUNDED')
+            ]);
+
+        return response([
+            'status' => true,
+            'message' => 'Order refunded Successfully.'
+        ]);
 
     }
 
