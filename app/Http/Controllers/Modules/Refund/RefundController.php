@@ -35,6 +35,8 @@ class RefundController extends Controller
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
 
+        dd($response);
+
         if ($order->product_id == env('PRODUCT_SV'))
         {
             $lastOrder = DB::table('sale_order')
@@ -56,7 +58,6 @@ class RefundController extends Controller
                 }
             }
         }
-
 
         return response([
             'status' => true,
