@@ -35,12 +35,14 @@ class RefundController extends Controller
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
 
-        if ($order->pass_id == env('PASS_SV'))
+        if ($order->product_id == env('PRODUCT_SV'))
         {
             $lastOrder = DB::table('sale_order')
                 ->where('ms_qr_no', '=', $order->ms_qr_no)
                 ->orderBy('txn_date', 'desc')
                 ->first();
+
+            dd($lastOrder);
 
             if (!is_null($lastOrder))
             {
