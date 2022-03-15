@@ -32,6 +32,7 @@ class StoreValueStatusController extends Controller
 
                 DB::table('sv_sl_booking')
                     ->where('mm_ms_acc_id', '=', $pass->mm_ms_acc_id)
+                    ->where('sl_qr_no', '=', $response->data->trips[0]->qrCodeId)
                     ->update([
                         'qr_status' => env($response->data->trips[0]->tokenStatus),
                         'sl_qr_exp' => Carbon::createFromTimestamp($response->data->trips[0]->expiryTime),
