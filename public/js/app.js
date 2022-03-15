@@ -19544,7 +19544,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       balance: 0,
-      isLoadingGenTrip: false
+      isLoadingGenTrip: false,
+      isLoadingRefund: false
     };
   },
   name: "Dashboard",
@@ -19618,20 +19619,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.next = 2;
+                this.isLoadingRefund = true;
+                _context3.next = 3;
                 return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/' + this.pass.sale_or_no);
 
-              case 2:
+              case 3:
                 res = _context3.sent;
-                _context3.next = 5;
+                _context3.next = 6;
                 return res.data;
 
-              case 5:
+              case 6:
                 data = _context3.sent;
 
                 if (data.status) {
+                  this.isLoadingRefund = false;
                   toggleModal('refund-help', true);
                 } else {
+                  this.isLoadingRefund = false;
                   this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -19639,7 +19643,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   });
                 }
 
-              case 7:
+              case 8:
               case "end":
                 return _context3.stop();
             }
@@ -22129,14 +22133,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PassButton, {
-    "is-disabled": false,
-    "is-loading": false,
+    "is-disabled": $data.isLoadingRefund,
+    "is-loading": $data.isLoadingRefund,
     type: 'button',
     title: 'REFUND PASS',
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["onClick"])], 64
+  , ["is-disabled", "is-loading", "onClick"])], 64
   /* STABLE_FRAGMENT */
   );
 }

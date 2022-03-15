@@ -52,8 +52,8 @@
     />
 
     <PassButton
-        :is-disabled="false"
-        :is-loading="false"
+        :is-disabled="isLoadingRefund"
+        :is-loading="isLoadingRefund"
         :type="'button'"
         :title="'REFUND PASS'"
         v-on:click="refundPass"
@@ -84,7 +84,8 @@ export default {
     data() {
         return {
             balance: 0,
-            isLoadingGenTrip: false
+            isLoadingGenTrip: false,
+            isLoadingRefund: false
         }
     },
 
@@ -108,11 +109,14 @@ export default {
             toggleModal('gra-help', true)
         },
         refundPass: async function () {
+            this.isLoadingRefund = true
             const res = await axios.get('/refund/' + this.pass.sale_or_no)
             const data = await res.data
             if (data.status) {
+                this.isLoadingRefund = false
                 toggleModal('refund-help', true)
             } else {
+                this.isLoadingRefund = false
                 this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',
