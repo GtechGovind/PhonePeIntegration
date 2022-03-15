@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/get/fare', [FareController::class, 'getFare'])->name('fare');
 
 // SETTLEMENT
-Route::middleware(['auth.basic'])->group(function () {
+Route::middleware([''])->group(function () {
     Route::post('get/settlement/issue', [SettlementController::class, 'getIssueUnsettledData'])->name('settlement.issue');
     Route::post('get/settlement/refund', [SettlementController::class, 'getRefundUnsettledData'])->name('settlement.refund');
     Route::post('set/settlement/issue', [SettlementController::class, 'setIssueUnsettledData'])->name('settlement.post.issue');
