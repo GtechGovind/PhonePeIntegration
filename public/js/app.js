@@ -19619,7 +19619,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/' + this.order_id);
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/' + this.pass.sale_or_no);
 
               case 2:
                 res = _context3.sent;

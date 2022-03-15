@@ -108,7 +108,7 @@ export default {
             toggleModal('gra-help', true)
         },
         refundPass: async function () {
-            const res = await axios.get('/refund/' + this.order_id)
+            const res = await axios.get('/refund/' + this.pass.sale_or_no)
             const data = await res.data
             if (data.status) {
                 toggleModal('refund-help', true)
