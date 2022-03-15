@@ -20,6 +20,23 @@ class RefundController extends Controller
         $api = new ApiController();
         $response = $api->getRefundInfo($order);
 
+        if ($order->pass_id == env('PASS_SV')) {
+
+            $lastOrder = DB::table('sale_order')
+                ->where('ms_qr_no', '=', $order -> ms_qr_no)
+                ->orderBy('txn_date', 'desc')
+                ->first();
+
+            if (!is_null($lastOrder)) {
+                if (!$lastOrder -> total_price - $response->data->details->pass->refundAmount > $lastOrder -> total_price) {
+                    return response([
+                        'status' => false,
+                        'error' => 'Please spend ₹ ' . ($lastOrder->total_price - $response->data->details->pass->refundAmount) . ' to refund card !'
+                    ]);
+                }
+            }
+        }
+
         if ($response == null) return response([
             'status' => false,
             'error' => 'Please check your internet connection!'
