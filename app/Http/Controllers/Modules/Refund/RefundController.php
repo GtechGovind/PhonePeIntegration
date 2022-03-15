@@ -156,7 +156,7 @@ class RefundController extends Controller
 
         // UPDATING OLD ORDER
         DB::table('sale_order')
-            ->where('sale_or_no', '=', $order->order_id)
+            ->where('sale_or_no', '=', $order->sale_or_no)
             ->update([
                 'sale_or_status' => env('ORDER_REFUNDED')
             ]);
@@ -232,7 +232,7 @@ class RefundController extends Controller
 
         // UPDATING OLD ORDER
         DB::table('sale_order')
-            ->where('sale_or_no', '=', $lastOrder->order_id)
+            ->where('sale_or_no', '=', $lastOrder->sale_or_no)
             ->update([
                 'sale_or_status' => env('ORDER_REFUNDED')
             ]);
@@ -284,7 +284,7 @@ class RefundController extends Controller
 
         // UPDATING OLD ORDER
         DB::table('sale_order')
-            ->where('sale_or_no', '=', $order->order_id)
+            ->where('sale_or_no', '=', $order->sale_or_no)
             ->update([
                 'sale_or_status' => env('ORDER_REFUNDED')
             ]);
