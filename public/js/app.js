@@ -21474,8 +21474,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var props = __props; // VARIABLES
 
     var isGraButtonLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var station_id = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('');
+    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
+    var station_id = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
     var gra = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)({
       penalty: null,
       penaltyNames: null,

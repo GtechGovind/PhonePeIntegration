@@ -124,8 +124,8 @@ const props = defineProps({
 
 // VARIABLES
 let isGraButtonLoading = ref(false)
-let isLoading = ref(false)
-let station_id = ref('')
+let isLoading = ref()
+let station_id = ref()
 let gra = ref({
     penalty: null,
     penaltyNames: null,
