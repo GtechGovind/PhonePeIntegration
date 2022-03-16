@@ -22407,7 +22407,7 @@ var _hoisted_1 = {
   key: 0
 };
 var _hoisted_2 = {
-  "class": "text-center m-2 border bg-white rounded-lg"
+  "class": "text-center m-2 border bg-white rounded-lg z-10"
 };
 var _hoisted_3 = {
   "class": "text-center p-2"
@@ -23606,7 +23606,7 @@ var _hoisted_1 = {
   key: 0
 };
 var _hoisted_2 = {
-  "class": "text-center m-2 border bg-white rounded-lg"
+  "class": "text-center m-2 border bg-white rounded-lg z-10"
 };
 var _hoisted_3 = {
   "class": "text-center p-2"
@@ -24300,7 +24300,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     href: $props.url,
     as: $props.type,
     type: "button",
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$props.disabled ? 'bg-gray-500' : 'bg-blue-500', "w-full h-12 px-6 text-gray-50 font-bold rounded-lg text-xl"])
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$props.disabled ? 'bg-gray-500' : 'bg-blue-500', "w-full h-12 px-6 text-gray-50 font-bold rounded-lg text-xl z-10"])
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
@@ -24362,7 +24362,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     disabled: $props.isDisabled,
     type: $props.type,
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full' : 'text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 w-full')
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full z-10' : 'text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 w-full z-10')
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_3, _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
   )], 10
@@ -24443,7 +24443,7 @@ var _hoisted_6 = [_hoisted_4, _hoisted_5];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: $props.type,
-    "class": "text-white bg-gradient-to-br py-5 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-2xl px-5 text-center mr-2 mb-2 w-full"
+    "class": "z-10 text-white bg-gradient-to-br py-5 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-2xl px-5 text-center mr-2 mb-2 w-full"
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_3, _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
   )], 8
@@ -24494,7 +24494,7 @@ var _hoisted_5 = [_hoisted_3, _hoisted_4];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     type: "button",
-    "class": "py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-full"
+    "class": "z-10 py-2.5 px-5 mb-2 text-sm font-medium text-gray-900 bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 w-full"
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_2, _hoisted_5)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
   )], 8
