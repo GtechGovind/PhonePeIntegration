@@ -1,6 +1,6 @@
 <template>
 
-    <div :class="isSv ? 'h-50' : 'h-64'" class="m-2 bg-blue-500 rounded-xl relative text-white shadow">
+    <div class="m-2 bg-blue-500 rounded-xl relative text-white shadow">
         <img class="relative object-cover w-full h-full rounded-xl" :src="card_img" alt="">
         <div class="w-full px-8 absolute top-8">
 
@@ -19,14 +19,14 @@
             </div>
 
             <!--CARD NUMBER-->
-            <div class="pt-2">
+            <div class="pt-4">
                 <p class="font-light">Master Number</p>
                 <p class="tracking-more-wider font-bold">
                     {{ passDetails.ms_qr_no }}
                 </p>
             </div>
 
-            <template class="pt-2" v-if="!isSv">
+            <template class="pt-4" v-if="!isSv">
                 <div class="flex justify-between">
 
                     <div>
