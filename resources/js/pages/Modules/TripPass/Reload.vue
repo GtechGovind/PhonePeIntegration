@@ -51,6 +51,8 @@
 
     </div>
 
+    <Footer />
+
 </template>
 
 <script>
@@ -60,9 +62,10 @@ import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
 import Button from "../../../Shared/Component/Button";
 import axios from "axios";
+import Footer from "../../../Shared/Footer";
 
 export default {
-    components: {Button, Hero, NavBar},
+    components: {Footer, Button, Hero, NavBar},
     props: {
         order_id: String,
         fare: Number,

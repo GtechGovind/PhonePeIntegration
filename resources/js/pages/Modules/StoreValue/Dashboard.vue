@@ -59,6 +59,8 @@
         v-on:click="refundPass"
     />
 
+    <Footer />
+
 </template>
 
 <script>
@@ -71,6 +73,7 @@ import Card from "../../../Shared/Card";
 import PassButton from "../../../Shared/Component/PassButton";
 import GraModel from "../../../Shared/Model/GraModel";
 import RefundModel from "../../../Shared/Model/RefundModel";
+import Footer from "../../../Shared/Footer";
 
 export default {
 
@@ -91,7 +94,7 @@ export default {
 
     name: "Dashboard",
 
-    components: {RefundModel, GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
+    components: {Footer, RefundModel, GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
 
     async mounted() {
         const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);

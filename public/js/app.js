@@ -19456,6 +19456,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
     order: Object
@@ -19465,7 +19467,8 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var props = __props;
     var __returned__ = {
-      props: props
+      props: props,
+      Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -19617,11 +19620,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/Component/PassButton */ "./resources/js/Shared/Component/PassButton.vue");
 /* harmony import */ var _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/Model/GraModel */ "./resources/js/Shared/Model/GraModel.vue");
 /* harmony import */ var _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Shared/Model/RefundModel */ "./resources/js/Shared/Model/RefundModel.vue");
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -19647,6 +19652,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   name: "Dashboard",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_9__["default"],
     RefundModel: _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_8__["default"],
     GraModel: _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_7__["default"],
     PassButton: _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_6__["default"],
@@ -19778,6 +19784,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/Component/Chip */ "./resources/js/Shared/Component/Chip.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19789,9 +19796,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Order",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_6__["default"],
     Chip: _Shared_Component_Chip__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -19933,11 +19942,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -19950,6 +19961,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   name: "Reload.vue",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_6__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_4__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_2__["default"],
@@ -20375,11 +20387,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -20399,6 +20413,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_10__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_9__["default"],
     AnchorButton: _Shared_Component_AnchorButton__WEBPACK_IMPORTED_MODULE_6__["default"],
     UpcomingTicket: _Components_UpcomingTicket__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -20651,11 +20666,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/Model/GraModel */ "./resources/js/Shared/Model/GraModel.vue");
 /* harmony import */ var _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../Shared/Model/RefundModel */ "./resources/js/Shared/Model/RefundModel.vue");
 /* harmony import */ var _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/Component/PassButton */ "./resources/js/Shared/Component/PassButton.vue");
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -20680,6 +20697,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   name: "Dashboard",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_8__["default"],
     PassButton: _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_7__["default"],
     RefundModel: _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_6__["default"],
     GraModel: _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -20809,11 +20827,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Hero__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/Hero */ "./resources/js/Shared/Hero.vue");
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 
 
 
@@ -20827,6 +20847,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   name: "Order",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_5__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_4__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_3__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -20989,6 +21010,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/Footer */ "./resources/js/Shared/Footer.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -20999,8 +21021,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_5__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_2__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -21088,6 +21112,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var _Shared_Footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Shared/Footer */ "./resources/js/Shared/Footer.vue");
+
 
 
 
@@ -21098,6 +21124,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   name: "Products",
   components: {
+    Footer: _Shared_Footer__WEBPACK_IMPORTED_MODULE_4__["default"],
     Button: _Shared_Component_Button__WEBPACK_IMPORTED_MODULE_3__["default"],
     NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_2__["default"],
     Hero: _Shared_Hero__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -21106,8 +21133,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       isLoading: false,
-      isDisabled: false,
-      coBrand: '/img/atek_logo.png'
+      isDisabled: false
     };
   }
 });
@@ -22280,7 +22306,7 @@ var _hoisted_33 = {
   "class": "py-4 px-6 text-sm text-gray-500 whitespace-nowrap"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.order.order_id), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.order.order_id), 1
   /* TEXT */
   )]), $props.order.ms_qr_no ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.order.ms_qr_no), 1
   /* TEXT */
@@ -22310,7 +22336,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_31, [_hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.order.txn_date), 1
   /* TEXT */
-  )])])])])])]);
+  )])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"])], 64
+  /* STABLE_FRAGMENT */
+  );
 }
 
 /***/ }),
@@ -22413,6 +22441,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_PassButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PassButton");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
     "pass-details": $props.pass,
     user: $props.user,
@@ -22474,7 +22504,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])], 64
+  , ["is-disabled", "is-loading", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22529,6 +22559,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     id: "price",
@@ -22566,7 +22598,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: 'PROCEED TO PAY ₹ ' + $data.pass.price
   }, null, 8
   /* PROPS */
-  , ["onClick", "is-loading", "is-disabled", "title"])], 64
+  , ["onClick", "is-loading", "is-disabled", "title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22625,6 +22657,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     id: "price",
@@ -22664,7 +22698,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.genOrder
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "title", "onClick"])], 64
+  , ["is-loading", "is-disabled", "title", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -22685,7 +22719,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-white border shadow m-2 p-3\"><h3 class=\"font-bold text-center my-3 text-gray-800\">Terms &amp; Condition</h3><ol class=\"text-sm text-gray-700 text-justify\"><li>1. Single Journey QR Ticket (SJT) will be valid for journey from selected “Origin” &amp; “Destination” Station. Passenger can also exit from station between “Origin” &amp; “Destination” station.</li><li>2. If Customer exit from station which is prior to “Destination” station with lower fare bracket, customer will not able to seek any refund for lesser travel.</li><li>3. Return Journey QR Ticket (RJT) will be valid for journey from selected “Origin” &amp; “Destination” Station. Passenger can also exit from station between “Origin” &amp; “Destination” station. Two QR Tickets one from “Origin” and “Destination” (Outward Journey) and another from “Destination” and “Origin” (Return Journey) will be issued.</li><li>4. For RJT, on return, If Customer exit from station which is prior to “Origin” station (currently “Destination”) with lower fare bracket, customer will not able to seek any refund for lesser travel.</li><li>5. Family/Friend travel: customer from one mobile can place maximum 2 Orders with up to 6 SJT/RJT tickets with same “Origin” and “Destination” for each order. Individual QR Tickets will be issued for each journey.</li><li>6. Customer purchasing multiple tickets will be allowed entries with different QR tickets one by one and followed by one by one exits equal to entries made.</li><li>7. For over travel beyond “Destination” station, exit will be allowed after paying the fare difference and new QR will be issued for exit.</li><li>8. For over time beyond time limits as per Metro rules, exit will be allowed after paying the penalty amount and new QR will be issued for exit.</li><li>9. Both SJT and RJT are valid up to the last train of same day only.</li><li>10. In case of Cancellation/Refund, amount will be credited back to original source of payment after deducting the refund charges as per Metro rules.</li></ol></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-white border shadow m-2 p-3\"><h3 class=\"font-bold text-center my-3 text-gray-800\">Terms &amp; Condition</h3><ol class=\"text-sm text-gray-700 text-justify\"><li class=\"mb-3\">1. Single Journey QR Ticket (SJT) will be valid for journey from selected “Origin” &amp; “Destination” Station. Passenger can also exit from station between “Origin” &amp; “Destination” station.</li><li class=\"mb-3\">2. If Customer exit from station which is prior to “Destination” station with lower fare bracket, customer will not able to seek any refund for lesser travel.</li><li class=\"mb-3\">3. Return Journey QR Ticket (RJT) will be valid for journey from selected “Origin” &amp; “Destination” Station. Passenger can also exit from station between “Origin” &amp; “Destination” station. Two QR Tickets one from “Origin” and “Destination” (Outward Journey) and another from “Destination” and “Origin” (Return Journey) will be issued.</li><li class=\"mb-3\">4. For RJT, on return, If Customer exit from station which is prior to “Origin” station (currently “Destination”) with lower fare bracket, customer will not able to seek any refund for lesser travel.</li><li class=\"mb-3\">5. Family/Friend travel: customer from one mobile can place maximum 2 Orders with up to 6 SJT/RJT tickets with same “Origin” and “Destination” for each order. Individual QR Tickets will be issued for each journey.</li><li class=\"mb-3\">6. Customer purchasing multiple tickets will be allowed entries with different QR tickets one by one and followed by one by one exits equal to entries made.</li><li class=\"mb-3\">7. For over travel beyond “Destination” station, exit will be allowed after paying the fare difference and new QR will be issued for exit.</li><li class=\"mb-3\">8. For over time beyond time limits as per Metro rules, exit will be allowed after paying the penalty amount and new QR will be issued for exit.</li><li class=\"mb-3\">9. Both SJT and RJT are valid up to the last train of same day only.</li><li class=\"mb-3\">10. In case of Cancellation/Refund, amount will be credited back to original source of payment after deducting the refund charges as per Metro rules.</li></ol></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_nav_bar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("nav-bar");
@@ -23308,6 +23342,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_UpcomingTicket = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("UpcomingTicket");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavBar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Hero), $props.recentOrders.length > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RecentTicket, {
@@ -23328,7 +23364,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : '')
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     type: 'button',
@@ -23604,6 +23640,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_PassButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("PassButton");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Card, {
     "pass-details": $props.pass,
     user: $props.user,
@@ -23665,7 +23703,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])], 64
+  , ["is-disabled", "is-loading", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -23785,6 +23823,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SOURCE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
@@ -23807,7 +23847,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\r\n                    {{ errors.tripPass.source_id }}\r\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.source_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.source_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("DESTINATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.tripPass.destination_id = $event;
@@ -23829,7 +23869,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\r\n                    {{ errors.tripPass.destination_id }}\r\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.tripPass.destination_id]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                <div class=\"block mb-2 text-sm text-red-500\" v-if=\"errors\">\n                    {{ errors.tripPass.destination_id }}\n                </div>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("TYPE AND QUANTITY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.trips), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [_hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.validity) + " Days", 1
   /* TEXT */
@@ -23843,7 +23883,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: 'PROCEED TO PAY ₹ ' + $data.tripPass.fare
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "onClick", "title"])], 64
+  , ["is-loading", "is-disabled", "onClick", "title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -23949,6 +23989,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
 
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SOURCE"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     disabled: "",
     "class": "c-input",
@@ -23977,7 +24019,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.genOrder
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "title", "onClick"])])])], 64
+  , ["is-loading", "is-disabled", "title", "onClick"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -24037,19 +24079,14 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_11 = {
-  "class": "absolute bottom-0 left-0 w-full"
-};
-var _hoisted_12 = {
-  "class": "grid gap-4 place-content-center p-10"
-};
-var _hoisted_13 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_NavBar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NavBar");
 
   var _component_Hero = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Hero");
 
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
+  var _component_Footer = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Footer");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavBar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Hero), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.products, function (product) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
@@ -24080,13 +24117,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-    src: $data.coBrand,
-    "class": "h-24",
-    alt: "logo"
-  }, null, 8
-  /* PROPS */
-  , _hoisted_13)])])])], 64
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -24510,6 +24541,38 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_4 = [_hoisted_2, _hoisted_3];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_1, _hoisted_4);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "absolute bottom-0 left-0 w-full"
+};
+var _hoisted_2 = {
+  "class": "grid gap-4 place-content-center p-10"
+};
+var _hoisted_3 = ["src"];
+function render(_ctx, _cache) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: '/img/atek_logo.png',
+    "class": "h-24",
+    alt: "logo"
+  }, null, 8
+  /* PROPS */
+  , _hoisted_3)])])]);
 }
 
 /***/ }),
@@ -32821,6 +32884,32 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Shared/Footer.vue":
+/*!****************************************!*\
+  !*** ./resources/js/Shared/Footer.vue ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Footer_vue_vue_type_template_id_a77bcb12__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.vue?vue&type=template&id=a77bcb12 */ "./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12");
+/* harmony import */ var C_Users_gtech_Desktop_Project2_PhonePe_PhonePeIntegration_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,C_Users_gtech_Desktop_Project2_PhonePe_PhonePeIntegration_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Footer_vue_vue_type_template_id_a77bcb12__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Shared/Footer.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Shared/Hero.vue":
 /*!**************************************!*\
   !*** ./resources/js/Shared/Hero.vue ***!
@@ -33837,6 +33926,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Spinner_vue_vue_type_template_id_cc6cf88a__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Spinner_vue_vue_type_template_id_cc6cf88a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Spinner.vue?vue&type=template&id=cc6cf88a */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Component/Spinner.vue?vue&type=template&id=cc6cf88a");
+
+
+/***/ }),
+
+/***/ "./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12 ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Footer_vue_vue_type_template_id_a77bcb12__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Footer_vue_vue_type_template_id_a77bcb12__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Footer.vue?vue&type=template&id=a77bcb12 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Footer.vue?vue&type=template&id=a77bcb12");
 
 
 /***/ }),

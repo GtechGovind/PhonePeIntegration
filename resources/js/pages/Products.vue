@@ -33,13 +33,7 @@
             </div>
         </Link>
     </div>
-    <div class="absolute bottom-0 left-0 w-full">
-        <div class="grid gap-4 place-content-center p-10">
-            <div>
-                <img :src="coBrand" class="h-24" alt="logo">
-            </div>
-        </div>
-    </div>
+    <Footer />
 </template>
 
 <script>
@@ -48,6 +42,7 @@ import Hero from "../Shared/Hero";
 import {Link} from '@inertiajs/inertia-vue3'
 import NavBar from "../Shared/NavBar";
 import Button from "../Shared/Component/Button";
+import Footer from "../Shared/Footer";
 export default {
 
     props: {
@@ -57,6 +52,7 @@ export default {
     name: "Products",
 
     components: {
+        Footer,
         Button,
         NavBar,
         Hero,
@@ -66,8 +62,7 @@ export default {
     data() {
         return {
             isLoading: false,
-            isDisabled: false,
-            coBrand: '/img/atek_logo.png',
+            isDisabled: false
         }
     },
 }

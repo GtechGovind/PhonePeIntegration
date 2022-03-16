@@ -30,6 +30,8 @@
         :title="'PROCEED TO PAY ₹ ' + pass.price"
     />
 
+    <Footer />
+
 </template>
 
 <script>
@@ -39,11 +41,13 @@ import Hero from "../../../Shared/Hero";
 import Button from "../../../Shared/Component/Button";
 import Chip from "../../../Shared/Component/Chip";
 import axios from "axios";
+import Footer from "../../../Shared/Footer";
 
 export default {
 
     name: "Order",
     components: {
+        Footer,
         Chip,
         Button,
         Hero,

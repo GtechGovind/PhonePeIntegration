@@ -36,6 +36,8 @@
         v-on:click="genOrder"
     />
 
+    <Footer />
+
 </template>
 
 <script>
@@ -46,6 +48,7 @@ import Hero from "../../../Shared/Hero";
 import NavBar from "../../../Shared/NavBar";
 import Button from "../../../Shared/Component/Button";
 import axios from "axios";
+import Footer from "../../../Shared/Footer";
 export default {
 
     props: {
@@ -54,7 +57,7 @@ export default {
 
     name: "Reload.vue",
 
-    components: {Button, NavBar, Hero, Chip},
+    components: {Footer, Button, NavBar, Hero, Chip},
 
     data() {
         return {
