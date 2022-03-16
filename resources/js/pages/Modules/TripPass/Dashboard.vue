@@ -16,6 +16,9 @@
                         class="w-3/4"
                         :value="trip.qr_data"
                         :cornersSquareOptions="{ type: 'square' }"
+                        :qr-options="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'L' }"
+                        :dots-options="{ type: 'square', color: '#1f1f1f' }"
+                        :backgroundOptions="{ color: '#ffffff' }"
                     />
                 </div>
                 <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
@@ -35,23 +38,21 @@
     />
 
     <RefundModel
-        v-if="!trip"
         :order_id="pass.sale_or_no"
     />
 
     <PassButton
         v-if="!trip"
-        :is-disabled="isLoading"
-        :is-loading="isLoading"
+        :is-disabled="isLoadingGenTrip"
+        :is-loading="isLoadingGenTrip"
         :type="'button'"
         :title="'GENERATE TRIP'"
         v-on:click="genTrip"
     />
 
     <PassButton
-        v-if="!trip"
-        :is-disabled="isLoading"
-        :is-loading="isLoading"
+        :is-disabled="isLoadingRefund"
+        :is-loading="isLoadingRefund"
         :type="'button'"
         :title="'REFUND PASS'"
         v-on:click="refundPass"
@@ -81,7 +82,8 @@ export default {
     data() {
         return {
             balance: 0,
-            isLoading: false
+            isLoadingGenTrip: false,
+            isLoadingRefund: false
         }
     },
 
@@ -104,8 +106,21 @@ export default {
         getGraInfo: function () {
             toggleModal('gra-help', true)
         },
-        refundPass: function () {
-            toggleModal('refund-help', true)
+        refundPass: async function () {
+            this.isLoadingRefund = true
+            const res = await axios.get('/refund/' + this.pass.sale_or_no)
+            const data = await res.data
+            if (data.status) {
+                this.isLoadingRefund = false
+                toggleModal('refund-help', true)
+            } else {
+                this.isLoadingRefund = false
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error,
+                })
+            }
         }
     }
 }

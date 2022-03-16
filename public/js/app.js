@@ -20660,7 +20660,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       balance: 0,
-      isLoading: false
+      isLoadingGenTrip: false,
+      isLoadingRefund: false
     };
   },
   name: "Dashboard",
@@ -20726,9 +20727,51 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     getGraInfo: function getGraInfo() {
       toggleModal('gra-help', true);
     },
-    refundPass: function refundPass() {
-      toggleModal('refund-help', true);
-    }
+    refundPass: function () {
+      var _refundPass = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var res, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                this.isLoadingRefund = true;
+                _context3.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/' + this.pass.sale_or_no);
+
+              case 3:
+                res = _context3.sent;
+                _context3.next = 6;
+                return res.data;
+
+              case 6:
+                data = _context3.sent;
+
+                if (data.status) {
+                  this.isLoadingRefund = false;
+                  toggleModal('refund-help', true);
+                } else {
+                  this.isLoadingRefund = false;
+                  this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error
+                  });
+                }
+
+              case 8:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this);
+      }));
+
+      function refundPass() {
+        return _refundPass.apply(this, arguments);
+      }
+
+      return refundPass;
+    }()
   }
 });
 
@@ -23383,6 +23426,18 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     value: $props.trip.qr_data,
     cornersSquareOptions: {
       type: 'square'
+    },
+    "qr-options": {
+      typeNumber: 0,
+      mode: 'Byte',
+      errorCorrectionLevel: 'L'
+    },
+    "dots-options": {
+      type: 'square',
+      color: '#1f1f1f'
+    },
+    backgroundOptions: {
+      color: '#ffffff'
     }
   }, null, 8
   /* PROPS */
@@ -23399,30 +23454,28 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_RefundModel, {
-    key: 2,
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
     order_id: $props.pass.sale_or_no
   }, null, 8
   /* PROPS */
-  , ["order_id"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 3,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
+  , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+    key: 2,
+    "is-disabled": $data.isLoadingGenTrip,
+    "is-loading": $data.isLoadingGenTrip,
     type: 'button',
     title: 'GENERATE TRIP',
     onClick: $options.genTrip
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
-    key: 4,
-    "is-disabled": $data.isLoading,
-    "is-loading": $data.isLoading,
+  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_PassButton, {
+    "is-disabled": $data.isLoadingRefund,
+    "is-loading": $data.isLoadingRefund,
     type: 'button',
     title: 'REFUND PASS',
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
+  , ["is-disabled", "is-loading", "onClick"])], 64
   /* STABLE_FRAGMENT */
   );
 }
