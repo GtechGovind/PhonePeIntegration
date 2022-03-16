@@ -16,10 +16,6 @@
                 <!--BODY-->
                 <div class="p-6 space-y-6">
 
-                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        Please selection station to continue ...
-                    </p>
-
                     <!--SELECT STATION-->
                     <div class="my-6">
                         <label class="c-label">Select Station</label>
@@ -35,7 +31,7 @@
                     </div>
 
                     <!--GRA INFO-->
-                    <div class="bg-blue-200 rounded-lg border p-3" v-if="gra.penaltyNames || gra.penaltyAmount">
+                    <div v-if="gra.penaltyNames || gra.penaltyAmount">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2">
@@ -67,7 +63,7 @@
                     </div>
 
                     <!--NO GRA-->
-                    <div class="bg-blue-200 rounded-lg border p-3" v-if="!(gra.penaltyNames || gra.penaltyAmount)">
+                    <div v-if="!(gra.penaltyNames || gra.penaltyAmount)">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
@@ -77,7 +73,7 @@
                     </div>
 
                     <!--LOADING-->
-                    <div class="bg-blue-200 rounded-lg border p-3" v-if="isLoading">
+                    <div v-if="isLoading">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
