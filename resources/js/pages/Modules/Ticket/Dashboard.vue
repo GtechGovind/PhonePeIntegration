@@ -10,7 +10,7 @@
     </TransitionGroup>
 
     <Button
-        :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0' : ''"
+        :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : ''"
         :type="'button'"
         :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
         :is-loading="isLoading"
