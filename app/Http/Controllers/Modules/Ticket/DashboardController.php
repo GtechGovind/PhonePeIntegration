@@ -27,9 +27,9 @@ class DashboardController extends Controller
             ->join('stations as s', 's.stn_id', 'so.src_stn_id')
             ->join('stations as d', 'd.stn_id', 'so.des_stn_id')
             ->where('so.pax_id', '=', Auth::id())
+            ->where('so.sale_or_status', '=', env('ORDER_TICKET_GENERATED'))
             ->where('product_id', '=', env('PRODUCT_SJT'))
             ->orWhere('product_id', '=', env('PRODUCT_RJT'))
-            ->where('so.sale_or_status', '=', env('ORDER_TICKET_GENERATED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
             ->get();
 
