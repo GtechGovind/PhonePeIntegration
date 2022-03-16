@@ -21710,6 +21710,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.isRefundButtonLoading = false;
                   this.close();
                   this.$swal.fire('Refunded Successfully !', 'success');
+                  this.$inertia.visit('/products');
                 } else {
                   this.isRefundButtonLoading = false;
                   this.close();
@@ -21811,7 +21812,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }(),
     applyGra: function () {
       var _applyGra = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee4() {
-        var res, _yield$res$data, error, redirectUrl, status;
+        var res, _yield$res$data, error, status;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee4$(_context4) {
           while (1) {
@@ -21832,15 +21833,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 6:
                 _yield$res$data = _context4.sent;
                 error = _yield$res$data.error;
-                redirectUrl = _yield$res$data.redirectUrl;
                 status = _yield$res$data.status;
 
                 if (status) {
-                  this.isRefundButtonLoading = false;
+                  this.isGraButtonLoading = false;
                   this.close();
-                  window.location.href = redirectUrl;
+                  this.$inertia.visit('/products');
                 } else {
-                  this.isRefundButtonLoading = false;
+                  this.isGraButtonLoading = false;
                   this.close();
                   this.$swal.fire({
                     icon: 'error',
@@ -21849,7 +21849,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   });
                 }
 
-              case 11:
+              case 10:
               case "end":
                 return _context4.stop();
             }

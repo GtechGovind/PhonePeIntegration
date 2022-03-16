@@ -270,6 +270,7 @@ export default {
                     'Refunded Successfully !',
                     'success'
                 )
+                this.$inertia.visit('/products')
             } else {
                 this.isRefundButtonLoading = false
                 this.close()
@@ -346,13 +347,13 @@ export default {
                 penaltyInfo: this.gra.penalty,
                 station_id: this.station_id
             })
-            const {error, redirectUrl, status} = await res.data
+            const {error, status} = await res.data
             if (status) {
-                this.isRefundButtonLoading = false
+                this.isGraButtonLoading = false
                 this.close()
-                window.location.href = redirectUrl
+                this.$inertia.visit('/products')
             } else {
-                this.isRefundButtonLoading = false
+                this.isGraButtonLoading = false
                 this.close()
                 this.$swal.fire({
                     icon: 'error',
