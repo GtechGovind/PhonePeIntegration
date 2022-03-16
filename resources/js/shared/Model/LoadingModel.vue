@@ -21,7 +21,10 @@ export default {
     components: {Spinner},
 
     props: {
-        isLoading: false
+        isLoading: {
+            type: Boolean,
+            default: false
+        }
     },
 
     mounted() {

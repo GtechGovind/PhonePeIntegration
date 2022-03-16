@@ -21516,7 +21516,10 @@ __webpack_require__.r(__webpack_exports__);
     Spinner: _Component_Spinner__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   props: {
-    isLoading: false
+    isLoading: {
+      type: Boolean,
+      "default": false
+    }
   },
   mounted: function mounted() {
     if (this.isLoading) toggleModal('loading-model', true);else toggleModal('loading-model', false);
