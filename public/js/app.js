@@ -24559,7 +24559,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "absolute bottom-0 left-0 w-full"
+  "class": "absolute bottom-0 left-0 w-full z-0"
 };
 var _hoisted_2 = {
   "class": "grid gap-4 place-content-center p-10"
@@ -25417,7 +25417,7 @@ _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
   delay: 250,
   color: '#dd223e',
   includeCSS: true,
-  showSpinner: false
+  showSpinner: true
 });
 
 /***/ }),
