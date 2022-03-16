@@ -15,7 +15,7 @@
                 <div class="flex justify-center m-1">
                     <QRCodeVue3
                         class="w-3/4"
-                        :value="trip.qr_data"
+                        :value="trip['qr_data']"
                         :cornersSquareOptions="{ type: 'square' }"
                         :qr-options="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'L' }"
                         :dots-options="{ type: 'square', color: '#1f1f1f' }"
@@ -33,7 +33,7 @@
     </div>
 
     <GraModel
-        v-if="trip"
+        :is-show="showGra"
         :slave_id="trip.sl_qr_no"
         :stations="stations"
     />
@@ -88,7 +88,8 @@ export default {
         return {
             balance: 0,
             isLoadingGenTrip: false,
-            isLoadingRefund: false
+            isLoadingRefund: false,
+            showGra: false
         }
     },
 
@@ -109,7 +110,7 @@ export default {
             this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
         },
         getGraInfo: function () {
-            toggleModal('gra-help', true)
+            this.showGra = true
         },
         refundPass: async function () {
             this.isLoadingRefund = true

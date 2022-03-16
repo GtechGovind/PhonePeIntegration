@@ -1,5 +1,5 @@
 <template>
-    <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center h-modal sm:h-full" id="gra-help">
+    <div :class="showModel ? '': 'hidden'" class="overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center h-modal sm:h-full" id="gra-help">
         <div class="relative px-4 w-full max-w-md h-auto">
             <div class="relative bg-white rounded-lg shadow">
 
@@ -112,14 +112,15 @@
 
 <script setup>
 
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import Button from "../Component/Button";
 import axios from "axios";
 
 // PROPS
 const props = defineProps({
     slave_id: String,
-    stations: Array
+    stations: Array,
+    isShow: Boolean
 })
 
 // VARIABLES
@@ -131,10 +132,16 @@ let gra = ref({
     penaltyNames: null,
     penaltyAmount: null,
 })
+let showModel = ref(false)
+
+// LIFE CYCLE
+onMounted(() => {
+    showModel = props.isShow
+})
 
 // FUNCTIONS
 const close = function () {
-    toggleModal('gra-help', false)
+    showModel = false
 }
 const graInfo = async function () {
 
