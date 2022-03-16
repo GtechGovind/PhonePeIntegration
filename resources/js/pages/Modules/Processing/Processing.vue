@@ -76,9 +76,8 @@ export default {
                 icon: 'error',
                 title: 'Payment Failed !',
                 text: data.error,
-                confirmButtonText: 'Try Again',
                 showDenyButton: true,
-                denyButtonText: 'Go Home !'
+                denyButtonText: 'Ok'
             }).then((res) => {
                 if (res.isConfirmed) {
                     this.$inertia.replace("/processing/" + this.order)

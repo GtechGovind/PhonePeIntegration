@@ -34,7 +34,7 @@ class RefundController extends Controller
         $processing_fee_amount = $response->data->details->pass->processingFeeAmount;
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
-        
+
         if ($order->product_id == env('PRODUCT_SV'))
         {
             $balance = $response->data->remainingBalance;
