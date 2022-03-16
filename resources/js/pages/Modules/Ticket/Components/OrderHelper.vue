@@ -125,15 +125,21 @@
 
     </div>
 
+    <LoadingModel :is-loading="isLoading"/>
+
 </template>
 
 <script>
 import axios from "axios";
 import Button from "../../../../Shared/Component/Button";
+import LoadingModel from "../../../../Shared/Model/LoadingModel";
 
 export default {
+
     name: "OrderHelper",
-    components: {Button},
+
+    components: {LoadingModel, Button},
+
     data() {
         return {
             ticket: {
@@ -159,7 +165,7 @@ export default {
     methods: {
 
         getFare: async function () {
-            if(this.isValid()) {
+            if (this.isValid()) {
                 const response = await axios.post('/api/get/fare', {
                     "source": this.ticket.source_id,
                     "destination": this.ticket.destination_id,
@@ -184,14 +190,14 @@ export default {
         onSuccess: function (data) {
             this.isLoading = false
             this.isDisabled = false
-            const { redirectUrl } = data
+            const {redirectUrl} = data
             window.location.href = redirectUrl
         },
 
         onFailure: function (data) {
             this.isLoading = false
             this.isDisabled = false
-            const { errors, message } = data
+            const {errors, message} = data
             this.$swal.fire({
                 icon: 'error',
                 title: message,
