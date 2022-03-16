@@ -99,9 +99,8 @@
                     <!--BUTTONS-->
                     <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
                         <Button
-                            v-if="gra.penaltyAmount > 0"
+                            :disabled="gra.penaltyAmount > 0"
                             :is-loading="isGraButtonLoading"
-                            :is-disabled="isGraButtonLoading"
                             :title="'Proceed to pay ₹' + gra.penaltyAmount"
                             :type="'button'"
                             v-on:click="applyGra"
