@@ -24579,7 +24579,7 @@ var _hoisted_3 = {
   "class": "relative bg-white rounded-lg shadow"
 };
 var _hoisted_4 = {
-  "class": "flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600"
+  "class": "flex justify-between items-start px-5 py-2 rounded-t border-b dark:border-gray-600"
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
@@ -24603,7 +24603,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
-  "class": "p-6"
+  "class": "px-6 py-2"
 };
 var _hoisted_9 = {
   "class": "mb-3"
