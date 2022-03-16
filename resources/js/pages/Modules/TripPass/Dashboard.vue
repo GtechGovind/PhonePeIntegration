@@ -9,7 +9,7 @@
     />
 
     <div v-if="trip">
-        <div class="text-center m-2 border bg-white rounded-lg z-10">
+        <div class="text-center m-2 border bg-white rounded-lg">
             <div class="text-center p-2">
                 <div class="flex justify-center m-1">
                     <QRCodeVue3
@@ -58,7 +58,7 @@
         v-on:click="refundPass"
     />
 
-    <Footer />
+    <Footer v-if="!trip" />
 
 </template>
 

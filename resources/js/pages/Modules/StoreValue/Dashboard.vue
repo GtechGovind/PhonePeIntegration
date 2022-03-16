@@ -59,7 +59,7 @@
         v-on:click="refundPass"
     />
 
-    <Footer />
+    <Footer v-if="!trip" />
 
 </template>
 

@@ -22504,7 +22504,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  , ["is-disabled", "is-loading", "onClick"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Footer, {
+    key: 3
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -23606,7 +23608,7 @@ var _hoisted_1 = {
   key: 0
 };
 var _hoisted_2 = {
-  "class": "text-center m-2 border bg-white rounded-lg z-10"
+  "class": "text-center m-2 border bg-white rounded-lg"
 };
 var _hoisted_3 = {
   "class": "text-center p-2"
@@ -23703,7 +23705,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.refundPass
   }, null, 8
   /* PROPS */
-  , ["is-disabled", "is-loading", "onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer)], 64
+  , ["is-disabled", "is-loading", "onClick"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Footer, {
+    key: 3
+  })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 64
   /* STABLE_FRAGMENT */
   );
 }
