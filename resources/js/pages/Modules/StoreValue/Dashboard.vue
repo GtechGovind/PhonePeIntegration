@@ -1,8 +1,8 @@
 <template>
 
-    <nav-bar/>
+    <nav-bar />
 
-    <card
+    <Card
         :pass-details="pass"
         :user="user"
         :isSv="true"
@@ -15,7 +15,7 @@
                 <div class="flex justify-center m-1">
                     <QRCodeVue3
                         class="w-3/4"
-                        :value="trip['qr_data']"
+                        :value="trip.qr_data"
                         :cornersSquareOptions="{ type: 'square' }"
                         :qr-options="{ typeNumber: 0, mode: 'Byte', errorCorrectionLevel: 'L' }"
                         :dots-options="{ type: 'square', color: '#1f1f1f' }"
@@ -26,8 +26,7 @@
                     {{ trip.sl_qr_no }}
                 </span>
             </div>
-            <button v-on:click="getGraInfo()"
-                    class="bg-blue-500 text-center p-3 rounded-b-lg text-gray-50 mt-2 w-full">
+            <button v-on:click="getGraInfo(trip.sl_qr_no)" class="bg-blue-500 text-center p-3 rounded-b-lg text-gray-50 mt-2 w-full">
                 <i class="fa-solid fa-circle-info mx-1"></i> NEED HELP
             </button>
         </div>
@@ -40,7 +39,6 @@
     />
 
     <RefundModel
-        v-if="canRefund"
         :order_id="pass.sale_or_no"
     />
 
@@ -63,66 +61,72 @@
 
 </template>
 
-<script setup>
+<script>
 
+import QRCodeVue3 from "qrcode-vue3";
+import axios from "axios";
+import AnchorButton from "../../../Shared/Component/AnchorButton";
 import NavBar from "../../../Shared/NavBar";
 import Card from "../../../Shared/Card";
-import GraModel from "../../../Shared/Model/GraModel";
 import PassButton from "../../../Shared/Component/PassButton";
-import {onMounted, ref} from "vue";
-import axios from "axios";
+import GraModel from "../../../Shared/Model/GraModel";
 import RefundModel from "../../../Shared/Model/RefundModel";
 
-const props = defineProps({
-    user: Object,
-    pass: Object,
-    trip: Object,
-    stations: Array
-})
+export default {
 
-// VARIABLES
-let balance = ref()
-let isLoadingGenTrip = ref()
-let isLoadingRefund = ref()
-let canRefund = ref()
+    props: {
+        user: Object,
+        pass: Object,
+        trip: Object,
+        stations: Array
+    },
 
-// METHODS
-const genTrip = () => {
-    isLoadingGenTrip = true
-    this.$inertia.get('/sv/trip/' + props.pass.sale_or_no)
-}
-const getGraInfo = () => {
-    toggleModal('gra-help', true)
-}
-const refundPass = async () => {
-    isLoadingRefund = true
-    const res = await axios.get('/refund/' + props.pass.sale_or_no)
-    const data = await res.data
-    if (data.status) {
-        isLoadingRefund = false
-        canRefund = true
-        toggleModal('refund-help', true)
-    } else {
-        isLoadingRefund = false
-        this.$swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: data.error,
-        })
+    data() {
+        return {
+            balance: 0,
+            isLoadingGenTrip: false,
+            isLoadingRefund: false
+        }
+    },
+
+    name: "Dashboard",
+
+    components: {RefundModel, GraModel, PassButton, Card, AnchorButton, NavBar, QRCodeVue3},
+
+    async mounted() {
+        const res = await axios.get('/sv/status/' + this.pass.ms_qr_no);
+        const data = res.data;
+        this.balance = data.data.balance;
+        this.$inertia.reload()
+    },
+
+    methods: {
+        genTrip: async function() {
+            this.isLoadingGenTrip = true
+            this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
+        },
+        getGraInfo: function () {
+            toggleModal('gra-help', true)
+        },
+        refundPass: async function () {
+            this.isLoadingRefund = true
+            const res = await axios.get('/refund/' + this.pass.sale_or_no)
+            const data = await res.data
+            if (data.status) {
+                this.isLoadingRefund = false
+                toggleModal('refund-help', true)
+            } else {
+                this.isLoadingRefund = false
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: data.error,
+                })
+            }
+        }
     }
-}
-const updatePass = async () => {
-    const res = await axios.get('/sv/status/' + props.pass.ms_qr_no);
-    const data = res.data;
-    balance = data.data.balance;
-    this.$inertia.reload()
-}
 
-// LIFECYCLE
-onMounted(() => {
-    updatePass()
-})
-
+}
 </script>
 
 <style scoped>
