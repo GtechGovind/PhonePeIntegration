@@ -4,7 +4,7 @@
             <div class="mx-auto flex items-center row-span-2">
                 <div class="text-center">
                     <img :src="logo" class="h-24" alt="logo">
-                    <Spinner />
+                    <Spinner/>
                 </div>
             </div>
             <div class="mx-auto flex items-center">
@@ -17,6 +17,7 @@
 <script>
 
 import Spinner from "../Shared/Component/Spinner";
+import axios from "axios";
 
 export default {
 
@@ -63,8 +64,34 @@ export default {
         /*
             AUTHENTICATING USER FROM PHONEPE
         */
-        authenticate: function (token) {
-            this.$inertia.post('auth', {token: token})
+        authenticate: async function (token) {
+
+            const res = await axios.post('/auth', {token: token})
+            const data = await res.data
+            const {status, error} = data
+
+            if (status)
+            {
+                this.$inertia.replace('/products')
+            }
+            else
+            {
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: error,
+                })
+                this.$swal.fire({
+                    icon: 'error',
+                    title: 'Do you want to save the changes?',
+                    showConfirmButton: true,
+                    confirmButtonText: 'Try again !',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        this.initPhonePe()
+                    }
+                })
+            }
         }
 
     }

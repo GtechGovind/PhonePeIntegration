@@ -57,16 +57,27 @@ class MainController extends Controller
 
                 $_user = User::where('pax_mobile', '=', $userRes->data->phoneNumber)->first();
                 Auth::login($_user);
-                return redirect()->route('products');
+
+                return response([
+                    'status' => true,
+                    'message' => 'User created successfully'
+                ]);
+
             }
             else
             {
-                dd($userRes);
+                return response([
+                    'status' => true,
+                    'error' => 'Unable to fetch user details from phonepe!'
+                ]);
             }
         }
         else
         {
-            dd($tokenRes);
+            return response([
+                'status' => true,
+                'error' => 'Invalid app token'
+            ]);
         }
     }
 }
