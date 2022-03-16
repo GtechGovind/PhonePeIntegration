@@ -125,20 +125,17 @@
 
     </div>
 
-    <LoadingModel :is-loading="isLoading"/>
-
 </template>
 
 <script>
 import axios from "axios";
 import Button from "../../../../Shared/Component/Button";
-import LoadingModel from "../../../../Shared/Model/LoadingModel";
 
 export default {
 
     name: "OrderHelper",
 
-    components: {LoadingModel, Button},
+    components: {Button},
 
     data() {
         return {
