@@ -30,7 +30,7 @@
                         </select>
                     </div>
 
-                    <!--GRA INFO-->
+<!--                    &lt;!&ndash;GRA INFO&ndash;&gt;
                     <div v-if="gra.penaltyNames || gra.penaltyAmount">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
 
-                    <!--NO GRA-->
+                    &lt;!&ndash;NO GRA&ndash;&gt;
                     <div v-if="!(gra.penaltyNames || gra.penaltyAmount)">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
@@ -70,7 +70,7 @@
                                 <p class="text-gray-600 font-bold">No penalties found.</p>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!--LOADING-->
                     <div v-if="isLoading">
