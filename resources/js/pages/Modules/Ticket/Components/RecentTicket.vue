@@ -6,7 +6,7 @@
             </span>
         </div>
         <div v-for="ticket in recentTickets" class="bg-white rounded shadow hover:bg-gray-50 m-2 ">
-            <Link :href="'ticket/order/' + ticket.src_stn_id + '/' + ticket.src_des_id">
+            <Link :href="'/ticket/order/' + ticket.src_stn_id + '/' + ticket.des_stn_id">
                 <div class="grid grid-cols-5">
                     <div class="grid grid-rows-2 col-span-4 p-3">
                         <div class="text-xl text-gray-600 font-semibold">
