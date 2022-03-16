@@ -31,7 +31,7 @@
                     </div>
 
                     <!--GRA INFO-->
-                    <div class="bg-blue-400" v-if="gra.penaltyNames || gra.penaltyAmount">
+                    <div class="bg-blue-200 p-3 rounded-lg" v-if="gra.penaltyNames || gra.penaltyAmount">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2">
@@ -63,7 +63,7 @@
                     </div>
 
                     <!--NO GRA-->
-                    <div class="bg-blue-400" v-if="!(gra.penaltyNames || isLoading)">
+                    <div class="bg-blue-200 p-3 rounded-lg" v-if="!(gra.penaltyNames || isLoading)">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
@@ -73,7 +73,7 @@
                     </div>
 
                     <!--LOADING-->
-                    <div class="bg-blue-400" v-if="isLoading">
+                    <div class="bg-blue-200 p-3 rounded-lg" v-if="isLoading">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
