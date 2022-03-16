@@ -24215,7 +24215,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_ReloadButton = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ReloadButton");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$props.isSv ? 'h-56' : 'h-64', "m-2 bg-blue-500 rounded-xl relative text-white shadow"])
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([$props.isSv ? 'h-64' : 'h-56', "m-2 bg-blue-500 rounded-xl relative text-white shadow"])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     "class": "relative object-cover w-full h-full rounded-xl",
     src: $data.card_img,
