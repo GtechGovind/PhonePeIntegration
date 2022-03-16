@@ -222,7 +222,14 @@ export default {
                     text: error,
                 })
             }
-        }
+        },
+
+        close: function () {
+            this.gra.penalty = null
+            this.gra.penaltyNames = null
+            this.gra.penaltyAmount = null
+            toggleModal('gra-help', false)
+        },
 
     }
 }

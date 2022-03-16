@@ -21616,7 +21616,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return applyGra;
-    }()
+    }(),
+    close: function close() {
+      this.gra.penalty = null;
+      this.gra.penaltyNames = null;
+      this.gra.penaltyAmount = null;
+      toggleModal('gra-help', false);
+    }
   }
 });
 
@@ -24717,7 +24723,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("HEADER"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     onClick: _cache[0] || (_cache[0] = function () {
-      return _ctx.close && _ctx.close.apply(_ctx, arguments);
+      return $options.close && $options.close.apply($options, arguments);
     }),
     "class": "text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white",
     "data-modal-toggle": "gra-help"
@@ -24761,7 +24767,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "is-disabled": false,
     title: 'Decline',
     type: 'button',
-    onClick: _ctx.close
+    onClick: $options.close
   }, null, 8
   /* PROPS */
   , ["onClick"])])])])])]);
