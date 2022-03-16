@@ -9,25 +9,8 @@
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
     </TransitionGroup>
 
-    <TransitionGroup>
-        <div v-if="upcomingOrders.length === 0" class="relative rounded-lg m-2 bg-white">
-            <div class="grid grid-rows-2 m-2 rounded-lg bg-blue-300">
-                <div class="flex">
-                    <div class="m-auto">
-                        <img :src="'/img/no_order.png'"  alt="no order"/>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="m-auto text-gray-50 font-bold text-xl p-4 text-center">
-                        No upcoming orders found click blow button to buy new ticket ..
-                    </div>
-                </div>
-            </div>
-        </div>
-    </TransitionGroup>
-
     <Button
-        class="mt-3"
+        :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0' : ''"
         :type="'button'"
         :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
         :is-loading="isLoading"

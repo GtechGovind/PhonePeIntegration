@@ -23299,29 +23299,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  key: 0,
-  "class": "relative rounded-lg m-2 bg-white"
-};
-var _hoisted_2 = {
-  "class": "grid grid-rows-2 m-2 rounded-lg bg-blue-300"
-};
-var _hoisted_3 = {
-  "class": "flex"
-};
-var _hoisted_4 = {
-  "class": "m-auto"
-};
-var _hoisted_5 = ["src"];
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "m-auto text-gray-50 font-bold text-xl p-4 text-center"
-}, " No upcoming orders found click blow button to buy new ticket .. ")], -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_NavBar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NavBar");
 
@@ -23351,20 +23328,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.TransitionGroup, null, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$props.upcomingOrders.length === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-        src: '/img/no_order.png',
-        alt: "no order"
-      }, null, 8
-      /* PROPS */
-      , _hoisted_5)])]), _hoisted_6])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
-    }),
-    _: 1
-    /* STABLE */
-
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": "mt-3",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.upcomingOrders.length < 1 ? 'absolute bottom-0 left-0' : ''),
     type: 'button',
     title: $props.upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket',
     "is-loading": $data.isLoading,
@@ -23372,7 +23337,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.newOrder
   }, null, 8
   /* PROPS */
-  , ["title", "is-loading", "is-disabled", "onClick"])], 64
+  , ["class", "title", "is-loading", "is-disabled", "onClick"])], 64
   /* STABLE_FRAGMENT */
   );
 }
