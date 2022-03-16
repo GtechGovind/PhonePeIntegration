@@ -46,7 +46,7 @@
                 </div>
             </template>
 
-            <div class="pt-6">
+            <div class="pt-2">
                 <div class="flex justify-between">
 
                     <!--BALANCE-->

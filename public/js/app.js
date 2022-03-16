@@ -24182,7 +24182,7 @@ var _hoisted_14 = {
   "class": "tracking-widest font-bold"
 };
 var _hoisted_15 = {
-  "class": "pt-6"
+  "class": "pt-2"
 };
 var _hoisted_16 = {
   "class": "flex justify-between"
