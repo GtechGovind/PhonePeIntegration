@@ -23328,8 +23328,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : ''),
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : '')
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     type: 'button',
     title: $props.upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket',
     "is-loading": $data.isLoading,
@@ -23337,7 +23338,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: $options.newOrder
   }, null, 8
   /* PROPS */
-  , ["class", "title", "is-loading", "is-disabled", "onClick"])], 64
+  , ["title", "is-loading", "is-disabled", "onClick"])], 2
+  /* CLASS */
+  )], 64
   /* STABLE_FRAGMENT */
   );
 }

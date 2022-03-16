@@ -9,15 +9,16 @@
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
     </TransitionGroup>
 
-    <Button
-        :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : ''"
-        :type="'button'"
-        :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
-        :is-loading="isLoading"
-        :is-disabled="upcomingOrders.length > 1"
-        v-on:click="newOrder"
-    />
-
+    <div :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : ''">
+        <Button
+            :type="'button'"
+            :title="upcomingOrders.length > 1 ? 'Only two orders are allowed at a time!' : 'Book Ticket'"
+            :is-loading="isLoading"
+            :is-disabled="upcomingOrders.length > 1"
+            v-on:click="newOrder"
+        />
+    </div>
+    
 </template>
 
 <script>
