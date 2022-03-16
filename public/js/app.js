@@ -23984,7 +23984,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "m-2"
 };
-var _hoisted_2 = ["type"];
+var _hoisted_2 = ["disabled", "type"];
 var _hoisted_3 = {
   key: 0,
   role: "status",
@@ -24011,6 +24011,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_6 = [_hoisted_4, _hoisted_5];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    disabled: $props.isDisabled,
     type: $props.type,
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($props.isDisabled ? 'text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full' : 'text-white bg-blue-500 hover:bg-blue-800 font-medium rounded-lg px-5 py-2.5 text-center mr-2 w-full')
   }, [$props.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("svg", _hoisted_3, _hoisted_6)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1

@@ -1,6 +1,7 @@
 <template>
     <div class="m-2">
         <button
+            :disabled="isDisabled"
             :type="type"
             :class="isDisabled ?
             'text-white bg-blue-400 cursor-not-allowed font-medium rounded-lg px-5 py-2.5 text-center w-full'
