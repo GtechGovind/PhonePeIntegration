@@ -161,6 +161,10 @@ export default {
         destination: Number
     },
 
+    mounted() {
+        this.setStations()
+    },
+
     methods: {
 
         setStations: function () {
