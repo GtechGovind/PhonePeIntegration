@@ -21436,10 +21436,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -21449,10 +21449,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _Component_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Component/Button */ "./resources/js/Shared/Component/Button.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Component_Button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Component/Button */ "./resources/js/Shared/Component/Button.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -21461,33 +21460,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
- // PROPS
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      isGraButtonLoading: false,
+      station_id: '',
+      isLoading: false,
+      gra: {
+        penalty: null,
+        penaltyNames: null,
+        penaltyAmount: null
+      }
+    };
+  },
+  name: "GraModel",
+  components: {
+    Button: _Component_Button__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
   props: {
     slave_id: String,
     stations: Array
   },
-  setup: function setup(__props, _ref) {
-    var expose = _ref.expose;
-    expose();
-    var props = __props; // VARIABLES
-
-    var isGraButtonLoading = false;
-    var isLoading = false;
-    var station_id = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
-    var gra = {
-      penalty: null,
-      penaltyNames: null,
-      penaltyAmount: null
-    }; // FUNCTIONS
-
-    var close = function close() {
-      toggleModal('gra-help', false);
-    };
-
-    var graInfo = /*#__PURE__*/function () {
-      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+  methods: {
+    graInfo: function () {
+      var _graInfo = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var _this = this;
 
         var res, data, _data$data, penalties, overTravelCharges;
@@ -21496,9 +21492,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                isLoading = true;
+                this.isLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default().get('/gra/' + props.slave_id + "/" + station_id.value);
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/gra/' + this.slave_id + "/" + this.station_id);
 
               case 3:
                 res = _context.sent;
@@ -21509,30 +21505,30 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 data = _context.sent;
 
                 if (data.status) {
-                  isLoading = false;
+                  this.isLoading = false;
                   _data$data = data.data, penalties = _data$data.penalties, overTravelCharges = _data$data.overTravelCharges;
-                  gra = {
+                  this.gra = {
                     penalty: null,
                     penaltyNames: null,
                     penaltyAmount: null
                   };
-                  gra.penalty = data.data;
+                  this.gra.penalty = data.data;
 
                   if (penalties.length && overTravelCharges.length) {
-                    gra.penaltyNames = 'Penalty + Over Travel';
+                    this.gra.penaltyNames = 'Penalty + Over Travel';
                     penalties.forEach(function (penalty) {
-                      gra.penaltyAmount += penalty.amount;
+                      _this.gra.penaltyAmount += penalty.amount;
                     });
                     overTravelCharges.forEach(function (overTravelCharge) {
-                      gra.penaltyAmount += overTravelCharge.amount;
+                      _this.gra.penaltyAmount += overTravelCharge.amount;
                     });
                   } else if (penalties.length) {
-                    gra.penaltyNames = 'Penalty';
+                    this.gra.penaltyNames = 'Penalty';
                     penalties.forEach(function (penalty) {
-                      gra.penaltyAmount += penalty.amount;
+                      _this.gra.penaltyAmount += penalty.amount;
                     });
                   } else if (overTravelCharges.length) {
-                    gra.penaltyNames = 'Over Travel';
+                    this.gra.penaltyNames = 'Over Travel';
                     overTravelCharges.forEach(function (overTravelCharge) {
                       _this.gra.penaltyAmount += overTravelCharge.amount;
                     });
@@ -21555,24 +21551,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee, this);
       }));
 
-      return function graInfo() {
-        return _ref2.apply(this, arguments);
-      };
-    }();
+      function graInfo() {
+        return _graInfo.apply(this, arguments);
+      }
 
-    var apply = /*#__PURE__*/function () {
-      var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
+      return graInfo;
+    }(),
+    applyGra: function () {
+      var _applyGra = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
         var res, _yield$res$data, error, status;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                isGraButtonLoading = true;
+                this.isGraButtonLoading = true;
                 _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default().post('/gra', {
-                  penaltyInfo: gra.penalty,
-                  station_id: station_id
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().post('/gra', {
+                  penaltyInfo: this.gra.penalty,
+                  station_id: this.station_id
                 });
 
               case 3:
@@ -21586,10 +21583,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 status = _yield$res$data.status;
 
                 if (status) {
-                  isGraButtonLoading = false;
+                  this.isGraButtonLoading = false;
                   this.close();
                 } else {
-                  isGraButtonLoading = false;
+                  this.isGraButtonLoading = false;
                   this.close();
                   this.$swal.fire({
                     icon: 'error',
@@ -21606,29 +21603,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2, this);
       }));
 
-      return function apply() {
-        return _ref3.apply(this, arguments);
-      };
-    }();
+      function applyGra() {
+        return _applyGra.apply(this, arguments);
+      }
 
-    var __returned__ = {
-      props: props,
-      isGraButtonLoading: isGraButtonLoading,
-      isLoading: isLoading,
-      station_id: station_id,
-      gra: gra,
-      close: close,
-      graInfo: graInfo,
-      apply: apply,
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-      Button: _Component_Button__WEBPACK_IMPORTED_MODULE_2__["default"],
-      axios: (axios__WEBPACK_IMPORTED_MODULE_3___default())
-    };
-    Object.defineProperty(__returned__, '__isScriptSetup', {
-      enumerable: false,
-      value: true
-    });
-    return __returned__;
+      return applyGra;
+    }()
   }
 });
 
@@ -24598,14 +24578,17 @@ var _hoisted_2 = {
 var _hoisted_3 = {
   "class": "relative bg-white rounded-lg shadow"
 };
+var _hoisted_4 = {
+  "class": "flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600"
+};
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
   "class": "text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white"
 }, "Unable to exit ?", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("svg", {
   "class": "w-5 h-5",
   fill: "currentColor",
   viewBox: "0 0 20 20",
@@ -24618,53 +24601,123 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_6 = [_hoisted_5];
-var _hoisted_7 = {
+var _hoisted_7 = [_hoisted_6];
+var _hoisted_8 = {
   "class": "p-6 space-y-6"
 };
-var _hoisted_8 = {
+var _hoisted_9 = {
   "class": "my-6"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
   "class": "c-label"
 }, "Select Station", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
   disabled: "",
   value: ""
 }, "Select station", -1
 /* HOISTED */
 );
 
-var _hoisted_11 = ["value"];
-var _hoisted_12 = {
+var _hoisted_12 = ["value"];
+var _hoisted_13 = {
   key: 0
 };
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-gray-700 font-bold mb-2\">Penalty Info</h1><div class=\"h-full bg-white p-3 rounded-lg\"><div class=\"m-2 p-3 text-center\"><svg class=\"inline w-8 h-8 text-gray-200 animate-spin fill-blue-600\" viewBox=\"0 0 100 101\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z\" fill=\"currentColor\"></path><path d=\"M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z\" fill=\"currentFill\"></path></svg></div></div>", 2);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "text-gray-700 font-bold mb-2"
+}, "Penalty Info", -1
+/* HOISTED */
+);
 
-var _hoisted_15 = [_hoisted_13];
+var _hoisted_15 = {
+  "class": "h-full bg-white p-3 rounded-lg"
+};
 var _hoisted_16 = {
+  "class": "m-2"
+};
+var _hoisted_17 = {
+  "class": "w-full rounded-lg"
+};
+var _hoisted_18 = {
+  "class": "bg-white border-b"
+};
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+  "class": "py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"
+}, " Penalties ", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = {
+  "class": "py-4 px-6 text-sm text-gray-500 whitespace-nowrap"
+};
+var _hoisted_21 = {
+  "class": "bg-white border-b"
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
+  "class": "py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"
+}, " Penalty Amount ", -1
+/* HOISTED */
+);
+
+var _hoisted_23 = {
+  "class": "py-4 px-6 text-sm text-gray-500 whitespace-nowrap"
+};
+var _hoisted_24 = {
+  key: 1
+};
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+  "class": "text-gray-700 font-bold mb-2"
+}, "Penalty Info", -1
+/* HOISTED */
+);
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "h-full bg-white p-3 rounded-lg"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "m-2 p-3 text-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "text-gray-600 font-bold"
+}, "No penalties found.")])], -1
+/* HOISTED */
+);
+
+var _hoisted_27 = [_hoisted_25, _hoisted_26];
+var _hoisted_28 = {
+  key: 2
+};
+
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-gray-700 font-bold mb-2\">Penalty Info</h1><div class=\"h-full bg-white p-3 rounded-lg\"><div class=\"m-2 p-3 text-center\"><svg class=\"inline w-8 h-8 text-gray-200 animate-spin fill-blue-600\" viewBox=\"0 0 100 101\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z\" fill=\"currentColor\"></path><path d=\"M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z\" fill=\"currentFill\"></path></svg></div></div>", 2);
+
+var _hoisted_31 = [_hoisted_29];
+var _hoisted_32 = {
   "class": "flex items-center p-6 space-x-2 rounded-b border-t border-gray-200"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("HEADER"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600"
-  }, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  var _component_Button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Button");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("HEADER"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    onClick: $setup.close,
+    onClick: _cache[0] || (_cache[0] = function () {
+      return _ctx.close && _ctx.close.apply(_ctx, arguments);
+    }),
     "class": "text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white",
     "data-modal-toggle": "gra-help"
-  }, _hoisted_6)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("BODY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SELECT STATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+  }, _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("BODY"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("SELECT STATION"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
     "class": "c-select",
-    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $setup.station_id = $event;
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.station_id = $event;
     }),
-    onChange: $setup.graInfo
-  }, [_hoisted_10, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.stations, function (_ref) {
+    onChange: _cache[2] || (_cache[2] = function () {
+      return $options.graInfo && $options.graInfo.apply($options, arguments);
+    })
+  }, [_hoisted_11, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.stations, function (_ref) {
     var id = _ref.id,
         stn_id = _ref.stn_id,
         stn_name = _ref.stn_name;
@@ -24673,27 +24726,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       value: stn_id
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(stn_name), 9
     /* TEXT, PROPS */
-    , _hoisted_11);
+    , _hoisted_12);
   }), 128
   /* KEYED_FRAGMENT */
   ))], 544
   /* HYDRATE_EVENTS, NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $setup.station_id]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    &lt;!&ndash;GRA INFO&ndash;&gt;\n                    <div v-if=\"gra.penaltyNames || gra.penaltyAmount\">\n                        <h1 class=\"text-gray-700 font-bold mb-2\">Penalty Info</h1>\n                        <div class=\"h-full bg-white p-3 rounded-lg\">\n                            <div class=\"m-2\">\n                                <table class=\"w-full rounded-lg\">\n                                    <tbody>\n\n                                    <tr class=\"bg-white border-b\">\n                                        <td class=\"py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap\">\n                                            Penalties\n                                        </td>\n                                        <td class=\"py-4 px-6 text-sm text-gray-500 whitespace-nowrap\">\n                                            {{ gra.penaltyNames }}\n                                        </td>\n                                    </tr>\n\n                                    <tr class=\"bg-white border-b\">\n                                        <td class=\"py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap\">\n                                            Penalty Amount\n                                        </td>\n                                        <td class=\"py-4 px-6 text-sm text-gray-500 whitespace-nowrap\">₹\n                                            {{ gra.penaltyAmount }}\n                                        </td>\n                                    </tr>\n\n                                    </tbody>\n                                </table>\n                            </div>\n                        </div>\n                    </div>\n\n                    &lt;!&ndash;NO GRA&ndash;&gt;\n                    <div v-if=\"!(gra.penaltyNames || gra.penaltyAmount)\">\n                        <h1 class=\"text-gray-700 font-bold mb-2\">Penalty Info</h1>\n                        <div class=\"h-full bg-white p-3 rounded-lg\">\n                            <div class=\"m-2 p-3 text-center\">\n                                <p class=\"text-gray-600 font-bold\">No penalties found.</p>\n                            </div>\n                        </div>\n                    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("LOADING"), $setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_12, _hoisted_15)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("BUTTONS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [$setup.gra.penaltyAmount > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Button"], {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.station_id]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("GRA INFO"), $data.gra.penaltyNames || $data.gra.penaltyAmount ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [_hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_16, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_18, [_hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.gra.penaltyNames), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_21, [_hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_23, "₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.gra.penaltyAmount), 1
+  /* TEXT */
+  )])])])])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("NO GRA"), !($data.gra.penaltyNames || $data.gra.penaltyAmount) ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_24, _hoisted_27)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("LOADING"), $data.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_28, _hoisted_31)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("BUTTONS"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [$data.gra.penaltyAmount > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Button, {
     key: 0,
-    "is-loading": $setup.isGraButtonLoading,
-    "is-disabled": $setup.isGraButtonLoading,
-    title: 'Proceed to pay ₹' + $setup.gra.penaltyAmount,
+    "is-loading": $data.isGraButtonLoading,
+    "is-disabled": $data.isGraButtonLoading,
+    title: 'Proceed to pay ₹' + $data.gra.penaltyAmount,
     type: 'button',
-    onClick: $setup.apply
+    onClick: $options.applyGra
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "title"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+  , ["is-loading", "is-disabled", "title", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "is-loading": false,
     "is-disabled": false,
     title: 'Decline',
     type: 'button',
-    onClick: $setup.close
-  })])])])])]);
+    onClick: _ctx.close
+  }, null, 8
+  /* PROPS */
+  , ["onClick"])])])])])]);
 }
 
 /***/ }),
@@ -32865,14 +32924,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _GraModel_vue_vue_type_template_id_2c8dba15__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GraModel.vue?vue&type=template&id=2c8dba15 */ "./resources/js/Shared/Model/GraModel.vue?vue&type=template&id=2c8dba15");
-/* harmony import */ var _GraModel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GraModel.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _GraModel_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GraModel.vue?vue&type=script&lang=js */ "./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js");
 /* harmony import */ var C_Users_gtech_Desktop_Project2_PhonePe_PhonePeIntegration_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_gtech_Desktop_Project2_PhonePe_PhonePeIntegration_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_GraModel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_GraModel_vue_vue_type_template_id_2c8dba15__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Shared/Model/GraModel.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_gtech_Desktop_Project2_PhonePe_PhonePeIntegration_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_GraModel_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_GraModel_vue_vue_type_template_id_2c8dba15__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Shared/Model/GraModel.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -33381,18 +33440,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js":
-/*!***********************************************************************************!*\
-  !*** ./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js ***!
-  \***********************************************************************************/
+/***/ "./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js":
+/*!************************************************************************!*\
+  !*** ./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js ***!
+  \************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_GraModel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_GraModel_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_GraModel_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./GraModel.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_GraModel_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./GraModel.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Shared/Model/GraModel.vue?vue&type=script&lang=js");
  
 
 /***/ }),
