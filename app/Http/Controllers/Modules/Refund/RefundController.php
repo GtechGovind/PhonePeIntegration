@@ -34,12 +34,10 @@ class RefundController extends Controller
         $processing_fee_amount = $response->data->details->pass->processingFeeAmount;
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
-
-        dd($response);
-
+        
         if ($order->product_id == env('PRODUCT_SV'))
         {
-            $balance = $response->data->details->pass->remainingBalance;
+            $balance = $response->data->remainingBalance;
 
             $lastOrder = DB::table('sale_order')
                 ->where('ms_qr_no', '=', $order->ms_qr_no)
