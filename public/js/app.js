@@ -20193,9 +20193,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.isDisabled = true;
         this.errors.source_id = 'Source & destination can\'t be same !';
         this.errors.destination_id = 'Source & destination can\'t be same !';
-      } else if (this.ticket.fare === 0) {
-        this.isLoading = false;
-        this.isDisabled = true;
       } else {
         this.isDisabled = false;
         this.errors.source_id = null;
