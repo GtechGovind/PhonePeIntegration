@@ -82,7 +82,7 @@ class SaleOrder extends Model
             'pax_id'            => Auth::id(),
             'src_stn_id'        => $request -> input('source_id'),
             'des_stn_id'        => $request -> input('destination_id'),
-            'unit'              => $request -> input('fare'),
+            'unit'              => 1,
             'unit_price'        => $request -> input('fare'),
             'total_price'       => $request -> input('fare'),
             'media_type_id'     => env('MEDIA_TYPE_ID_MOBILE'),
