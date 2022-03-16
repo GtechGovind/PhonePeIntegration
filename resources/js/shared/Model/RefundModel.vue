@@ -139,6 +139,7 @@ export default {
                     ' Refunded Successfully !',
                 )
                 window.location.href = '/products'
+                history.pushState(null, document.title, location.href);
             } else {
                 this.isRefundButtonLoading = false
                 this.close()

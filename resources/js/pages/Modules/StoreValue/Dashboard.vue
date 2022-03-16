@@ -39,7 +39,7 @@
         :stations="stations"
     />
 
-    <RecentTicket
+    <RefundModel
         v-if="canRefund"
         :order_id="pass.sale_or_no"
     />
@@ -68,10 +68,10 @@
 import NavBar from "../../../Shared/NavBar";
 import Card from "../../../Shared/Card";
 import GraModel from "../../../Shared/Model/GraModel";
-import RecentTicket from "../Ticket/Components/RecentTicket";
 import PassButton from "../../../Shared/Component/PassButton";
 import {onMounted, ref} from "vue";
 import axios from "axios";
+import RefundModel from "../../../Shared/Model/RefundModel";
 
 const props = defineProps({
     user: Object,

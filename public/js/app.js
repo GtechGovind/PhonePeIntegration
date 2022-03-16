@@ -19513,11 +19513,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Shared_NavBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../Shared/NavBar */ "./resources/js/Shared/NavBar.vue");
 /* harmony import */ var _Shared_Card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../Shared/Card */ "./resources/js/Shared/Card.vue");
 /* harmony import */ var _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../Shared/Model/GraModel */ "./resources/js/Shared/Model/GraModel.vue");
-/* harmony import */ var _Ticket_Components_RecentTicket__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Ticket/Components/RecentTicket */ "./resources/js/Pages/Modules/Ticket/Components/RecentTicket.vue");
-/* harmony import */ var _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../Shared/Component/PassButton */ "./resources/js/Shared/Component/PassButton.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../Shared/Component/PassButton */ "./resources/js/Shared/Component/PassButton.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../Shared/Model/RefundModel */ "./resources/js/Shared/Model/RefundModel.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -19545,10 +19545,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     expose();
     var props = __props; // VARIABLES
 
-    var balance = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)();
-    var isLoadingGenTrip = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)();
-    var isLoadingRefund = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)();
-    var canRefund = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)(); // METHODS
+    var balance = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)();
+    var isLoadingGenTrip = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)();
+    var isLoadingRefund = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)();
+    var canRefund = (0,vue__WEBPACK_IMPORTED_MODULE_5__.ref)(); // METHODS
 
     var genTrip = function genTrip() {
       isLoadingGenTrip = true;
@@ -19569,7 +19569,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 isLoadingRefund = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_7___default().get('/refund/' + props.pass.sale_or_no);
+                return axios__WEBPACK_IMPORTED_MODULE_6___default().get('/refund/' + props.pass.sale_or_no);
 
               case 3:
                 res = _context.sent;
@@ -19614,7 +19614,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_7___default().get('/sv/status/' + props.pass.ms_qr_no);
+                return axios__WEBPACK_IMPORTED_MODULE_6___default().get('/sv/status/' + props.pass.ms_qr_no);
 
               case 2:
                 res = _context2.sent;
@@ -19637,7 +19637,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }(); // LIFECYCLE
 
 
-    (0,vue__WEBPACK_IMPORTED_MODULE_6__.onMounted)(function () {
+    (0,vue__WEBPACK_IMPORTED_MODULE_5__.onMounted)(function () {
       updatePass();
     });
     var __returned__ = {
@@ -19653,11 +19653,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       NavBar: _Shared_NavBar__WEBPACK_IMPORTED_MODULE_1__["default"],
       Card: _Shared_Card__WEBPACK_IMPORTED_MODULE_2__["default"],
       GraModel: _Shared_Model_GraModel__WEBPACK_IMPORTED_MODULE_3__["default"],
-      RecentTicket: _Ticket_Components_RecentTicket__WEBPACK_IMPORTED_MODULE_4__["default"],
-      PassButton: _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_5__["default"],
-      onMounted: vue__WEBPACK_IMPORTED_MODULE_6__.onMounted,
-      ref: vue__WEBPACK_IMPORTED_MODULE_6__.ref,
-      axios: (axios__WEBPACK_IMPORTED_MODULE_7___default())
+      PassButton: _Shared_Component_PassButton__WEBPACK_IMPORTED_MODULE_4__["default"],
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_5__.onMounted,
+      ref: vue__WEBPACK_IMPORTED_MODULE_5__.ref,
+      axios: (axios__WEBPACK_IMPORTED_MODULE_6___default()),
+      RefundModel: _Shared_Model_RefundModel__WEBPACK_IMPORTED_MODULE_7__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -21850,6 +21850,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.close();
                   this.$swal.fire('₹' + this.refund.refund_amount + ' Refunded Successfully !');
                   window.location.href = '/products';
+                  history.pushState(null, document.title, location.href);
                 } else {
                   this.isRefundButtonLoading = false;
                   this.close();
@@ -22116,7 +22117,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     stations: $props.stations
   }, null, 8
   /* PROPS */
-  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.canRefund ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["RecentTicket"], {
+  , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.canRefund ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["RefundModel"], {
     key: 2,
     order_id: $props.pass.sale_or_no
   }, null, 8
