@@ -28,8 +28,10 @@ class DashboardController extends Controller
             ->join('stations as d', 'd.stn_id', 'so.des_stn_id')
             ->where('so.pax_id', '=', Auth::id())
             ->where('so.sale_or_status', '=', env('ORDER_TICKET_GENERATED'))
-            ->where('product_id', '=', env('PRODUCT_SJT'))
-            ->orWhere('product_id', '=', env('PRODUCT_RJT'))
+            ->where(function($query) {
+                $query->where('product_id', '=', env('PRODUCT_SJT'))
+                    ->orWhere('product_id', '=', env('PRODUCT_RJT'));
+            })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
             ->get();
 
@@ -42,8 +44,10 @@ class DashboardController extends Controller
             ->join('stations as d', 'd.stn_id', 'so.des_stn_id')
             ->where('so.pax_id', '=', Auth::id())
             ->where('so.sale_or_status', '=', env('ORDER_COMPLETED'))
-            ->where('product_id', '=', env('PRODUCT_SJT'))
-            ->orWhere('product_id', '=', env('PRODUCT_RJT'))
+            ->where(function($query) {
+                $query->where('product_id', '=', env('PRODUCT_SJT'))
+                      ->orWhere('product_id', '=', env('PRODUCT_RJT'));
+            })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
             ->limit(1)
             ->get();
