@@ -21473,14 +21473,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     expose();
     var props = __props; // VARIABLES
 
-    var isGraButtonLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
+    var isGraButtonLoading = false;
+    var isLoading = false;
     var station_id = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)();
-    var gra = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)({
+    var gra = {
       penalty: null,
       penaltyNames: null,
       penaltyAmount: null
-    }); // FUNCTIONS
+    }; // FUNCTIONS
 
     var close = function close() {
       toggleModal('gra-help', false);

@@ -123,14 +123,14 @@ const props = defineProps({
 })
 
 // VARIABLES
-let isGraButtonLoading = ref(false)
-let isLoading = ref()
+let isGraButtonLoading = false
+let isLoading = false
 let station_id = ref()
-let gra = ref({
+let gra = {
     penalty: null,
     penaltyNames: null,
     penaltyAmount: null,
-})
+}
 
 // FUNCTIONS
 const close = function () {
