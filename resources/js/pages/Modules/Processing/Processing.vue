@@ -15,6 +15,9 @@
 <script>
 
 import Spinner from "../../../Shared/Component/Spinner";
+import {Inertia} from "@inertiajs/inertia";
+import {usePage} from "@inertiajs/inertia-vue3";
+
 import axios from "axios";
 
 export default {
@@ -34,6 +37,7 @@ export default {
     },
 
     async mounted() {
+        console.log(usePage().props.value.urlPrev)
         await this.initCreation()
     },
 
