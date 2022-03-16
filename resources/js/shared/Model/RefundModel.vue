@@ -1,6 +1,5 @@
 <template>
-    <div
-        class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="refund-help">
+    <div class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-20 z-50 justify-center items-center md:inset-0 h-modal sm:h-full" id="refund-help">
         <div class="relative px-4 w-full max-w-md h-full md:h-auto">
 
             <!--REFUND INFO-->
