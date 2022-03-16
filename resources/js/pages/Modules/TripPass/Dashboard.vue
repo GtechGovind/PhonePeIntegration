@@ -9,8 +9,8 @@
     />
 
     <div v-if="trip">
-        <div class="text-center border bg-white rounded-lg">
-            <div class="text-center">
+        <div class="text-center m-2 border bg-white rounded-lg">
+            <div class="text-center p-2">
                 <div class="flex justify-center m-1">
                     <QRCodeVue3
                         class="w-3/4"

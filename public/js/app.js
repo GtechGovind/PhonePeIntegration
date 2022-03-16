@@ -23587,10 +23587,10 @@ var _hoisted_1 = {
   key: 0
 };
 var _hoisted_2 = {
-  "class": "text-center border bg-white rounded-lg"
+  "class": "text-center m-2 border bg-white rounded-lg"
 };
 var _hoisted_3 = {
-  "class": "text-center"
+  "class": "text-center p-2"
 };
 var _hoisted_4 = {
   "class": "flex justify-center m-1"
