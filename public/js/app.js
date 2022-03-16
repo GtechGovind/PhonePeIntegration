@@ -19582,7 +19582,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$swal.fire({
         icon: 'error',
         title: 'Payment Failed !',
-        text: data.error,
         confirmButtonText: 'Ok'
       }).then(function (res) {
         if (res.isConfirmed) {

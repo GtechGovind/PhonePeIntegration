@@ -75,7 +75,6 @@ export default {
             this.$swal.fire({
                 icon: 'error',
                 title: 'Payment Failed !',
-                text: data.error,
                 confirmButtonText: 'Ok',
             }).then((res) => {
                 if (res.isConfirmed) {
