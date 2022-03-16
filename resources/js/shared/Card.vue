@@ -26,6 +26,26 @@
                 </p>
             </div>
 
+            <div class="pt-1" v-if="!isSv">
+                <div class="flex justify-between">
+
+                    <div>
+                        <p class="font-light">Source</p>
+                        <p class="tracking-widest font-bold">
+                            {{ passDetails.source }}
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="font-light">Destination</p>
+                        <p class="tracking-widest font-bold">
+                            {{ passDetails.destination }}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
             <div class="pt-6">
                 <div class="flex justify-between">
 
