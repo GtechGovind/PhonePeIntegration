@@ -19583,13 +19583,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         icon: 'error',
         title: 'Payment Failed !',
         text: data.error,
-        showDenyButton: true,
-        denyButtonText: 'Ok'
+        confirmButtonText: 'Ok'
       }).then(function (res) {
         if (res.isConfirmed) {
-          _this2.$inertia.replace("/processing/" + _this2.order);
-        } else if (res.isDenied) {
-          _this2.$inertia.replace('/products');
+          _this2.$inertia.replace("/products");
         }
       });
     }
