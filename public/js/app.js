@@ -24038,15 +24038,12 @@ var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_11 = {
-  "class": "container mx-auo"
+  "class": "absolute bottom-0 left-0 w-full"
 };
 var _hoisted_12 = {
-  "class": "h-full my-10 grid grid-rows-1"
-};
-var _hoisted_13 = {
   "class": "mx-auto flex items-center"
 };
-var _hoisted_14 = ["src"];
+var _hoisted_13 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_NavBar = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NavBar");
 
@@ -24083,13 +24080,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $data.coBrand,
     "class": "h-24",
     alt: "logo"
   }, null, 8
   /* PROPS */
-  , _hoisted_14)])])])], 64
+  , _hoisted_13)])])], 64
   /* STABLE_FRAGMENT */
   );
 }

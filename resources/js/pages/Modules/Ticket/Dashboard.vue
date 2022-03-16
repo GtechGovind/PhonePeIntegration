@@ -18,7 +18,7 @@
             v-on:click="newOrder"
         />
     </div>
-    
+
 </template>
 
 <script>

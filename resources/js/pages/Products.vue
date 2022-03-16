@@ -33,11 +33,9 @@
             </div>
         </Link>
     </div>
-    <div class="container mx-auo">
-        <div class="h-full my-10 grid grid-rows-1">
-            <div class="mx-auto flex items-center">
-                <img :src="coBrand" class="h-24" alt="logo">
-            </div>
+    <div class="absolute bottom-0 left-0 w-full">
+        <div class="mx-auto flex items-center">
+            <img :src="coBrand" class="h-24" alt="logo">
         </div>
     </div>
 </template>
