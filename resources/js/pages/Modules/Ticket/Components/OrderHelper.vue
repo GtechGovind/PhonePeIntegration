@@ -162,6 +162,7 @@ export default {
     methods: {
 
         getFare: async function () {
+            this.isDisabled = true
             if (this.isValid()) {
                 const response = await axios.post('/api/get/fare', {
                     "source": this.ticket.source_id,
@@ -169,7 +170,10 @@ export default {
                     "pass_id": this.ticket.pass_id
                 });
                 let data = await response.data
-                if (data.status) this.ticket.fare = data.fare
+                if (data.status) {
+                    this.ticket.fare = data.fare
+                    this.isDisabled = false
+                }
             }
         },
 
@@ -216,6 +220,9 @@ export default {
                 this.isDisabled = true
                 this.errors.source_id = 'Source & destination can\'t be same !'
                 this.errors.destination_id = 'Source & destination can\'t be same !'
+            } else if (this.ticket.fare === 0) {
+                this.isLoading = false
+                this.isDisabled = true
             } else {
                 this.isDisabled = false
                 this.errors.source_id = null

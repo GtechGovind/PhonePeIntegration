@@ -20081,28 +20081,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                this.isDisabled = true;
+
                 if (!this.isValid()) {
-                  _context.next = 8;
+                  _context.next = 9;
                   break;
                 }
 
-                _context.next = 3;
+                _context.next = 4;
                 return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/get/fare', {
                   "source": this.ticket.source_id,
                   "destination": this.ticket.destination_id,
                   "pass_id": this.ticket.pass_id
                 });
 
-              case 3:
+              case 4:
                 response = _context.sent;
-                _context.next = 6;
+                _context.next = 7;
                 return response.data;
 
-              case 6:
+              case 7:
                 data = _context.sent;
-                if (data.status) this.ticket.fare = data.fare;
 
-              case 8:
+                if (data.status) {
+                  this.ticket.fare = data.fare;
+                  this.isDisabled = false;
+                }
+
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -20187,6 +20193,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.isDisabled = true;
         this.errors.source_id = 'Source & destination can\'t be same !';
         this.errors.destination_id = 'Source & destination can\'t be same !';
+      } else if (this.ticket.fare === 0) {
+        this.isLoading = false;
+        this.isDisabled = true;
       } else {
         this.isDisabled = false;
         this.errors.source_id = null;
