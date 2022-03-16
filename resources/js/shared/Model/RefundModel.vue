@@ -112,7 +112,6 @@ export default {
                 this.isRefundButtonLoading = false
             } else {
                 this.isRefundButtonLoading = false
-                this.close()
                 this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',

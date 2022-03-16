@@ -21994,7 +21994,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   this.isRefundButtonLoading = false;
                 } else {
                   this.isRefundButtonLoading = false;
-                  this.close();
                   this.$swal.fire({
                     icon: 'error',
                     title: 'Oops...',
