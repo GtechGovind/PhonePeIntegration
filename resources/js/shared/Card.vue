@@ -19,14 +19,14 @@
             </div>
 
             <!--CARD NUMBER-->
-            <div class="pt-1">
+            <div class="pt-2">
                 <p class="font-light">Master Number</p>
                 <p class="tracking-more-wider font-bold">
                     {{ passDetails.ms_qr_no }}
                 </p>
             </div>
 
-            <div class="pt-1" v-if="!isSv">
+            <template class="pt-2" v-if="!isSv">
                 <div class="flex justify-between">
 
                     <div>
@@ -44,7 +44,7 @@
                     </div>
 
                 </div>
-            </div>
+            </template>
 
             <div class="pt-6">
                 <div class="flex justify-between">
