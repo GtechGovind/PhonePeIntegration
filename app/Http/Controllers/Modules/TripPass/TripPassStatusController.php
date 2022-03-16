@@ -23,6 +23,29 @@ class TripPassStatusController extends Controller
             'error' => 'No order found !'
         ]);
 
+        $slaves = DB::table('tp_sl_booking')
+            ->where('sale_or_id', '=', $pass->sale_or_id)
+            ->where('qr_status', '!=', env('EXPIRED'))
+            ->where('qr_status', '!=', env('COMPLETED'))
+            ->get();
+
+        foreach ($slaves as $slave) {
+
+            $status = $slave->qr_status;
+
+            $api = new ApiController();
+            $apiStatus = $api -> getSlaveStatus($slave->sl_qr_no);
+
+            if (env($apiStatus -> data -> trips[0] -> tokenStatus) != $status) {
+                DB::table('tp_sl_booking')
+                    ->where('sl_qr_no', '=', $slave->sl_qr_no)
+                    ->update([
+                        'qr_status' => env($apiStatus -> data -> trips[0] -> tokenStatus)
+                    ]);
+            }
+
+        }
+
         $api = new ApiController();
         $response = $api->getPassStatus($pass->ms_qr_no);
 

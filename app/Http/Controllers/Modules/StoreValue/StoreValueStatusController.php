@@ -23,12 +23,35 @@ class StoreValueStatusController extends Controller
             'error' => 'No order found !'
         ]);
 
+        $slaves = DB::table('sv_sl_booking')
+            ->where('sale_or_id', '=', $pass->sale_or_id)
+            ->where('qr_status', '!=', env('EXPIRED'))
+            ->where('qr_status', '!=', env('COMPLETED'))
+            ->get();
+
+        foreach ($slaves as $slave) {
+
+            $status = $slave->qr_status;
+
+            $api = new ApiController();
+            $apiStatus = $api -> getSlaveStatus($slave->sl_qr_no);
+
+            if (env($apiStatus -> data -> trips[0] -> tokenStatus) != $status) {
+                DB::table('sv_sl_booking')
+                    ->where('sl_qr_no', '=', $slave->sl_qr_no)
+                    ->update([
+                        'qr_status' => env($apiStatus -> data -> trips[0] -> tokenStatus)
+                    ]);
+            }
+
+        }
+
         $api = new ApiController();
         $response = $api->getPassStatus($pass->ms_qr_no);
 
         if ($response->status == "OK") {
 
-            if (count($response -> data -> trips) > 0) {
+            if (count($response->data->trips) > 0) {
 
                 DB::table('sv_sl_booking')
                     ->where('mm_ms_acc_id', '=', $pass->mm_ms_acc_id)
@@ -43,12 +66,10 @@ class StoreValueStatusController extends Controller
 
             return response([
                 'status' => true,
-                'data' => $response -> data
+                'data' => $response->data
             ]);
 
-        }
-        else
-        {
+        } else {
             return response([
                 'status' => false,
                 'message' => 'unable to fetch data from mmopl!'
