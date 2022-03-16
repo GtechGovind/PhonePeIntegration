@@ -99,7 +99,7 @@
                     <!--BUTTONS-->
                     <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
                         <Button
-                            :disabled="gra.penaltyAmount > 0"
+                            :disabled="gra.penaltyAmount"
                             :is-loading="isGraButtonLoading"
                             :title="'Proceed to pay ₹' + gra.penaltyAmount"
                             :type="'button'"
