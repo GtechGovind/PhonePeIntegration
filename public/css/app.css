@@ -1123,6 +1123,9 @@ input:checked + .toggle-bg {
 .flex-row-reverse {
   flex-direction: row-reverse;
 }
+.place-content-center {
+  place-content: center;
+}
 .content-center {
   align-content: center;
 }
@@ -1149,6 +1152,9 @@ input:checked + .toggle-bg {
 }
 .gap-12 {
   gap: 3rem;
+}
+.gap-4 {
+  gap: 1rem;
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -1343,6 +1349,9 @@ input:checked + .toggle-bg {
 }
 .p-2\.5 {
   padding: 0.625rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-8 {
   padding-left: 2rem;

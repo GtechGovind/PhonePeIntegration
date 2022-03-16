@@ -34,8 +34,10 @@
         </Link>
     </div>
     <div class="absolute bottom-0 left-0 w-full">
-        <div class="mx-auto flex items-center">
-            <img :src="coBrand" class="h-24" alt="logo">
+        <div class="grid gap-4 place-content-center p-10">
+            <div>
+                <img :src="coBrand" class="h-24" alt="logo">
+            </div>
         </div>
     </div>
 </template>

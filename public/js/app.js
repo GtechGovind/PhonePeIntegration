@@ -24041,7 +24041,7 @@ var _hoisted_11 = {
   "class": "absolute bottom-0 left-0 w-full"
 };
 var _hoisted_12 = {
-  "class": "mx-auto flex items-center"
+  "class": "grid gap-4 place-content-center p-10"
 };
 var _hoisted_13 = ["src"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -24080,13 +24080,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["href"])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
     src: $data.coBrand,
     "class": "h-24",
     alt: "logo"
   }, null, 8
   /* PROPS */
-  , _hoisted_13)])])], 64
+  , _hoisted_13)])])])], 64
   /* STABLE_FRAGMENT */
   );
 }
