@@ -81,9 +81,9 @@ export default {
                 denyButtonText: 'Go Home !'
             }).then((res) => {
                 if (res.isConfirmed) {
-                    this.$inertia.get("/processing/" + this.order)
+                    this.$inertia.replace("/processing/" + this.order)
                 } else if (res.isDenied) {
-                    this.$inertia.get('/products')
+                    this.$inertia.replace('/products')
                 }
             })
         }

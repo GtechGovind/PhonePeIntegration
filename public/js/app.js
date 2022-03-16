@@ -19556,9 +19556,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         denyButtonText: 'Go Home !'
       }).then(function (res) {
         if (res.isConfirmed) {
-          _this2.$inertia.get("/processing/" + _this2.order);
+          _this2.$inertia.replace("/processing/" + _this2.order);
         } else if (res.isDenied) {
-          _this2.$inertia.get('/products');
+          _this2.$inertia.replace('/products');
         }
       });
     }
