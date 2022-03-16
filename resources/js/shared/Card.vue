@@ -1,6 +1,6 @@
 <template>
 
-    <div class="h-56 m-2 bg-blue-500 rounded-xl relative text-white shadow">
+    <div :class="isSv ? 'h-56' : 'h-64'" class="m-2 bg-blue-500 rounded-xl relative text-white shadow">
         <img class="relative object-cover w-full h-full rounded-xl" :src="card_img" alt="">
         <div class="w-full px-8 absolute top-8">
 

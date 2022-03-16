@@ -988,6 +988,9 @@ input:checked + .toggle-bg {
 .h-9 {
   height: 2.25rem;
 }
+.h-64 {
+  height: 16rem;
+}
 .w-10 {
   width: 2.5rem;
 }
