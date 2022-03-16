@@ -5,7 +5,7 @@
                 <i class="fa-solid fa-chevron-left fa-xl"></i>
             </div>
             <div class="text-center col-span-3 font-semibold text-gray-700 text-xl">
-                <Link :href="home">Mumbai Metro One</Link>
+                <Link :href="'/products'">Mumbai Metro One</Link>
             </div>
             <button class="text-right" v-on:click="showMenuItems()">
                 <i class="fa-solid fa-bars fa-xl"></i>
@@ -19,9 +19,7 @@
                 <Link :href="'/products'" class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Home</Link>
             </li>
             <li>
-                <Link :href="'/terms'"
-                      class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Terms & Conditions
-                </Link>
+                <Link :href="'/terms'" class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Terms & Conditions</Link>
             </li>
         </ul>
     </div>
