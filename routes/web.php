@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Modules\GateRejection\GraController;
+use App\Http\Controllers\Modules\OrderDetailsController;
 use App\Http\Controllers\Modules\Processing\ProcessingController;
 use App\Http\Controllers\Modules\Refund\RefundController;
 use App\Http\Controllers\Modules\StoreValue\StoreValueDashboardController;
@@ -77,3 +78,5 @@ Route::middleware('auth')->group(function () {
     });
 
 });
+
+Route::get('order/{order_id}', [OrderDetailsController::class, 'index'])->name('details-order');

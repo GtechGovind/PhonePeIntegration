@@ -34,6 +34,7 @@ class RefundController extends Controller
         $processing_fee_amount = $response->data->details->pass->processingFeeAmount;
         $refund_amount = $response->data->details->pass->refundAmount;
         $pass_price = $response->data->details->pass->passPrice;
+        $balance = $response->data->details->pass->remainingBalance;
 
 
         if ($order->product_id == env('PRODUCT_SV'))
@@ -45,11 +46,11 @@ class RefundController extends Controller
 
             if (!is_null($lastOrder))
             {
-                if ($refund_amount > $lastOrder->total_price)
+                if ($balance > $lastOrder->total_price)
                 {
                     return response([
                         'status' => false,
-                        'error' => 'Please spend ₹ ' . ($refund_amount - $lastOrder->total_price) . ' to refund pass !'
+                        'error' => 'Please spend ₹ ' . ($balance - $lastOrder->total_price) . ' to refund pass !'
                     ]);
                 }
             }
