@@ -23,7 +23,7 @@
                 <div class="p-6">
 
                     <!--SELECT STATION-->
-                    <div class="my-2">
+                    <div>
                         <label class="c-label">Select Station</label>
                         <select class="c-select" v-model="station_id" v-on:change="graInfo">
                             <option disabled value="">Select station</option>
@@ -69,7 +69,7 @@
                     </div>
 
                     <!--NO GRA-->
-                    <div v-if="!(gra.penaltyNames && isLoading)">
+                    <div v-if="!(gra.penaltyNames && !isLoading)">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
