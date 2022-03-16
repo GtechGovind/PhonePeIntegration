@@ -21966,9 +21966,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      showMenu: false,
-      home: '',
-      location: window.location.pathname
+      showMenu: false
     };
   },
   methods: {
@@ -21976,27 +21974,8 @@ __webpack_require__.r(__webpack_exports__);
       this.showMenu = !this.showMenu;
     },
     onBackButtonPress: function onBackButtonPress() {
-      if (this.location.includes('qr')) {
-        window.location.href = '/products';
-      } else {
-        window.history.back();
-      }
+      window.history.back();
     }
-  },
-  mounted: function mounted() {
-    if (this.location.includes('ticket')) {
-      this.home = '/ticket/dashboard';
-    } else if (this.location.includes('sv')) {
-      this.home = '/sv/dashboard';
-    } else if (this.location.includes('tp')) {
-      this.home = '/tp/dashboard';
-    }
-
-    window.onpopstate = function (event) {
-      if (window.location.pathname.includes('qr')) {
-        window.location.href = '/products';
-      }
-    };
   }
 });
 
@@ -24971,7 +24950,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.onBackButtonPress && $options.onBackButtonPress.apply($options, arguments);
     })
   }, _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: $data.home
+    href: _ctx.home
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_6];
@@ -24987,7 +24966,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $options.showMenuItems();
     })
   }, _hoisted_8)])]), $data.showMenu ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
-    href: $data.home,
+    href: '/products',
     "class": "block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -24996,9 +24975,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }, 8
-  /* PROPS */
-  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
     href: '/terms',
     "class": "block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100"
   }, {

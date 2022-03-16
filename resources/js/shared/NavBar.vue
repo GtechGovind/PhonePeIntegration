@@ -16,7 +16,7 @@
     <div v-if="showMenu" class="m-2 bg-white border">
         <ul class="py-1">
             <li>
-                <Link :href="home" class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Home</Link>
+                <Link :href="'/products'" class="block bg-gray-50 m-2 p-2 text-sm text-gray-700 hover:bg-gray-100">Home</Link>
             </li>
             <li>
                 <Link :href="'/terms'"
@@ -37,8 +37,6 @@ export default {
     data() {
         return {
             showMenu: false,
-            home: '',
-            location: window.location.pathname
         }
     },
     methods: {
@@ -46,29 +44,8 @@ export default {
             this.showMenu = !this.showMenu;
         },
         onBackButtonPress: function () {
-            if (this.location.includes('qr')) {
-                window.location.href = '/products'
-            } else {
-                window.history.back()
-            }
+            window.history.back()
         }
-    },
-    mounted() {
-
-        if (this.location.includes('ticket')) {
-            this.home = '/ticket/dashboard'
-        } else if (this.location.includes('sv')) {
-            this.home = '/sv/dashboard'
-        } else if (this.location.includes('tp')) {
-            this.home = '/tp/dashboard'
-        }
-
-        window.onpopstate = function (event) {
-            if (window.location.pathname.includes('qr')) {
-                window.location.href = '/products'
-            }
-        }
-
     }
 }
 </script>
