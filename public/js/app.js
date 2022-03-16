@@ -23587,7 +23587,7 @@ var _hoisted_1 = {
   key: 0
 };
 var _hoisted_2 = {
-  "class": "text-center m-2 border bg-white rounded-lg"
+  "class": "text-center border bg-white rounded-lg"
 };
 var _hoisted_3 = {
   "class": "text-center"
