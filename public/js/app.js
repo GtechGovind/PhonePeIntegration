@@ -19647,7 +19647,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       balance: 0,
       isLoadingGenTrip: false,
-      isLoadingRefund: false
+      isLoadingRefund: false,
+      refund: {
+        order_id: null,
+        processing_fee: null,
+        processing_fee_amount: null,
+        refund_amount: null,
+        pass_price: null
+      }
     };
   },
   name: "Dashboard",
@@ -19736,6 +19743,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 if (data.status) {
                   this.isLoadingRefund = false;
+                  this.refund = data.refund;
                   toggleModal('refund-help', true);
                 } else {
                   this.isLoadingRefund = false;
@@ -21950,28 +21958,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   name: "RefundModel",
   props: {
-    order_id: String
+    order_id: String,
+    refund: {
+      order_id: null,
+      processing_fee: null,
+      processing_fee_amount: null,
+      refund_amount: null,
+      pass_price: null
+    }
   },
   data: function data() {
     return {
       status: Boolean,
       error: String,
-      isRefundButtonLoading: false,
-      refund: {
-        order_id: null,
-        processing_fee: null,
-        processing_fee_amount: null,
-        refund_amount: null,
-        pass_price: null
-      }
+      isRefundButtonLoading: false
     };
   },
   methods: {
     close: function close() {
       toggleModal('refund-help', false);
     },
-    getRefundInfo: function () {
-      var _getRefundInfo = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    refundTicket: function () {
+      var _refundTicket = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var res, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
@@ -21979,7 +21987,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 this.isRefundButtonLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/' + this.order_id);
+                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/ticket/' + this.order_id);
 
               case 3:
                 res = _context.sent;
@@ -21988,51 +21996,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 6:
                 data = _context.sent;
-
-                if (data.status) {
-                  this.refund = data.refund;
-                  this.isRefundButtonLoading = false;
-                } else {
-                  this.isRefundButtonLoading = false;
-                  this.$swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: data.error
-                  });
-                }
-
-              case 8:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function getRefundInfo() {
-        return _getRefundInfo.apply(this, arguments);
-      }
-
-      return getRefundInfo;
-    }(),
-    refundTicket: function () {
-      var _refundTicket = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        var res, data;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                this.isRefundButtonLoading = true;
-                _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default().get('/refund/ticket/' + this.order_id);
-
-              case 3:
-                res = _context2.sent;
-                _context2.next = 6;
-                return res.data;
-
-              case 6:
-                data = _context2.sent;
 
                 if (data.status) {
                   this.isRefundButtonLoading = false;
@@ -22051,10 +22014,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 8:
               case "end":
-                return _context2.stop();
+                return _context.stop();
             }
           }
-        }, _callee2, this);
+        }, _callee, this);
       }));
 
       function refundTicket() {
@@ -22063,9 +22026,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
       return refundTicket;
     }()
-  },
-  mounted: function mounted() {
-    this.getRefundInfo();
   }
 });
 
@@ -22488,10 +22448,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["is-show", "slave_id", "stations"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
-    order_id: $props.pass.sale_or_no
+    order_id: $props.pass.sale_or_no,
+    refund: $data.refund
   }, null, 8
   /* PROPS */
-  , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+  , ["order_id", "refund"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
     key: 1,
     "is-disabled": $data.isLoadingGenTrip,
     "is-loading": $data.isLoadingGenTrip,
@@ -24768,9 +24729,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.station_id = $event;
     }),
-    onChange: _cache[1] || (_cache[1] = function () {
-      return _ctx.getGraInfo && _ctx.getGraInfo.apply(_ctx, arguments);
-    })
+    onChange: $setup.graInfo
   }, [_hoisted_10, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.stations, function (_ref) {
     var id = _ref.id,
         stn_id = _ref.stn_id,
@@ -25274,13 +25233,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": "text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white",
     "data-modal-toggle": "refund-help"
-  }, _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.pass_price), 1
+  }, _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_13, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.refund.pass_price), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, " Processing Charges (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee) + "%) ", 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_15, " Processing Charges (" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.refund.processing_fee) + "%) ", 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.processing_fee_amount), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_16, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.refund.processing_fee_amount), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_19, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.refund.refund_amount), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_19, " ₹ " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.refund.refund_amount), 1
   /* TEXT */
   )])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_20, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     "is-loading": $data.isRefundButtonLoading,

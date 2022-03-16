@@ -40,6 +40,7 @@
 
     <RefundModel
         :order_id="pass.sale_or_no"
+        :refund="refund"
     />
 
     <PassButton
@@ -88,7 +89,14 @@ export default {
         return {
             balance: 0,
             isLoadingGenTrip: false,
-            isLoadingRefund: false
+            isLoadingRefund: false,
+            refund: {
+                order_id: null,
+                processing_fee: null,
+                processing_fee_amount: null,
+                refund_amount: null,
+                pass_price: null,
+            }
         }
     },
 
@@ -117,6 +125,7 @@ export default {
             const data = await res.data
             if (data.status) {
                 this.isLoadingRefund = false
+                this.refund = data.refund
                 toggleModal('refund-help', true)
             } else {
                 this.isLoadingRefund = false

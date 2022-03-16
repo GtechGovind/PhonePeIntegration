@@ -19,7 +19,7 @@
                     <!--SELECT STATION-->
                     <div class="my-6">
                         <label class="c-label">Select Station</label>
-                        <select class="c-select" v-model="station_id" v-on:change="getGraInfo">
+                        <select class="c-select" v-model="station_id" v-on:change="graInfo">
                             <option disabled value="">Select station</option>
                             <option
                                 v-for="{id, stn_id, stn_name} in stations"

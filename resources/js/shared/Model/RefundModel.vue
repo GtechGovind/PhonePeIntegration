@@ -82,42 +82,25 @@ export default {
     name: "RefundModel",
     props: {
         order_id: String,
+        refund: {
+            order_id: null,
+            processing_fee: null,
+            processing_fee_amount: null,
+            refund_amount: null,
+            pass_price: null,
+        }
     },
     data() {
         return {
             status: Boolean,
             error: String,
             isRefundButtonLoading: false,
-            refund: {
-                order_id: null,
-                processing_fee: null,
-                processing_fee_amount: null,
-                refund_amount: null,
-                pass_price: null,
-            },
         }
     },
     methods: {
 
         close: function () {
             toggleModal('refund-help', false)
-        },
-
-        getRefundInfo: async function () {
-            this.isRefundButtonLoading = true
-            const res = await axios.get('/refund/' + this.order_id)
-            const data = await res.data
-            if (data.status) {
-                this.refund = data.refund
-                this.isRefundButtonLoading = false
-            } else {
-                this.isRefundButtonLoading = false
-                this.$swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: data.error,
-                })
-            }
         },
 
         refundTicket: async function () {
@@ -142,9 +125,6 @@ export default {
                 })
             }
         },
-    },
-    mounted() {
-        this.getRefundInfo()
     }
 }
 </script>
