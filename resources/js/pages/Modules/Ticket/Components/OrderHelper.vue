@@ -163,6 +163,7 @@ export default {
 
     mounted() {
         this.setStations()
+        this.getFare()
     },
 
     methods: {

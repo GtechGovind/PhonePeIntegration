@@ -20105,6 +20105,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   mounted: function mounted() {
     this.setStations();
+    this.getFare();
   },
   methods: {
     setStations: function setStations() {
