@@ -23590,7 +23590,7 @@ var _hoisted_2 = {
   "class": "text-center m-2 border bg-white rounded-lg"
 };
 var _hoisted_3 = {
-  "class": "text-center p-2"
+  "class": "text-center"
 };
 var _hoisted_4 = {
   "class": "flex justify-center m-1"
