@@ -26,7 +26,7 @@
                 </p>
             </div>
 
-            <template class="pt-2" v-if="!isSv">
+            <template class="pt-2 mr-2" v-if="!isSv">
                 <div class="flex justify-between">
 
                     <div>
