@@ -23,7 +23,7 @@
                 </p>
             </div>
 
-            <template class="mt-4" v-if="!isSv">
+            <template class="mt-5" v-if="!isSv">
                 <div class="flex justify-between">
                     <div>
                         <p class="font-light">Source</p>
