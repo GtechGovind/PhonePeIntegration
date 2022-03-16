@@ -20700,7 +20700,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       balance: 0,
       isLoadingGenTrip: false,
-      isLoadingRefund: false
+      isLoadingRefund: false,
+      refund: {
+        order_id: null,
+        processing_fee: null,
+        processing_fee_amount: null,
+        refund_amount: null,
+        pass_price: null
+      }
     };
   },
   name: "Dashboard",
@@ -20788,6 +20795,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 if (data.status) {
                   this.isLoadingRefund = false;
+                  this.refund = data.refund;
                   toggleModal('refund-help', true);
                 } else {
                   this.isLoadingRefund = false;
@@ -23630,10 +23638,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["slave_id", "stations"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_RefundModel, {
-    order_id: $props.pass.sale_or_no
+    order_id: $props.pass.sale_or_no,
+    refund: $data.refund
   }, null, 8
   /* PROPS */
-  , ["order_id"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
+  , ["order_id", "refund"]), !$props.trip ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_PassButton, {
     key: 2,
     "is-disabled": $data.isLoadingGenTrip,
     "is-loading": $data.isLoadingGenTrip,
