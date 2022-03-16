@@ -237,6 +237,13 @@ class RefundController extends Controller
                 'sale_or_status' => env('ORDER_REFUNDED')
             ]);
 
+        // UPDATE ORIGINAL ORDER
+        DB::table('sale_order')
+            ->where('sale_or_no', '=', $order->sale_or_no)
+            ->update([
+                'sale_or_status' => env('ORDER_REFUNDED')
+            ]);
+
         return response([
             'status' => true,
             'message' => 'Order refunded Successfully.'
