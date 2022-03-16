@@ -88,8 +88,7 @@ export default {
         return {
             balance: 0,
             isLoadingGenTrip: false,
-            isLoadingRefund: false,
-            showGra: false
+            isLoadingRefund: false
         }
     },
 
@@ -110,7 +109,7 @@ export default {
             this.$inertia.get('/sv/trip/' + this.pass.sale_or_no)
         },
         getGraInfo: function () {
-            this.showGra = true
+            toggleModal('gra-help', true)
         },
         refundPass: async function () {
             this.isLoadingRefund = true

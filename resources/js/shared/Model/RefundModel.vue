@@ -100,9 +100,6 @@ export default {
     methods: {
 
         close: function () {
-            this.showRefund = false
-            this.showGra = false
-            this.showHelp = true
             toggleModal('refund-help', false)
         },
 
@@ -111,8 +108,6 @@ export default {
             const res = await axios.get('/refund/' + this.order_id)
             const data = await res.data
             if (data.status) {
-                this.showHelp = false
-                this.showRefund = true
                 this.refund = data.refund
                 this.isRefundButtonLoading = false
             } else {
@@ -137,8 +132,7 @@ export default {
                     '₹' + this.refund.refund_amount +
                     ' Refunded Successfully !',
                 )
-                window.location.href = '/products'
-                history.pushState(null, document.title, location.href);
+                window.location.replace('/products')
             } else {
                 this.isRefundButtonLoading = false
                 this.close()
