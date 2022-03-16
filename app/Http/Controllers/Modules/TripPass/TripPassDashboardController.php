@@ -30,7 +30,8 @@ class TripPassDashboardController extends Controller
         return Inertia::render('Modules/TripPass/Dashboard', [
             'user' => Auth::user(),
             'pass' => $pass,
-            'trip' => $trip
+            'trip' => $trip,
+            'stations' => DB::table('stations')->get(['stn_id', 'stn_name'])
         ]);
 
     }
