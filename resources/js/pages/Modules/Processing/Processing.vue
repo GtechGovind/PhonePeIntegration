@@ -15,8 +15,6 @@
 <script>
 
 import Spinner from "../../../Shared/Component/Spinner";
-import {Inertia} from "@inertiajs/inertia";
-import {usePage} from "@inertiajs/inertia-vue3";
 
 import axios from "axios";
 
@@ -37,7 +35,6 @@ export default {
     },
 
     async mounted() {
-        console.log(usePage().props.value)
         await this.initCreation()
     },
 
@@ -56,20 +53,20 @@ export default {
 
             if (op_type_id === 1)
             {
-                if (product_id === 1 || product_id === 2) this.$inertia.get('/ticket/view/' + this.order)
-                else if (product_id === 3) this.$inertia.get('/sv/dashboard')
-                else this.$inertia.get('/tp/dashboard')
+                if (product_id === 1 || product_id === 2) this.$inertia.replace('/ticket/view/' + this.order)
+                else if (product_id === 3) this.$inertia.replace('/sv/dashboard')
+                else this.$inertia.replace('/tp/dashboard')
             }
             else if (op_type_id === 3)
             {
-                if (product_id === 3) this.$inertia.get('/sv/dashboard')
-                else this.$inertia.get('/tp/dashboard')
+                if (product_id === 3) this.$inertia.replace('/sv/dashboard')
+                else this.$inertia.replace('/tp/dashboard')
             }
             else
             {
-                if (product_id === 1 || product_id === 2) this.$inertia.get('/ticket/view/' + order_id)
-                else if (product_id === 3) this.$inertia.get('/sv/dashboard')
-                else this.$inertia.get('/tp/dashboard')
+                if (product_id === 1 || product_id === 2) this.$inertia.replace('/ticket/view/' + order_id)
+                else if (product_id === 3) this.$inertia.replace('/sv/dashboard')
+                else this.$inertia.replace('/tp/dashboard')
             }
 
         },
