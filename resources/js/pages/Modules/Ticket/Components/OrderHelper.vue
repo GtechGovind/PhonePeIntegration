@@ -92,7 +92,7 @@
                 <div class="grid grid-cols-2">
                     <div class="text-gray-600">Journey Type</div>
                     <div class="text-right font-bold text-gray-600">
-                        {{ ticket.pass_id === "11" ? "Single Journey" : "Return Journey" }}
+                        {{ ticket.pass_id === "10" ? "Single Journey" : "Return Journey" }}
                     </div>
                     <div class="text-gray-600">Passengers</div>
                     <div class="text-right font-bold text-gray-600">
