@@ -21490,7 +21490,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 isLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default().get('/gra/' + props.slave_id + "/" + this.station_id);
+                return axios__WEBPACK_IMPORTED_MODULE_3___default().get('/gra/' + props.slave_id + "/" + station_id);
 
               case 3:
                 res = _context.sent;
@@ -24802,10 +24802,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "is-disabled": $setup.isGraButtonLoading,
     title: 'Proceed to pay ₹' + $setup.gra.penaltyAmount,
     type: 'button',
-    onClick: _ctx.applyGra
+    onClick: $setup.apply
   }, null, 8
   /* PROPS */
-  , ["is-loading", "is-disabled", "title", "onClick"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+  , ["is-loading", "is-disabled", "title"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
     "is-loading": false,
     "is-disabled": false,
     title: 'Decline',

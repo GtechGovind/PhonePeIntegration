@@ -93,7 +93,7 @@
                             :is-disabled="isGraButtonLoading"
                             :title="'Proceed to pay ₹' + gra.penaltyAmount"
                             :type="'button'"
-                            v-on:click="applyGra"
+                            v-on:click="apply"
                         />
                         <Button
                             :is-loading="false"
@@ -103,6 +103,7 @@
                             v-on:click="close"
                         />
                     </div>
+
                 </div>
             </div>
         </div>
@@ -139,7 +140,7 @@ const graInfo = async function () {
 
     isLoading = true
 
-    const res = await axios.get('/gra/' + props.slave_id + "/" + this.station_id)
+    const res = await axios.get('/gra/' + props.slave_id + "/" + station_id)
     const data = await res.data;
 
     if (data.status) {
