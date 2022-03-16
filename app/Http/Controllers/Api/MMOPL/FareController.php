@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection LaravelFunctionsInspection */
 
 namespace App\Http\Controllers\Api\MMOPL;
 
@@ -16,11 +16,10 @@ class FareController extends Controller
             'pass_id' => 'required'
         ]);
 
-        $fare_table_id = 0;
-
-        if ($request -> input('pass_id') === "11") $fare_table_id = 0;
-        else if ($request -> input('pass_id') === "91") $fare_table_id = 1;
-        else if ($request -> input('pass_id') === "21") $fare_table_id = 2;
+        if ($request -> input('pass_id') == env('PASS_SJT')) $fare_table_id = 0;
+        else if ($request -> input('pass_id') == env('PASS_SJT')) $fare_table_id = 1;
+        else if ($request -> input('pass_id') == env('PASS_SV')) $fare_table_id = 3;
+        else if ($request -> input('pass_id') == env('PASS_TP')) $fare_table_id = 2;
 
         $fare = DB::table('fares')
             -> where('source', '=', $request -> input('source'))
