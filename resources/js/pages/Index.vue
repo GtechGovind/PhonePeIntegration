@@ -32,8 +32,16 @@ export default {
         }
     },
 
+    props: {
+        isUser: Boolean
+    },
+
     mounted() {
-        this.initPhonePe()
+        if (this.isUser) {
+            this.$inertia.replace('/products')
+        } else {
+            this.initPhonePe()
+        }
     },
 
     methods: {

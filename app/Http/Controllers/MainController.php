@@ -13,7 +13,9 @@ class MainController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Index');
+        return Inertia::render('Index', [
+            'isUser' => Auth::check()
+        ]);
     }
 
     public function auth(Request $request)

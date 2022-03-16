@@ -19342,8 +19342,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       coBrand: '/img/atek_logo.png'
     };
   },
+  props: {
+    isUser: Boolean
+  },
   mounted: function mounted() {
-    this.initPhonePe();
+    if (this.isUser) {
+      this.$inertia.replace('/products');
+    } else {
+      this.initPhonePe();
+    }
   },
   methods: {
     /*

@@ -23,53 +23,57 @@ use Inertia\Inertia;
 Route::get('/', [MainController::class, 'index'])->name('home');
 Route::post('auth', [MainController::class, 'auth'])->name('auth');
 
-// PRODUCTS
-Route::get('products', [ProductController::class, 'index'])->name('products');
+Route::middleware('auth')->group(function () {
 
-// PROCESSING TICKET
-Route::get('processing/{order_id}', [ProcessingController::class, 'index'])->name('processing');
-Route::get('processing/init/{order_id}', [ProcessingController::class, 'init'])->name('processing.init');
-Route::get('processing/failed/{order_id}', [ProcessingController::class, 'failed'])->name('processing.failed');
+    // PRODUCTS
+    Route::get('products', [ProductController::class, 'index'])->name('products');
 
-// TICKET
-Route::get('ticket/dashboard', [DashboardController::class, 'index'])->name('ticket.dashboard');
-Route::get('ticket/order', [OrderController::class, 'index'])->name('ticket.index');
-Route::get('ticket/status', [TicketStatusController::class, 'index'])->name('ticket.status');
-Route::post('ticket/create', [OrderController::class, 'create'])->name('ticket.create');
-Route::get('ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');
-Route::get('ticket/view/{order_id}', [TicketViewController::class, 'index'])->name('ticket.view');
+    // PROCESSING TICKET
+    Route::get('processing/{order_id}', [ProcessingController::class, 'index'])->name('processing');
+    Route::get('processing/init/{order_id}', [ProcessingController::class, 'init'])->name('processing.init');
+    Route::get('processing/failed/{order_id}', [ProcessingController::class, 'failed'])->name('processing.failed');
 
-// STORE VALUE
-Route::get('sv/dashboard', [StoreValueDashboardController::class, 'index'])->name('sv.dashboard');
-Route::get('sv/canIssuePass', [StoreValueOrderController::class, 'canIssuePass'])->name('sv.canIssuePass');
-Route::get('sv/order', [StoreValueOrderController::class, 'index'])->name('sv.order');
-Route::post('sv/create', [StoreValueOrderController::class, 'create'])->name('sv.create');
-Route::get('sv/trip/{order_id}', [StoreValueOrderController::class, 'issueTrip'])->name('sv.issueTrip');
-Route::get('sv/status/{master_id}', [StoreValueStatusController::class, 'index'])->name('sv.status');
-Route::get('sv/reload/status/{order_id}', [StoreValueReloadController::class, 'status'])->name('sv.reload.status');
-Route::get('sv/reload/{order_id}', [StoreValueReloadController::class, 'index'])->name('sv.reload.index');
-Route::post('sv/reload', [StoreValueReloadController::class, 'reload'])->name('sv.reload');
+    // TICKET
+    Route::get('ticket/dashboard', [DashboardController::class, 'index'])->name('ticket.dashboard');
+    Route::get('ticket/order', [OrderController::class, 'index'])->name('ticket.index');
+    Route::get('ticket/status', [TicketStatusController::class, 'index'])->name('ticket.status');
+    Route::post('ticket/create', [OrderController::class, 'create'])->name('ticket.create');
+    Route::get('ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');
+    Route::get('ticket/view/{order_id}', [TicketViewController::class, 'index'])->name('ticket.view');
 
-// TRIP PASS VALUE
-Route::get('tp/dashboard', [TripPassDashboardController::class, 'index'])->name('tp.dashboard');
-Route::get('tp/canIssuePass', [TripPassOrderController::class, 'canIssuePass'])->name('tp.canIssuePass');
-Route::get('tp/order', [TripPassOrderController::class, 'index'])->name('tp.order');
-Route::post('tp/create', [TripPassOrderController::class, 'create'])->name('tp.create');
-Route::get('tp/trip/{order_id}', [TripPassOrderController::class, 'issueTrip'])->name('tp.issueTrip');
-Route::get('tp/status/{master_id}', [TripPassStatusController::class, 'index'])->name('tp.status');
-Route::get('tp/reload/status/{order_id}', [TripPassReloadController::class, 'status'])->name('tp.reload.status');
-Route::get('tp/reload/{order_id}', [TripPassReloadController::class, 'index'])->name('tp.reload.index');
-Route::post('tp/reload', [TripPassReloadController::class, 'reload'])->name('tp.reload');
+    // STORE VALUE
+    Route::get('sv/dashboard', [StoreValueDashboardController::class, 'index'])->name('sv.dashboard');
+    Route::get('sv/canIssuePass', [StoreValueOrderController::class, 'canIssuePass'])->name('sv.canIssuePass');
+    Route::get('sv/order', [StoreValueOrderController::class, 'index'])->name('sv.order');
+    Route::post('sv/create', [StoreValueOrderController::class, 'create'])->name('sv.create');
+    Route::get('sv/trip/{order_id}', [StoreValueOrderController::class, 'issueTrip'])->name('sv.issueTrip');
+    Route::get('sv/status/{master_id}', [StoreValueStatusController::class, 'index'])->name('sv.status');
+    Route::get('sv/reload/status/{order_id}', [StoreValueReloadController::class, 'status'])->name('sv.reload.status');
+    Route::get('sv/reload/{order_id}', [StoreValueReloadController::class, 'index'])->name('sv.reload.index');
+    Route::post('sv/reload', [StoreValueReloadController::class, 'reload'])->name('sv.reload');
 
-// GRA
-Route::get('gra/{slave_id}/{station_id}', [GraController::class, 'info'])->name('gra.info');
-Route::post('gra', [GraController::class, 'apply'])->name('gra.perform-gra');
+    // TRIP PASS VALUE
+    Route::get('tp/dashboard', [TripPassDashboardController::class, 'index'])->name('tp.dashboard');
+    Route::get('tp/canIssuePass', [TripPassOrderController::class, 'canIssuePass'])->name('tp.canIssuePass');
+    Route::get('tp/order', [TripPassOrderController::class, 'index'])->name('tp.order');
+    Route::post('tp/create', [TripPassOrderController::class, 'create'])->name('tp.create');
+    Route::get('tp/trip/{order_id}', [TripPassOrderController::class, 'issueTrip'])->name('tp.issueTrip');
+    Route::get('tp/status/{master_id}', [TripPassStatusController::class, 'index'])->name('tp.status');
+    Route::get('tp/reload/status/{order_id}', [TripPassReloadController::class, 'status'])->name('tp.reload.status');
+    Route::get('tp/reload/{order_id}', [TripPassReloadController::class, 'index'])->name('tp.reload.index');
+    Route::post('tp/reload', [TripPassReloadController::class, 'reload'])->name('tp.reload');
 
-// REFUND
-Route::get('refund/{order_id}', [RefundController::class, 'info'])->name('refund.info');
-Route::get('refund/ticket/{order_id}', [RefundController::class, 'apply'])->name('refund');
+    // GRA
+    Route::get('gra/{slave_id}/{station_id}', [GraController::class, 'info'])->name('gra.info');
+    Route::post('gra', [GraController::class, 'apply'])->name('gra.perform-gra');
 
-// TERMS AND CONDITIONS
-Route::get('/terms', function () {
-    return Inertia::render('Modules/Terms');
+    // REFUND
+    Route::get('refund/{order_id}', [RefundController::class, 'info'])->name('refund.info');
+    Route::get('refund/ticket/{order_id}', [RefundController::class, 'apply'])->name('refund');
+
+    // TERMS AND CONDITIONS
+    Route::get('/terms', function () {
+        return Inertia::render('Modules/Terms');
+    });
+
 });
