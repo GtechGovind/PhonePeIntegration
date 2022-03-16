@@ -37,7 +37,7 @@ export default {
     },
 
     async mounted() {
-        console.log(usePage().props.value.urlPrev)
+        console.log(usePage().props)
         await this.initCreation()
     },
 
