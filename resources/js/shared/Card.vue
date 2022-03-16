@@ -6,27 +6,24 @@
 
             <!--USER NAME & COMPANY LOGO-->
             <div class="flex justify-between">
-
                 <div>
                     <p class="font-light">Name</p>
                     <p class="tracking-widest font-bold">
                         {{ user.pax_name }}
                     </p>
                 </div>
-
                 <img class="w-28 h-auto" :src="short_logo" alt=""/>
-
             </div>
 
             <!--CARD NUMBER-->
-            <div class="mt-1">
+            <div>
                 <p class="font-light">Master Number</p>
                 <p class="tracking-more-wider font-bold">
                     {{ passDetails.ms_qr_no }}
                 </p>
             </div>
 
-            <template class="mt-1" v-if="!isSv">
+            <template class="mt-3" v-if="!isSv">
                 <div class="flex justify-between">
                     <div>
                         <p class="font-light">Source</p>
@@ -43,7 +40,7 @@
                 </div>
             </template>
 
-            <div class="mt-1">
+            <div class="mt-3">
                 <div class="flex justify-between">
                     <!--BALANCE-->
                     <div>
