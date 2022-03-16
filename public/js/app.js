@@ -24603,7 +24603,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = [_hoisted_6];
 var _hoisted_8 = {
-  "class": "p-6 space-y-6"
+  "class": "p-6"
 };
 var _hoisted_9 = {
   "class": "my-6"

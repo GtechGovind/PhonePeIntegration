@@ -20,7 +20,7 @@
                 </div>
 
                 <!--BODY-->
-                <div class="p-6 space-y-6">
+                <div class="p-6">
 
                     <!--SELECT STATION-->
                     <div class="my-6">
