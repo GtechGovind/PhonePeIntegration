@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     // TICKET
     Route::get('ticket/dashboard', [DashboardController::class, 'index'])->name('ticket.dashboard');
     Route::get('ticket/order', [OrderController::class, 'index'])->name('ticket.index');
+    Route::get('ticket/order/{source}/{destination}', [OrderController::class, 'indexRecent'])->name('ticket.recent');
     Route::get('ticket/status', [TicketStatusController::class, 'index'])->name('ticket.status');
     Route::post('ticket/create', [OrderController::class, 'create'])->name('ticket.create');
     Route::get('ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');

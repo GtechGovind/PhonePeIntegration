@@ -6,33 +6,41 @@
             </span>
         </div>
         <div v-for="ticket in recentTickets" class="bg-white rounded shadow hover:bg-gray-50 m-2 ">
-            <div class="grid grid-cols-5">
-                <div class="grid grid-rows-2 col-span-4 p-3">
-                    <div class="text-xl text-gray-600 font-semibold">
-                        {{ ticket.source }} <i class="fa-solid fa-right-long mx-2"></i> {{ ticket.destination }}
+            <Link :href="'ticket/order/' + ticket.src_stn_id + '/' + ticket.src_des_id">
+                <div class="grid grid-cols-5">
+                    <div class="grid grid-rows-2 col-span-4 p-3">
+                        <div class="text-xl text-gray-600 font-semibold">
+                            {{ ticket.source }} <i class="fa-solid fa-right-long mx-2"></i> {{ ticket.destination }}
+                        </div>
+                        <div class="text-sm content-center h-full mt-2">
+                            Click to buy again, fare ₹ {{ ticket.total_price }} / ticket
+                        </div>
                     </div>
-                    <div class="text-sm content-center h-full mt-2">
-                        Click to buy again, fare ₹ {{ ticket.total_price }} / ticket
-                    </div>
-                </div>
-                <div class="grid grid-rows-2 bg-blue-400">
-                    <div class="row-span-2 text-center">
-                        <div class="grid content-center h-full">
-                            <i class="fa-solid fa-angle-right fa-2xl text-gray-50 hover:text-blue-700"></i>
+                    <div class="grid grid-rows-2 bg-blue-400">
+                        <div class="row-span-2 text-center">
+                            <div class="grid content-center h-full">
+                                <i class="fa-solid fa-angle-right fa-2xl text-gray-50 hover:text-blue-700"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     </div>
 </template>
 
 <script>
+
+import {Link} from '@inertiajs/inertia-vue3'
+
 export default {
     props: {
         recentTickets: Object
     },
-    name: "RecentTicket"
+    name: "RecentTicket",
+    components: {
+        Link
+    }
 }
 </script>
 

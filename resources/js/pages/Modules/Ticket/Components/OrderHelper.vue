@@ -156,10 +156,19 @@ export default {
     },
 
     props: {
-        stations: Array
+        stations: Array,
+        source: Number,
+        destination: Number
     },
 
     methods: {
+
+        setStations: function () {
+            if (this.source) {
+                this.ticket.source_id = this.source
+                this.ticket.destination_id = this.destination
+            }
+        },
 
         getFare: async function () {
             this.isDisabled = true

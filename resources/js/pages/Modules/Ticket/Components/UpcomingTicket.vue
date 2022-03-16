@@ -39,7 +39,9 @@
     </div>
 </template>
 
-<script>import {Link} from '@inertiajs/inertia-vue3'
+<script>
+
+import {Link} from '@inertiajs/inertia-vue3'
 
 export default {
     props: {

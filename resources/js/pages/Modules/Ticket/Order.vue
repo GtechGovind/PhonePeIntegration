@@ -3,7 +3,13 @@
     <nav-bar/>
     <hero/>
 
-    <OrderHelper :stations="stations"/>
+    <template v-if="source">
+        <OrderHelper :stations="stations" :source="source" :destination="destination"/>
+    </template>
+
+    <template v-else>
+        <OrderHelper :stations="stations"/>
+    </template>
 
 </template>
 
@@ -27,7 +33,9 @@ export default {
     },
 
     props: {
-        stations: Array
+        stations: Array,
+        source: Number,
+        destination: Number
     },
 
     name: "Order",

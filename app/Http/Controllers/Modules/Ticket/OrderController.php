@@ -21,6 +21,15 @@ class OrderController extends Controller
         ]);
     }
 
+    public function indexRecent($source, $destination)
+    {
+        return Inertia::render('Modules/Ticket/Order', [
+            'stations' => DB::table('stations')->get(['stn_id', 'stn_name']),
+            'source' => $source,
+            'destination' => $destination
+        ]);
+    }
+
     /*
         CHECK IF USER HAS
         ANY UNPAID ORDERS
