@@ -37,7 +37,7 @@ export default {
     },
 
     async mounted() {
-        console.log(usePage().props)
+        console.log(usePage().props.value)
         await this.initCreation()
     },
 
