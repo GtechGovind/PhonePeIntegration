@@ -23,7 +23,7 @@
                 <div class="p-6">
 
                     <!--SELECT STATION-->
-                    <div class="mb-2">
+                    <div class="mb-3">
                         <label class="c-label">Select Station</label>
                         <select class="c-select" v-model="station_id" v-on:change="graInfo">
                             <option disabled value="">Select station</option>
@@ -99,8 +99,9 @@
                     <!--BUTTONS-->
                     <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200">
                         <Button
-                            :is-disabled="gra.penaltyAmount > 0"
+                            v-if="gra.penaltyAmount > 0"
                             :is-loading="isGraButtonLoading"
+                            :is-disabled="isGraButtonLoading"
                             :title="'Proceed to pay ₹' + gra.penaltyAmount"
                             :type="'button'"
                             v-on:click="applyGra"
