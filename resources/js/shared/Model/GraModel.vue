@@ -140,7 +140,7 @@ const graInfo = async function () {
 
     isLoading = true
 
-    const res = await axios.get('/gra/' + props.slave_id + "/" + station_id)
+    const res = await axios.get('/gra/' + props.slave_id + "/" + station_id.value)
     const data = await res.data;
 
     if (data.status) {

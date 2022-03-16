@@ -21498,7 +21498,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 isLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_3___default().get('/gra/' + props.slave_id + "/" + station_id);
+                return axios__WEBPACK_IMPORTED_MODULE_3___default().get('/gra/' + props.slave_id + "/" + station_id.value);
 
               case 3:
                 res = _context.sent;
