@@ -4,7 +4,7 @@
             <div class="relative bg-white rounded-lg shadow">
 
                 <!--HEADER-->
-                <div class="flex justify-between items-start px-5 py-2 rounded-t border-b dark:border-gray-600">
+                <div class="flex justify-between items-start px-5 py-4 rounded-t border-b dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">Unable to exit ?</h3>
                     <button type="button" v-on:click="close" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="gra-help">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
                     </div>
 
                     <!--GRA INFO-->
-                    <div v-if="gra.penaltyNames || gra.penaltyAmount">
+                    <div class="bg-blue-400" v-if="gra.penaltyNames || gra.penaltyAmount">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2">
@@ -63,7 +63,7 @@
                     </div>
 
                     <!--NO GRA-->
-                    <div v-if="!(gra.penaltyNames || isLoading)">
+                    <div class="bg-blue-400" v-if="!(gra.penaltyNames || isLoading)">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
@@ -73,7 +73,7 @@
                     </div>
 
                     <!--LOADING-->
-                    <div v-if="isLoading">
+                    <div class="bg-blue-400" v-if="isLoading">
                         <h1 class="text-gray-700 font-bold mb-2">Penalty Info</h1>
                         <div class="h-full bg-white p-3 rounded-lg">
                             <div class="m-2 p-3 text-center">
