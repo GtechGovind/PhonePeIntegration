@@ -19583,9 +19583,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         icon: 'error',
         title: 'Payment Failed !',
         text: data.error,
-        confirmButtonText: 'Try Again',
         showDenyButton: true,
-        denyButtonText: 'Go Home !'
+        denyButtonText: 'Ok'
       }).then(function (res) {
         if (res.isConfirmed) {
           _this2.$inertia.replace("/processing/" + _this2.order);
