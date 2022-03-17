@@ -33,7 +33,7 @@
     </div>
 
     <GraModel
-        :is-show="showGra"
+        v-if="trip"
         :slave_id="trip.sl_qr_no"
         :stations="stations"
     />
