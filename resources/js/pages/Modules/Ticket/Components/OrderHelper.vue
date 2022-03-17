@@ -176,8 +176,8 @@ export default {
         },
 
         getFare: async function () {
-            this.isDisabled = true
             if (this.isValid()) {
+                this.isDisabled = true
                 const response = await axios.post('/api/get/fare', {
                     "source": this.ticket.source_id,
                     "destination": this.ticket.destination_id,
