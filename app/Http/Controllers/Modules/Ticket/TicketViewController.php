@@ -59,8 +59,6 @@ class TicketViewController extends Controller
             ->join('stations as d', 'd.id', 'so.des_stn_id')
             ->where('so.sale_or_no', '=', $order_id)
             ->where('rjt.qr_dir', '=', $dir)
-            ->where('rjt.qr_status', '!=', env('EXPIRED'))
-            ->where('rjt.qr_status', '!=', env('COMPLETED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'rjt.*'])
             ->get();
     }
