@@ -92,7 +92,7 @@ export default {
         onSuccess: function (data) {
             this.isLoading = false
             const { redirectUrl } = data
-            window.location.href = redirectUrl
+            window.location.replace(redirectUrl)
         },
 
         onFailure: function (data) {

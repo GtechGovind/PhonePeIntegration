@@ -206,7 +206,7 @@ export default {
             this.isLoading = false
             this.isDisabled = false
             const {redirectUrl} = data
-            window.location.href = redirectUrl
+            window.location.replace(redirectUrl)
         },
 
         onFailure: function (data) {
