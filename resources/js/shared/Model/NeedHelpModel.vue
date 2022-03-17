@@ -347,11 +347,11 @@ export default {
                 penaltyInfo: this.gra.penalty,
                 station_id: this.station_id
             })
-            const {error, status} = await res.data
+            const {error, status, redirectUrl} = await res.data
             if (status) {
                 this.isGraButtonLoading = false
                 this.close()
-                this.$inertia.visit('/products')
+                window.location.href = redirectUrl
             } else {
                 this.isGraButtonLoading = false
                 this.close()
