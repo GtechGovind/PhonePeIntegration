@@ -208,10 +208,11 @@ export default {
                 station_id: this.station_id
             })
 
-            const {error, status} = await res.data
+            const {error, status, redirectUrl} = await res.data
 
             if (status) {
                 this.isGraButtonLoading = false
+                window.location.href = redirectUrl
                 this.close()
             } else {
                 this.isGraButtonLoading = false
