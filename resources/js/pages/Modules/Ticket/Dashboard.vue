@@ -3,7 +3,7 @@
     <NavBar/>
     <Hero/>
 
-    <RecentTicket v-if="recentOrders.length > 0"  :is-disabled="upcomingOrders.length <= 1" :recent-tickets="recentOrders" />
+    <RecentTicket v-if="show"   :recent-tickets="recentOrders" />
 
     <TransitionGroup>
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
@@ -65,7 +65,7 @@ export default {
         },
 
         RecentTkt : function (){
-            console.log("hi")
+
             if(this.recentOrders.length > 0 && this.upcomingOrders.length <= 1){
                this.show = true;
             }
