@@ -166,12 +166,14 @@ export default {
                 this.errors.source_id = 'Source & destination can\'t be same !'
                 this.errors.destination_id = 'Source & destination can\'t be same !'
 
+                return false
+
             } else {
                 this.isDisabled = false
                 return  true
             }
 
-            return false
+
         }
 
     },
