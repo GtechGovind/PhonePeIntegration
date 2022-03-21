@@ -72,6 +72,7 @@ export default {
     },
     mounted() {
         this.updateDashboard()
+        this.RecentTkt()
     }
 }
 </script>

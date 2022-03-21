@@ -20494,6 +20494,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   mounted: function mounted() {
     this.updateDashboard();
+    this.RecentTkt();
   }
 });
 
