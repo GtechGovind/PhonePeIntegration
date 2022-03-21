@@ -19830,7 +19830,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else if (this.pass.price < 100) {
         this.error = 'Amount must be greater then 100';
         this.pass.price = 100;
-        this.isDisabled = true;
+        this.isDisabled = false;
       } else if (this.pass.price % 100 !== 0) {
         this.error = 'Amount must be multiple of 100';
         this.isDisabled = true;
@@ -20605,7 +20605,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/ticket/status');
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/get/upcoming');
 
               case 2:
                 res = _context3.sent;

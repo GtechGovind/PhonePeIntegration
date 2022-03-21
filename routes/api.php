@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/get/fare', [FareController::class, 'getFare'])->name('fare');
 
+
 // SETTLEMENT
 Route::middleware(['basic_auth'])->group(function () {
     Route::post('get/settlement/issue', [SettlementController::class, 'getIssueUnsettledData'])->name('settlement.issue');

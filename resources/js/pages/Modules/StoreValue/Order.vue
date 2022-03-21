@@ -98,7 +98,7 @@ export default {
             } else if (this.pass.price < 100) {
                 this.error = 'Amount must be greater then 100'
                 this.pass.price = 100
-                this.isDisabled = true
+                this.isDisabled = false
             } else if (this.pass.price % 100 !== 0) {
                 this.error = 'Amount must be multiple of 100'
                 this.isDisabled = true

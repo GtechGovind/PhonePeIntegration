@@ -57,7 +57,7 @@ export default {
         },
 
         redirectPage : async function (){
-            const res = await axios.get('/ticket/status');
+            const res = await axios.get('/get/upcoming');
             const data = res.data
             console.log(data);
         }

@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::post('ticket/create', [OrderController::class, 'create'])->name('ticket.create');
     Route::get('ticket/order/pending', [OrderController::class, 'isPending'])->name('ticket.order.pending');
     Route::get('ticket/view/{order_id}', [TicketViewController::class, 'index'])->name('ticket.view');
+    Route::get('get/upcoming',[DashboardController::class, 'getUpcomingOrders'])->name('ticket.upcoming');
+
 
     // STORE VALUE
     Route::get('sv/dashboard', [StoreValueDashboardController::class, 'index'])->name('sv.dashboard');
