@@ -20541,12 +20541,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
             case 2:
               url = _this.urlPrev.split("/");
+              console.log(url);
 
               if (url[url.length - 2] === 'view') {
                 window.location.replace('/ticket/dashboard');
               }
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
