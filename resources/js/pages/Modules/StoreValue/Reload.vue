@@ -36,8 +36,6 @@
         v-on:click="genOrder"
     />
 
-    <Footer />
-
 </template>
 
 <script>

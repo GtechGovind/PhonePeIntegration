@@ -9,8 +9,6 @@
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
     </TransitionGroup>
 
-    <Footer />
-
     <div :class="upcomingOrders.length < 1 ? 'absolute bottom-0 left-0 w-full' : ''">
         <Button
             :type="'button'"
@@ -34,7 +32,6 @@ import AnchorButton from "../../../Shared/Component/AnchorButton";
 import axios from "axios";
 import {Inertia} from "@inertiajs/inertia";
 import Button from "../../../Shared/Component/Button";
-import Footer from "../../../Shared/Footer";
 
 export default {
     name: "Dashboard",
@@ -44,7 +41,7 @@ export default {
             isDisabled: false,
         }
     },
-    components: {Footer, Button, AnchorButton, UpcomingTicket, RecentTicket, Hero, NavBar, Link},
+    components: {Button, AnchorButton, UpcomingTicket, RecentTicket, Hero, NavBar, Link},
     props: {
         user: Object,
         upcomingOrders: Array,

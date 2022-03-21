@@ -77,8 +77,6 @@
         :title="'PROCEED TO PAY ₹ ' + tripPass.fare"
     />
 
-    <Footer />
-
 </template>
 
 <script>
@@ -87,7 +85,6 @@ import axios from "axios";
 import Button from "../../../Shared/Component/Button";
 import NavBar from "../../../Shared/NavBar";
 import Hero from "../../../Shared/Hero";
-import Footer from "../../../Shared/Footer";
 
 export default {
 
@@ -99,7 +96,7 @@ export default {
 
     name: "Order",
 
-    components: {Footer, Hero, NavBar, Button},
+    components: {Hero, NavBar, Button},
 
     data() {
         return {

@@ -103,13 +103,9 @@
         </div>
     </div>
 
-    <Footer />
-
 </template>
 
 <script setup>
-
-import Footer from "../../Shared/Footer";
 
 const props = defineProps({
     order: Object
