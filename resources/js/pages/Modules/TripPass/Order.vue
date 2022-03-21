@@ -158,21 +158,7 @@ export default {
 
         isValid: function () {
 
-            this.errors.source_id = null
-            this.errors.destination_id = null
-
-            if (this.tripPass.source_id === '') {
-                this.isLoading = false
-                this.isDisabled = true
-                this.errors.source_id = 'Please select source station !'
-
-            } else if (this.tripPass.destination_id === '') {
-                this.isLoading = false
-                this.isDisabled = true
-                this.errors.destination_id = 'Please select destination station !'
-
-            } else if (this.tripPass.source_id === this.tripPass.destination_id) {
-                this.isLoading = false
+            if (this.tripPass.source_id === this.tripPass.destination_id) {
                 this.isDisabled = true
                 this.errors.source_id = 'Source & destination can\'t be same !'
                 this.errors.destination_id = 'Source & destination can\'t be same !'
