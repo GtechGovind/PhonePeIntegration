@@ -35,7 +35,7 @@ class DashboardController extends Controller
                     ->orWhere('product_id', '=', env('PRODUCT_RJT'));
             })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
-            ->orderBy('txn_date', 'desc')
+            ->orderBy('so.txn_date', 'desc')
             ->get();
 
     }
@@ -52,7 +52,7 @@ class DashboardController extends Controller
                       ->orWhere('product_id', '=', env('PRODUCT_RJT'));
             })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
-            ->orderBy('txn_date', 'desc')
+            ->orderBy('so.txn_date', 'desc')
             ->limit(1)
             ->get();
     }

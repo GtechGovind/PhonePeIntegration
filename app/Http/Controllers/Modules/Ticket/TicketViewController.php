@@ -49,7 +49,7 @@ class TicketViewController extends Controller
             ->where('sjt.qr_status', '!=', env('EXPIRED'))
             ->where('sjt.qr_status', '!=', env('COMPLETED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'sjt.*'])
-            ->orderBy('txn_date', 'desc')
+            ->orderBy('so.txn_date', 'desc')
             ->get();
 
     }
@@ -63,7 +63,7 @@ class TicketViewController extends Controller
             ->where('so.sale_or_no', '=', $order_id)
             ->where('rjt.qr_dir', '=', $dir)
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'rjt.*'])
-            ->orderBy('txn_date', 'desc')
+            ->orderBy('so.txn_date', 'desc')
             ->get();
     }
 }
