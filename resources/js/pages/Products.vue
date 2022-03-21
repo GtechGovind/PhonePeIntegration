@@ -33,7 +33,7 @@
             </div>
         </Link>
     </div>
-    <Footer />
+
 </template>
 
 <script>
