@@ -20539,9 +20539,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _this.checkIsPending();
 
             case 2:
-              console.log(document.referrer);
+              _context.next = 4;
+              return _this.redirectPage();
 
-            case 3:
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -20595,6 +20596,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       return checkIsPending;
+    }(),
+    redirectPage: function () {
+      var _redirectPage = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee3() {
+        var res, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().get('/ticket/status');
+
+              case 2:
+                res = _context3.sent;
+                data = res.data;
+                console.log(data);
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      function redirectPage() {
+        return _redirectPage.apply(this, arguments);
+      }
+
+      return redirectPage;
     }()
   }
 });

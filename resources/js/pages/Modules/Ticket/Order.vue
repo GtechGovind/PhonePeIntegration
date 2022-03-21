@@ -30,8 +30,7 @@ export default {
 
     async mounted() {
         await this.checkIsPending()
-        console.log(document.referrer)
-
+        await this.redirectPage()
     },
 
     props: {
@@ -55,6 +54,12 @@ export default {
             const data = await response.data
             const {isPendingPayment} = data
             this.isPendingPayment = isPendingPayment
+        },
+
+        redirectPage : async function (){
+            const res = await axios.get('/ticket/status');
+            const data = res.data
+            console.log(data);
         }
     },
 
