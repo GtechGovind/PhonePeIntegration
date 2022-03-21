@@ -23,7 +23,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    private function getUpcomingOrders(): Collection
+    public function getUpcomingOrders(): Collection
     {
         return DB::table('sale_order as so')
             ->join('stations as s', 's.stn_id', 'so.src_stn_id')
