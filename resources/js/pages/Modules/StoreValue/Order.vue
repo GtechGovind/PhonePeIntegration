@@ -92,7 +92,9 @@ export default {
 
         validate: function () {
 
-            if (this.pass.price < 100) {
+            if (this.pass.price === '') {
+                this.pass.price = 0
+            } else if (this.pass.price < 100) {
                 this.error = 'Amount must be grater then 100'
                 this.isDisabled = true
             } else if (this.pass.price % 100 !== 0) {
