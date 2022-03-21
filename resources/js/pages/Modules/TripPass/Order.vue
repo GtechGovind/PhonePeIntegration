@@ -119,20 +119,17 @@ export default {
 
         getFare: async function () {
             if (this.isValid) {
-
                 const response = await axios.post('/api/get/fare', {
                     "source": this.tripPass.source_id,
                     "destination": this.tripPass.destination_id,
                     "pass_id": this.tripPass.pass_id
                 });
-
                 let data = await response.data
                 if (data.status) {
                     this.tripPass.fare = data.fare
                     this.isDisabled = false
                 }
                 else console.log(data.errors)
-
             }
         },
 
@@ -160,7 +157,7 @@ export default {
 
         isValid: function () {
 
-            console.log(this.tripPass.fare)
+            console.log("hi")
 
             if(this.tripPass.fare === 0) {
                 this.isDisabled = true
