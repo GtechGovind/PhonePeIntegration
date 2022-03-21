@@ -59,7 +59,10 @@ export default {
         redirectPage : async function (){
             const res = await axios.get('/get/upcoming');
             const data = res.data
-            console.log(data);
+            if(data.length > 1){
+                window.location.replace('/ticket/dashboard')
+            }
+
         }
     },
 

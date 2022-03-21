@@ -20610,7 +20610,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 2:
                 res = _context3.sent;
                 data = res.data;
-                console.log(data);
+
+                if (data.length > 1) {
+                  window.location.replace('/ticket/dashboard');
+                }
 
               case 5:
               case "end":
