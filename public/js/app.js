@@ -20878,37 +20878,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   methods: {
     getFare: function () {
       var _getFare = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var response, data;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                if (!this.isValid) {
-                  _context.next = 8;
-                  break;
+                if (this.isValid) {
+                  /*const response = await axios.post('/api/get/fare', {
+                      "source": this.tripPass.source_id,
+                      "destination": this.tripPass.destination_id,
+                      "pass_id": this.tripPass.pass_id
+                  });
+                  let data = await response.data
+                  if (data.status) {
+                      this.tripPass.fare = data.fare
+                      this.isDisabled = false
+                  }
+                  else console.log(data.errors)*/
                 }
 
-                _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('/api/get/fare', {
-                  "source": this.tripPass.source_id,
-                  "destination": this.tripPass.destination_id,
-                  "pass_id": this.tripPass.pass_id
-                });
-
-              case 3:
-                response = _context.sent;
-                _context.next = 6;
-                return response.data;
-
-              case 6:
-                data = _context.sent;
-
-                if (data.status) {
-                  this.tripPass.fare = data.fare;
-                  this.isDisabled = false;
-                } else console.log(data.errors);
-
-              case 8:
+              case 1:
               case "end":
                 return _context.stop();
             }
