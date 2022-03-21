@@ -25,9 +25,9 @@
                         {{ stn_name }}
                     </option>
                 </select>
-<!--                <div class="block mb-2 text-sm text-red-500" v-if="errors">
-                    {{ errors.tripPass.source_id }}
-                </div>-->
+                <div class="block mb-2 text-sm text-red-500" v-if="errors.source_id">
+                    {{ errors.source_id }}
+                </div>
             </div>
 
             <!--DESTINATION-->
@@ -44,9 +44,9 @@
                         {{ stn_name }}
                     </option>
                 </select>
-<!--                <div class="block mb-2 text-sm text-red-500" v-if="errors">
-                    {{ errors.tripPass.destination_id }}
-                </div>-->
+                <div class="block mb-2 text-sm text-red-500" v-if="errors.destination_id">
+                    {{ errors.destination_id }}
+                </div>
             </div>
 
             <!--TYPE AND QUANTITY-->
@@ -107,33 +107,42 @@ export default {
                 pass_id: "21"
             },
             isLoading: false,
-            errors: Object,
-            isDisabled: false
+            errors: {
+                source_id: null,
+                destination_id: null
+            },
+            isDisabled: true
         }
     },
 
     methods: {
+
         getFare: async function () {
-            this.isDisabled = true
-            const response = await axios.post('/api/get/fare', {
-                "source": this.tripPass.source_id,
-                "destination": this.tripPass.destination_id,
-                "pass_id": this.tripPass.pass_id
-            });
+            if (this.isValid) {
+                this.isDisabled = true
+                const response = await axios.post('/api/get/fare', {
+                    "source": this.tripPass.source_id,
+                    "destination": this.tripPass.destination_id,
+                    "pass_id": this.tripPass.pass_id
+                });
 
-            let data = await response.data
-            if (data.status) this.tripPass.fare = data.fare
-            else console.log(data.errors)
-
+                let data = await response.data
+                if (data.status) {
+                    this.tripPass.fare = data.fare
+                    this.isDisabled = false
+                }
+                else console.log(data.errors)
+            }
         },
 
-
         genOrder: async function () {
-            this.isLoading = true
-            const response = await axios.post('/tp/create', this.tripPass)
-            let data = await response.data
-            if (data.status) this.onSuccess(data)
-            else this.onFailure(data)
+            if (this.isValid) {
+                this.isLoading = true
+                const response = await axios.post('/tp/create', this.tripPass)
+                let data = await response.data
+                if (data.status) this.onSuccess(data)
+                else this.onFailure(data)
+            }
         },
 
         onSuccess: function (data) {
@@ -147,6 +156,33 @@ export default {
             const {errors} = data
             this.errors = errors
         },
+
+        isValid: function () {
+
+            this.errors.source_id = null
+            this.errors.destination_id = null
+
+            if (this.tripPass.source_id === '') {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.source_id = 'Please select source station !'
+            } else if (this.tripPass.destination_id === '') {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.destination_id = 'Please select destination station !'
+            } else if (this.tripPass.source_id === this.ticket.destination_id) {
+                this.isLoading = false
+                this.isDisabled = true
+                this.errors.source_id = 'Source & destination can\'t be same !'
+                this.errors.destination_id = 'Source & destination can\'t be same !'
+            } else {
+                this.isDisabled = false
+                this.errors.source_id = null
+                this.errors.destination_id = null
+                return true
+            }
+            return false
+        }
 
     },
 

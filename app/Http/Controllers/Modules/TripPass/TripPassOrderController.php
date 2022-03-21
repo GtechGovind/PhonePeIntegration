@@ -8,13 +8,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Modules\Utility\OrderUtility;
 use App\Models\SaleOrder;
 use App\Models\TpSlBooking;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class TripPassOrderController extends Controller
 {
-    public function index()
+    public function index(): Response
     {
         return Inertia::render('Modules/TripPass/Order', [
             'stations' => DB::table('stations')->get(['stn_id', 'stn_name']),
@@ -62,7 +64,7 @@ class TripPassOrderController extends Controller
 
     }
 
-    public function issueTrip($order_id)
+    public function issueTrip($order_id): RedirectResponse
     {
         $order = DB::table('sale_order')
             ->where('sale_or_no', '=', $order_id)
