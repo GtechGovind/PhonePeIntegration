@@ -20975,10 +20975,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.errors.source_id = null;
       this.errors.destination_id = null;
 
-      if (this.ticket.source_id === '') {
+      if (this.tripPass.source_id === '') {
         this.isDisabled = true;
         this.errors.source_id = 'Please select source station !';
-      } else if (this.ticket.destination_id === '') {
+      } else if (this.tripPass.destination_id === '') {
         this.isDisabled = true;
         this.errors.destination_id = 'Please select destination station !';
       } else if (this.tripPass.source_id === this.tripPass.destination_id) {

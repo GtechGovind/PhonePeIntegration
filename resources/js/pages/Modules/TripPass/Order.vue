@@ -120,7 +120,7 @@ export default {
         getFare: async function () {
 
             if (this.isValid()) {
-                
+
                 const response = await axios.post('/api/get/fare', {
                     "source": this.tripPass.source_id,
                     "destination": this.tripPass.destination_id,
@@ -162,11 +162,11 @@ export default {
             this.errors.source_id = null
             this.errors.destination_id = null
 
-            if (this.ticket.source_id === '') {
+            if (this.tripPass.source_id === '') {
                 this.isDisabled = true
                 this.errors.source_id = 'Please select source station !'
 
-            } else if (this.ticket.destination_id === '') {
+            } else if (this.tripPass.destination_id === '') {
                 this.isDisabled = true
                 this.errors.destination_id = 'Please select destination station !'
 
