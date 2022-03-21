@@ -5,14 +5,14 @@
             <span class="flex-initial max-w-full leading-none text-xs font-normal">Upcoming Ticket</span>
         </span>
         </div>
-        <div v-for="ticket in upcomingTickets" :key="ticket.sale_or_id" class="bg-white rounded shadow hover:bg-gray-50 m-2 ">
-            <Link :href="'/ticket/view/' + ticket.sale_or_no">
+        <div v-for="ticket in upcomingTickets" :key="ticket['sale_or_id']" class="bg-white rounded shadow hover:bg-gray-50 m-2 ">
+            <Link :href="'/ticket/view/' + ticket['sale_or_no']">
                 <div class="grid grid-cols-5">
                     <div class="grid grid-rows-3 col-span-4 p-3">
                         <div class="text-xl text-gray-600 font-semibold">
                             {{ ticket.source }}
-                            <i v-if="ticket.product_id === 1" class="fa-solid fa-right-long mx-2"></i>
-                            <i v-if="ticket.product_id === 2" class="fa-solid fa-arrow-right-arrow-left mx-2"></i>
+                            <i v-if="ticket['product_id'] === 1" class="fa-solid fa-right-long mx-2"></i>
+                            <i v-if="ticket['product_id'] === 2" class="fa-solid fa-arrow-right-arrow-left mx-2"></i>
                             {{ ticket.destination }}
                         </div>
                         <div class="text-sm content-center grid grid-cols-5 mt-2 text-gray-600">
