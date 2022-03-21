@@ -22866,10 +22866,10 @@ var _hoisted_12 = {
   "class": "c-error"
 };
 var _hoisted_13 = {
-  "class": "mb-6 grid grid-cols-3 gap-12 content-center w-full"
+  "class": "mb-6 grid grid-cols-2 gap-10 content-center w-full"
 };
 var _hoisted_14 = {
-  "class": "col-span-3 grid grid-cols-2 text-center content-center w-full"
+  "class": "grid grid-cols-2 text-center content-center w-full"
 };
 var _hoisted_15 = {
   "class": "mx-2 text-gray-900"

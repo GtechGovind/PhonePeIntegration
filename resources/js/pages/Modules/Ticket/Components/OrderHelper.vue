@@ -38,8 +38,8 @@
                 </div>
 
                 <!--TYPE AND QUANTITY-->
-                <div class="mb-6 grid grid-cols-3 gap-12 content-center w-full">
-                    <div class="col-span-3 grid grid-cols-2 text-center content-center w-full">
+                <div class="mb-6 grid grid-cols-2 gap-10 content-center w-full">
+                    <div class="grid grid-cols-2 text-center content-center w-full">
                         <label class="mx-2 text-gray-900">
                             <input
                                 type="radio"
