@@ -119,6 +119,7 @@ export default {
 
         getFare: async function () {
             if (this.isValid) {
+
                 const response = await axios.post('/api/get/fare', {
                     "source": this.tripPass.source_id,
                     "destination": this.tripPass.destination_id,
@@ -131,6 +132,7 @@ export default {
                     this.isDisabled = false
                 }
                 else console.log(data.errors)
+
             }
         },
 
@@ -158,7 +160,7 @@ export default {
 
         isValid: function () {
 
-            if(this.tripPass.source_id == this.tripPass.destination_id) {
+            if(this.tripPass.source_id === this.tripPass.destination_id) {
                 this.isDisabled = true
                 this.errors.source_id = 'Source & destination can\'t be same !'
                 this.errors.destination_id = 'Source & destination can\'t be same !'
