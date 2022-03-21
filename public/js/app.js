@@ -19817,7 +19817,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     addAmount: function addAmount(amount) {
-      this.pass.price += parseInt(amount);
+      if (this.validate()) {
+        this.pass.price += parseInt(amount);
+      }
     },
     validate: function validate() {
       if (this.pass.price < 100) {
@@ -19832,7 +19834,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else {
         this.error = null;
         this.isDisabled = false;
+        return true;
       }
+
+      return false;
     },
     genOrder: function () {
       var _genOrder = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -19882,12 +19887,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         title: errors,
         text: errors
       });
-    },
-    add: function add() {
-      this.pass.price = this.pass.price + 100;
-    },
-    minus: function minus() {
-      this.pass.price = this.pass.price - 100;
     }
   },
   mounted: function mounted() {
@@ -22578,8 +22577,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_hero), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-span-2",
-    onClick: _cache[0] || (_cache[0] = function () {
-      return $options.minus && $options.minus.apply($options, arguments);
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.addAmount(-100);
     })
   }, _hoisted_5), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     textContent: (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(100),
@@ -22588,16 +22587,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "col-span-2",
-    onClick: _cache[1] || (_cache[1] = function () {
-      return $options.add && $options.add.apply($options, arguments);
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.addAmount(100);
     })
   }, _hoisted_8)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "number",
     id: "price",
     "class": "form_number_input",
     placeholder: "₹ 500",
-    min: "100",
-    max: "3000",
     required: "",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.pass.price = $event;

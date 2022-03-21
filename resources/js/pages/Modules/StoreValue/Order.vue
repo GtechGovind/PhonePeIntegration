@@ -1,7 +1,7 @@
 <template>
 
-    <nav-bar />
-    <hero />
+    <nav-bar/>
+    <hero/>
 
     <div class="bg-white m-2 p-3 shadow border text-center">
         <p class="font-bold text-lg text-gray-600">BUY NEW STORE VALUE PASS</p>
@@ -10,28 +10,36 @@
     <div class="bg-white m-2 p-5 shadow border rounded">
         <div class="grid grid-cols-5 text-center content-center w-full items-center">
             <div class="col-span-2"
-                 v-on:click="minus">
+                 v-on:click="addAmount(-100)">
                 <i class="fas fa-minus-circle fa-xl mt-1"></i>
             </div>
             <p v-text="100" class="text-gray-600 text-3xl font-bold">
             </p>
             <div class="col-span-2"
-                 v-on:click="add">
+                 v-on:click="addAmount(100)">
                 <i class="fas fa-plus-circle fa-xl mt-1"></i>
             </div>
         </div>
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
-            <input type="number" id="price" class="form_number_input" placeholder="₹ 500" min="100" max="3000" required v-model="pass.price" v-on:keyup="validate"/>
+            <input
+                type="number"
+                id="price"
+                class="form_number_input"
+                placeholder="₹ 500"
+                required
+                v-model="pass.price"
+                v-on:keyup="validate"
+            />
             <div class="c-error" v-if="error">
                 {{ error }}
             </div>
         </div>
 
         <div class="mt-3 grid grid-cols-3 gap-5">
-            <chip :title = "'₹ 100'" v-on:click="addAmount(100)"/>
-            <chip :title = "'₹ 200'" v-on:click="addAmount(200)"/>
-            <chip :title = "'₹ 500'" v-on:click="addAmount(500)"/>
+            <chip :title="'₹ 100'" v-on:click="addAmount(100)"/>
+            <chip :title="'₹ 200'" v-on:click="addAmount(200)"/>
+            <chip :title="'₹ 500'" v-on:click="addAmount(500)"/>
         </div>
 
     </div>
@@ -76,9 +84,13 @@ export default {
     },
 
     methods: {
+
         addAmount: function (amount) {
-            this.pass.price += parseInt(amount)
+            if (this.validate()) {
+                this.pass.price += parseInt(amount)
+            }
         },
+
         validate: function () {
 
             if (this.pass.price < 100) {
@@ -93,8 +105,9 @@ export default {
             } else {
                 this.error = null
                 this.isDisabled = false
+                return true
             }
-
+            return false
         },
 
         genOrder: async function () {
@@ -108,13 +121,13 @@ export default {
 
         onSuccess: function (data) {
             this.isLoading = false
-            const { redirectUrl } = data
+            const {redirectUrl} = data
             window.location.replace(redirectUrl)
         },
 
         onFailure: function (data) {
             this.isLoading = false
-            const { errors } = data
+            const {errors} = data
             this.$swal.fire({
                 icon: 'error',
                 title: errors,
@@ -122,16 +135,7 @@ export default {
             })
         },
 
-        add : function (){
-            this.pass.price = this.pass.price + 100;
-        },
-        minus : function (){
-            this.pass.price = this.pass.price - 100;
-        }
-
     },
-
-
 
 
     async mounted() {
