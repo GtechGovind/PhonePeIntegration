@@ -121,7 +121,7 @@ export default {
 
             if (this.isValid) {
 
-                const response = await axios.post('/api/get/fare', {
+                /*const response = await axios.post('/api/get/fare', {
                     "source": this.tripPass.source_id,
                     "destination": this.tripPass.destination_id,
                     "pass_id": this.tripPass.pass_id
@@ -131,7 +131,7 @@ export default {
                     this.tripPass.fare = data.fare
                     this.isDisabled = false
                 }
-                else console.log(data.errors)
+                else console.log(data.errors)*/
             }
         },
 
