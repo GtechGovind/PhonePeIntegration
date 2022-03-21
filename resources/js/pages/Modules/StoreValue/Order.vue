@@ -33,9 +33,9 @@
 
 
         <div class="mt-3 grid grid-cols-3 gap-5">
-            <chip :title="'₹ 100'" v-on:click="addAmount(100)"/>
-            <chip :title="'₹ 200'" v-on:click="addAmount(200)"/>
-            <chip :title="'₹ 500'" v-on:click="addAmount(500)"/>
+            <chip :title="'₹ 100'" v-on:click="setAmount(100)"/>
+            <chip :title="'₹ 200'" v-on:click="setAmount(200)"/>
+            <chip :title="'₹ 500'" v-on:click="setAmount(500)"/>
         </div>
 
     </div>
@@ -86,12 +86,18 @@ export default {
             this.validate()
         },
 
+        setAmount: function (amount) {
+            this.pass.price = parseInt(amount)
+            this.validate()
+        },
+
         validate: function () {
 
             if (this.pass.price === '') {
                 this.pass.price = 0
             } else if (this.pass.price < 100) {
-                this.error = 'Amount must be grater then 100'
+                this.error = 'Amount must be greater then 100'
+                this.pass.price = 100
                 this.isDisabled = true
             } else if (this.pass.price % 100 !== 0) {
                 this.error = 'Amount must be multiple of 100'

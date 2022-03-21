@@ -19820,11 +19820,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.pass.price += parseInt(amount);
       this.validate();
     },
+    setAmount: function setAmount(amount) {
+      this.pass.price = parseInt(amount);
+      this.validate();
+    },
     validate: function validate() {
       if (this.pass.price === '') {
         this.pass.price = 0;
       } else if (this.pass.price < 100) {
-        this.error = 'Amount must be grater then 100';
+        this.error = 'Amount must be greater then 100';
+        this.pass.price = 100;
         this.isDisabled = true;
       } else if (this.pass.price % 100 !== 0) {
         this.error = 'Amount must be multiple of 100';
@@ -22602,17 +22607,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, _hoisted_10)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 100',
     onClick: _cache[4] || (_cache[4] = function ($event) {
-      return $options.addAmount(100);
+      return $options.setAmount(100);
     })
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 200',
     onClick: _cache[5] || (_cache[5] = function ($event) {
-      return $options.addAmount(200);
+      return $options.setAmount(200);
     })
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_chip, {
     title: '₹ 500',
     onClick: _cache[6] || (_cache[6] = function ($event) {
-      return $options.addAmount(500);
+      return $options.setAmount(500);
     })
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Button, {
     onClick: $options.genOrder,
