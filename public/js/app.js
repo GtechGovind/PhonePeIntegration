@@ -20539,7 +20539,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _this.checkIsPending();
 
             case 2:
-              console.log(window.history.previous.href);
+              console.log(document.referrer);
 
             case 3:
             case "end":

@@ -30,8 +30,8 @@ export default {
 
     async mounted() {
         await this.checkIsPending()
-        console.log(window.history.previous.href)
-        
+        console.log(document.referrer)
+
     },
 
     props: {
