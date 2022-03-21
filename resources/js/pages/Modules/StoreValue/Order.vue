@@ -86,9 +86,8 @@ export default {
     methods: {
 
         addAmount: function (amount) {
-            if (this.validate()) {
-                this.pass.price += parseInt(amount)
-            }
+            this.pass.price += parseInt(amount)
+            this.validate()
         },
 
         validate: function () {

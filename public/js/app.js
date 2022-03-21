@@ -19817,9 +19817,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   methods: {
     addAmount: function addAmount(amount) {
-      if (this.validate()) {
-        this.pass.price += parseInt(amount);
-      }
+      this.pass.price += parseInt(amount);
+      this.validate();
     },
     validate: function validate() {
       if (this.pass.price < 100) {
