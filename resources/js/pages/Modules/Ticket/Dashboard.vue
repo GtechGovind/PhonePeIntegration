@@ -65,7 +65,8 @@ export default {
         },
 
         RecentTkt : function (){
-            if(this.recentOrders.length > 0 && this.upcomingOrders.length < 1){
+            console.log("hi")
+            if(this.recentOrders.length > 0 && this.upcomingOrders.length <= 1){
                this.show = true;
             }
         }

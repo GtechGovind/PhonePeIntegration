@@ -20487,7 +20487,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.$inertia.visit('/ticket/order');
     },
     RecentTkt: function RecentTkt() {
-      if (this.recentOrders.length > 0 && this.upcomingOrders.length < 1) {
+      console.log("hi");
+
+      if (this.recentOrders.length > 0 && this.upcomingOrders.length <= 1) {
         this.show = true;
       }
     }
@@ -23102,7 +23104,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "m-2 px-2 py-1 border rounded-full bg-gray-200 text-base text-gray-700 font-medium"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "flex-initial max-w-full leading-none text-xs font-normal"
-}, "Recent Ticket")])], -1
+}, "Frequent Ticket")])], -1
 /* HOISTED */
 );
 

@@ -2,7 +2,7 @@
     <div>
         <div class="my-3">
             <span class="m-2 px-2 py-1 border rounded-full bg-gray-200 text-base text-gray-700 font-medium">
-                <span class="flex-initial max-w-full leading-none text-xs font-normal">Recent Ticket</span>
+                <span class="flex-initial max-w-full leading-none text-xs font-normal">Frequent Ticket</span>
             </span>
         </div>
         <div v-for="ticket in recentTickets" class="bg-white rounded shadow hover:bg-gray-50 m-2 ">
