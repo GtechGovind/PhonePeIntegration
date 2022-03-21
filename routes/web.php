@@ -18,10 +18,10 @@ use App\Http\Controllers\Modules\TripPass\TripPassOrderController;
 use App\Http\Controllers\Modules\TripPass\TripPassReloadController;
 use App\Http\Controllers\Modules\TripPass\TripPassStatusController;
 use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [MainController::class, 'index'])->name('home');
+
+Route::get('/', [MainController::class, 'index'])->name('login');
 Route::post('auth', [MainController::class, 'auth'])->name('auth');
 
 Route::middleware('auth')->group(function () {
