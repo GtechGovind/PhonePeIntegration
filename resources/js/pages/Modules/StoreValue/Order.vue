@@ -9,7 +9,7 @@
 
     <div class="bg-white m-2 p-5 shadow border rounded">
         <div class="grid grid-cols-5 text-center content-center w-full items-center">
-            <div class="col-span-2"
+            <div
                  v-on:click="addAmount(-100)">
                 <i class="fas fa-minus-circle fa-xl mt-1"></i>
             </div>
@@ -28,7 +28,7 @@
                     {{ error }}
                 </div>
             </div>
-            <div class="col-span-2"
+            <div
                  v-on:click="addAmount(100)">
                 <i class="fas fa-plus-circle fa-xl mt-1"></i>
             </div>
