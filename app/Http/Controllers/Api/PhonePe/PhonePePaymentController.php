@@ -32,26 +32,25 @@ class PhonePePaymentController extends Controller
         $x_verify = $this->createXVerify($payload);
 
         $response = Http::withBody($request, 'application/json')
-            -> withHeaders([
-                'X-CALLBACK-URL' => $this -> app_url . '/processing/' . $order->sale_or_no,
+            ->withHeaders([
+                'X-CALLBACK-URL' => $this->app_url . '/processing/' . $order->sale_or_no,
                 'X-CLIENT-ID' => $this->x_client_id,
                 'X-VERIFY' => $x_verify
             ])
-            -> post('https://apps-uat.phonepe.com/v3/transaction/sdk-less/initiate') -> collect();
+            ->post('https://apps-uat.phonepe.com/v3/transaction/sdk-less/initiate')->collect();
 
         return json_decode($response);
 
     }
 
-    private function createCart($order)
+    private function createCart($order): string
     {
         $url = $this->app_url . '/order/' . $order->sale_or_no;
 
-        if ($order -> op_type_id == env('ISSUE'))
-        {
-            if ($order -> product_id == env('PRODUCT_SV')) {
+        if ($order->op_type_id == env('ISSUE')) {
+            if ($order->product_id == env('PRODUCT_SV')) {
 
-                return '{
+                /*return '{
                     "orderContext": {
                         "trackingInfo": {
                             "type": "HTTPS",
@@ -76,11 +75,42 @@ class PhonePePaymentController extends Controller
                             }
                         ]
                     }
-                }';
+                }';*/
+
+                return '{
+                "orderContext": {
+                    "trackingInfo": {
+                        "type": "HTTPS",
+                        "url":"' . $url . '"
+                    }
+                },
+                "fareDetails": {
+                    "totalAmount":' . $order->total_price * 100 . ',
+                    "payableAmount":' . $order->total_price * 100 . '
+                },
+                "cartDetails": {
+                    "cartItems": [
+                        {
+                            "category": "SHOPPING",
+                            "itemId":"' . $order->sale_or_no . '",
+                            "price":' . $order->total_price * 100 . ',
+                            "itemName": "Store Value",
+                            "quantity": 1,
+                            "shippingInfo": {
+                                "deliveryType": "STANDARD",
+                                "time": {
+                                    "timestamp": ' . time() . ',
+                                    "zoneOffSet": "+05:30"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }';
 
             }
 
-                return '{
+            return '{
                 "orderContext": {
                     "trackingInfo": {
                         "type": "HTTPS",
@@ -113,9 +143,7 @@ class PhonePePaymentController extends Controller
                 }
             }';
 
-        }
-        else
-        {
+        } else {
             return '{
                 "orderContext": {
                     "trackingInfo": {
@@ -156,24 +184,24 @@ class PhonePePaymentController extends Controller
     private function createPayload($order, $cert)
     {
         $payload = new Payload();
-        $payload->merchantId = $this -> x_client_id;
-        $payload->amount = $order -> total_price * 100;
+        $payload->merchantId = $this->x_client_id;
+        $payload->amount = $order->total_price * 100;
         $payload->validFor = 300000;
-        $payload->transactionId = $order -> sale_or_no;
-        $payload->merchantOrderId = $order -> sale_or_no;
-        $payload->redirectUrl = $this -> app_url . '/processing/' . $order->sale_or_no;
+        $payload->transactionId = $order->sale_or_no;
+        $payload->merchantOrderId = $order->sale_or_no;
+        $payload->redirectUrl = $this->app_url . '/processing/' . $order->sale_or_no;
         $payload->transactionContext = "" . base64_encode($cert) . "";
 
         return json_encode($payload, JSON_FORCE_OBJECT);
 
     }
 
-    private function createRequest($payload)
+    private function createRequest($payload): string
     {
         return '{"request": "' . base64_encode($payload) . '"}';
     }
 
-    private function createXVerify($payload)
+    private function createXVerify($payload): string
     {
         $hash = hash('sha256', base64_encode($payload) . "/v3/transaction/sdk-less/initiate" . $this->salt_key);
         return $hash . "###" . $this->salt_index;
