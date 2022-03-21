@@ -160,10 +160,12 @@ export default {
 
         isValid: function () {
 
-            if(this.tripPass.source_id === this.tripPass.destination_id) {
+            if(this.tripPass.fare === 0) {
+
                 this.isDisabled = true
                 this.errors.source_id = 'Source & destination can\'t be same !'
                 this.errors.destination_id = 'Source & destination can\'t be same !'
+
             } else {
                 this.isDisabled = false
                 return  true
