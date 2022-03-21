@@ -159,7 +159,7 @@ export default {
 
             this.$swal.fire({
                 icon: 'error',
-                title: data.error,
+                title: 'Active Pass already exists !',
                 text: 'Please contact Mumbai Metro One for assistance !',
                 confirmButtonText: 'Okay',
             }).then((res) => {
