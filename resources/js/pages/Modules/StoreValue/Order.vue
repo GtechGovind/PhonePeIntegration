@@ -9,11 +9,8 @@
 
     <div class="bg-white m-2 p-5 shadow border rounded">
         <div class="grid grid-cols-5 text-center content-center w-full items-center">
-            <div
-                 v-on:click="addAmount(-100)">
-                <i class="fas fa-minus-circle fa-xl mt-1"></i>
-            </div>
-            <div class="mb-3">
+            <div v-on:click="addAmount(-100)"><i class="fas fa-minus-circle fa-xl mt-1"></i></div>
+            <div class="mb-3 col-span-3">
                 <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
                 <input
                     type="number"
