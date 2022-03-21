@@ -71,7 +71,7 @@
 
     <Button
         :is-loading="isLoading"
-        :is-disabled="isLoading"
+        :is-disabled="isDisabled"
         v-on:click="genOrder"
         type="'button'"
         :title="'PROCEED TO PAY ₹ ' + tripPass.fare"
@@ -107,13 +107,14 @@ export default {
                 pass_id: "21"
             },
             isLoading: false,
-            errors: Object
+            errors: Object,
+            isDisabled: false
         }
     },
 
     methods: {
         getFare: async function () {
-
+            this.isDisabled = true
             const response = await axios.post('/api/get/fare', {
                 "source": this.tripPass.source_id,
                 "destination": this.tripPass.destination_id,

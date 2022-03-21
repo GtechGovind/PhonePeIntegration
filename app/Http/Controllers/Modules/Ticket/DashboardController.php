@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Modules\Ticket;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
@@ -21,7 +22,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    private function getUpcomingOrders()
+    private function getUpcomingOrders(): Collection
     {
         return DB::table('sale_order as so')
             ->join('stations as s', 's.stn_id', 'so.src_stn_id')
@@ -33,11 +34,12 @@ class DashboardController extends Controller
                     ->orWhere('product_id', '=', env('PRODUCT_RJT'));
             })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
+            ->orderBy('txn_date', 'desc')
             ->get();
 
     }
 
-    private function getRecentOrders()
+    private function getRecentOrders(): Collection
     {
         return DB::table('sale_order as so')
             ->join('stations as s', 's.stn_id', 'so.src_stn_id')
@@ -49,6 +51,7 @@ class DashboardController extends Controller
                       ->orWhere('product_id', '=', env('PRODUCT_RJT'));
             })
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination'])
+            ->orderBy('txn_date', 'desc')
             ->limit(1)
             ->get();
     }

@@ -221,6 +221,10 @@ export default {
         },
 
         isValid: function () {
+
+            this.errors.source_id = null
+            this.errors.destination_id = null
+
             if (this.ticket.source_id === '') {
                 this.isLoading = false
                 this.isDisabled = true

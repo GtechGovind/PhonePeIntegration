@@ -12,6 +12,9 @@
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
             <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
+            <div class="c-error" v-if="error">
+                {{ error }}
+            </div>
         </div>
 
         <div class="mt-3 grid grid-cols-3 gap-5">
@@ -25,7 +28,7 @@
     <Button
         v-on:click="genOrder"
         :is-loading="isLoading"
-        :is-disabled="isLoading"
+        :is-disabled="isDisabled"
         :type="'button'"
         :title="'PROCEED TO PAY ₹ ' + pass.price"
     />
@@ -55,7 +58,9 @@ export default {
             pass: {
                 price: 0
             },
-            isLoading: false
+            isLoading: false,
+            isDisabled: false,
+            error: null
         }
     },
 
@@ -66,19 +71,24 @@ export default {
         validate: function () {
 
             if (this.pass.price < 100) {
-                this.errors.pass.price = 'Amount must be grater then 100'
+                this.error = 'Amount must be grater then 100'
+                this.isDisabled = true
             } else if (this.pass.price % 100 !== 0) {
-                this.errors.pass.price = 'Amount must be multiple of 100'
+                this.error = 'Amount must be multiple of 100'
+                this.isDisabled = true
             } else if (this.pass.price > 3000) {
-                this.errors.pass.price = 'Amount must not be grater then 3000'
+                this.error = 'Amount must not be grater then 3000'
+                this.isDisabled = true
             } else {
-                this.errors.pass.price = ''
+                this.error = null
+                this.isDisabled = false
             }
 
         },
 
         genOrder: async function () {
             this.isLoading = true
+            this.isDisabled = true
             const response = await axios.post('/sv/create', this.pass)
             let data = await response.data
             if (data.status) this.onSuccess(data)
