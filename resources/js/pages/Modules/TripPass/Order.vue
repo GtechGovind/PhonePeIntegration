@@ -170,7 +170,7 @@ export default {
                 this.isLoading = false
                 this.isDisabled = true
                 this.errors.destination_id = 'Please select destination station !'
-            } else if (this.tripPass.source_id === this.ticket.destination_id) {
+            } else if (this.tripPass.source_id === this.tripPass.destination_id) {
                 this.isLoading = false
                 this.isDisabled = true
                 this.errors.source_id = 'Source & destination can\'t be same !'
