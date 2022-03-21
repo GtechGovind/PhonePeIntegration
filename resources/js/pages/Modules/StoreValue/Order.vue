@@ -22,7 +22,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
-            <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
+            <input type="number" id="price" class="form_number_input" placeholder="₹ 500" min="100" max="3000" required v-model="pass.price" v-on:keyup="validate"/>
             <div class="c-error" v-if="error">
                 {{ error }}
             </div>

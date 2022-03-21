@@ -22596,6 +22596,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     id: "price",
     "class": "form_number_input",
     placeholder: "₹ 500",
+    min: "100",
+    max: "3000",
     required: "",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $data.pass.price = $event;
