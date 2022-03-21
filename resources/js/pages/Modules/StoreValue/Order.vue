@@ -8,7 +8,18 @@
     </div>
 
     <div class="bg-white m-2 p-5 shadow border rounded">
-
+        <div class="grid grid-cols-5 text-center content-center w-full items-center">
+            <div class="col-span-2"
+                 v-on:click="minus">
+                <i class="fas fa-minus-circle fa-xl mt-1"></i>
+            </div>
+            <p v-text="100" class="text-gray-600 text-3xl font-bold">
+            </p>
+            <div class="col-span-2"
+                 v-on:click="add">
+                <i class="fas fa-plus-circle fa-xl mt-1"></i>
+            </div>
+        </div>
         <div class="mb-3">
             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
             <input type="number" id="price" class="form_number_input" placeholder="₹ 500" required v-model="pass.price" v-on:keyup="validate"/>
@@ -109,9 +120,18 @@ export default {
                 title: errors,
                 text: errors,
             })
+        },
+
+        add : function (){
+            this.pass.price = this.pass.price + 100;
+        },
+        minus : function (){
+            this.pass.price = this.pass.price - 100;
         }
 
     },
+
+
 
 
     async mounted() {
