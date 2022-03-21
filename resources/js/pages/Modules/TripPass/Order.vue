@@ -118,8 +118,8 @@ export default {
     methods: {
 
         getFare: async function () {
-            this.isValid();
-            /*if (this.isValid) {
+           
+            if (this.isValid) {
 
                 const response = await axios.post('/api/get/fare', {
                     "source": this.tripPass.source_id,
@@ -132,7 +132,7 @@ export default {
                     this.isDisabled = false
                 }
                 else console.log(data.errors)
-            }*/
+            }
         },
 
         genOrder: async function () {
