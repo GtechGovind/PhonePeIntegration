@@ -1,14 +1,16 @@
-<?php /** @noinspection LaravelFunctionsInspection */
+<?php
 
 namespace App\Http\Controllers\Modules\Ticket;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class TicketViewController extends Controller
 {
-    public function index($order_id)
+    public function index($order_id): Response
     {
         $order = DB::table('sale_order')
             ->where('sale_or_no', '=', $order_id)
@@ -37,7 +39,7 @@ class TicketViewController extends Controller
         }
     }
 
-    private function getSjtTrips($order_id)
+    private function getSjtTrips($order_id): Collection
     {
         return DB::table('sjt_sl_booking as sjt')
             ->join('sale_order as so', 'so.sale_or_id', 'sjt.sale_or_id')
@@ -47,11 +49,12 @@ class TicketViewController extends Controller
             ->where('sjt.qr_status', '!=', env('EXPIRED'))
             ->where('sjt.qr_status', '!=', env('COMPLETED'))
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'sjt.*'])
+            ->orderBy('txn_date', 'desc')
             ->get();
 
     }
 
-    private function getRjtTrips($order_id, $dir)
+    private function getRjtTrips($order_id, $dir): Collection
     {
         return DB::table('rjt_sl_booking as rjt')
             ->join('sale_order as so', 'so.sale_or_id', 'rjt.sale_or_id')
@@ -60,6 +63,7 @@ class TicketViewController extends Controller
             ->where('so.sale_or_no', '=', $order_id)
             ->where('rjt.qr_dir', '=', $dir)
             ->select(['so.*', 's.stn_name as source', 'd.stn_name as destination', 'rjt.*'])
+            ->orderBy('txn_date', 'desc')
             ->get();
     }
 }

@@ -35,7 +35,7 @@
             <div class="grid grid-cols-5 px-3 pt-1">
                 <div class="text-left font-bold text-gray-700 col-span-2">{{ upwardTicket[0]['source'] }}</div>
                 <div class="text-center">
-                    <i v-if="upwardTicket" class="fa-solid fa-right-long mx-2"></i>
+                    <i v-if="!returnTicket" class="fa-solid fa-right-long mx-2"></i>
                     <i v-if="returnTicket" class="fa-solid fa-arrow-right-arrow-left mx-2"></i>
                 </div>
                 <div class="text-right font-bold text-gray-700 col-span-2">{{ upwardTicket[0]['destination'] }}</div>
