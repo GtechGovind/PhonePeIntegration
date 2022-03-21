@@ -3,7 +3,7 @@
     <NavBar/>
     <Hero/>
 
-    <RecentTicket v-if="recentOrders.length > 0" :recent-tickets="recentOrders"/>
+    <RecentTicket v-if="recentOrders.length > 0" :recent-tickets="recentOrders" :is-disabled="upcomingOrders.length > 1"/>
 
     <TransitionGroup>
         <UpcomingTicket v-if="upcomingOrders.length > 0" :upcoming-tickets="upcomingOrders" class="mt-5"/>
