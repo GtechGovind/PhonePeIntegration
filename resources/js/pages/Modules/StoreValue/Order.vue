@@ -13,28 +13,27 @@
                  v-on:click="addAmount(-100)">
                 <i class="fas fa-minus-circle fa-xl mt-1"></i>
             </div>
-            <p v-text="100" class="text-gray-600 text-3xl font-bold">
-            </p>
+            <div class="mb-3">
+                <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
+                <input
+                    type="number"
+                    id="price"
+                    class="form_number_input"
+                    placeholder="₹ 500"
+                    required
+                    v-model="pass.price"
+                    v-on:keyup="validate"
+                />
+                <div class="c-error" v-if="error">
+                    {{ error }}
+                </div>
+            </div>
             <div class="col-span-2"
                  v-on:click="addAmount(100)">
                 <i class="fas fa-plus-circle fa-xl mt-1"></i>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Enter Amount</label>
-            <input
-                type="number"
-                id="price"
-                class="form_number_input"
-                placeholder="₹ 500"
-                required
-                v-model="pass.price"
-                v-on:keyup="validate"
-            />
-            <div class="c-error" v-if="error">
-                {{ error }}
-            </div>
-        </div>
+
 
         <div class="mt-3 grid grid-cols-3 gap-5">
             <chip :title="'₹ 100'" v-on:click="addAmount(100)"/>
