@@ -20531,6 +20531,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var url;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -20539,6 +20540,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _this.checkIsPending();
 
             case 2:
+              url = _this.urlPrev.split("/");
+
+              if (url[url.length - 2] === 'view') {
+                window.location.replace('/ticket/dashboard');
+              }
+
+            case 4:
             case "end":
               return _context.stop();
           }
@@ -20549,7 +20557,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     stations: Array,
     source: Number,
-    destination: Number
+    destination: Number,
+    urlPrev: String
   },
   name: "Order",
   components: {

@@ -30,12 +30,17 @@ export default {
 
     async mounted() {
         await this.checkIsPending()
+        const url = this.urlPrev.split("/")
+        if(url[url.length - 2] === 'view') {
+            window.location.replace('/ticket/dashboard')
+        }
     },
 
     props: {
         stations: Array,
         source: Number,
-        destination: Number
+        destination: Number,
+        urlPrev: String
     },
 
     name: "Order",
@@ -54,6 +59,7 @@ export default {
             this.isPendingPayment = isPendingPayment
         }
     },
+
 
 }
 </script>
