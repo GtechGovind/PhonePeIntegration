@@ -30,11 +30,8 @@ export default {
 
     async mounted() {
         await this.checkIsPending()
-        const url = this.urlPrev.split("/")
-        console.log(url)
-        if(url[url.length - 2] === 'view') {
-            window.location.replace('/ticket/dashboard')
-        }
+        console.log(window.history.previous.href)
+        
     },
 
     props: {
