@@ -94,7 +94,7 @@ class PhonePePaymentController extends Controller
                             "category": "SHOPPING",
                             "itemId":"' . $order->sale_or_no . '",
                             "price":' . $order->total_price * 100 . ',
-                            "itemName": "Store Value",
+                            "itemName": "Store Value Pass",
                             "quantity": 1,
                             "shippingInfo": {
                                 "deliveryType": "STANDARD",
