@@ -1,6 +1,14 @@
 <template>
     <NavBar/>
-    <Hero/>
+    <amp-ad width="100vw" height="320"
+            type="adsense"
+            data-ad-client="ca-pub-5244072360571761"
+            data-ad-slot="8253383551"
+            data-auto-format="mcrspv"
+            data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+
     <div class="bg-white cursor-pointer rounded shadow hover:bg-gray-50 m-3 border" v-for="product in products" :key="product.id">
         <Link :href="product.url" class="appearance-none">
             <div class="grid grid-cols-6">
